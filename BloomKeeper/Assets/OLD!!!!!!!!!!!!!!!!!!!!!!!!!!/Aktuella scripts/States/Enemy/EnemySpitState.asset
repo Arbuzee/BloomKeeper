@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774828fa43498a64cb9da293e441652d, type: 3}
+  m_Name: EnemySpitState
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  material: {fileID: 0}
+  attackDistance: 0
+  lostTargetDistance: 0
+  spitt: {fileID: 7939980736749093821, guid: 50df2d89cfa347b4d851cde8dffefef6, type: 3}

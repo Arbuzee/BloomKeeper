@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a868dd3205d02b4ebd6149ff7e7ec11, type: 3}
+  m_Name: EnemyAttackState
+  m_EditorClassIdentifier: 
+  moveSpeed: 20
+  material: {fileID: 2100000, guid: 845b638d5b449634abf2c2afad81d79b, type: 2}
+  attackDistance: 15
+  lostTargetDistance: 35
+  chaseDistance: 15.66
+  cooldown: 3
+  currentCool: 0
