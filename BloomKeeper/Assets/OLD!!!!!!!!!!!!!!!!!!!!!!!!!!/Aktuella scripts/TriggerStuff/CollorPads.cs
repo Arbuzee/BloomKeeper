@@ -6,13 +6,20 @@ public class CollorPads : MonoBehaviour
 {
     public Material material1, material2, material3;
     private Material tempMaterial;
-    private void Awake()
+
+
+    //private RightMaterial rightMaterial;
+    public Material Rm;
+
+    public bool b = false;
+
+
+    private void Start()
     {
-
-        
-
-
+        //rightMaterial = GetComponent<RightMaterial>();
+        //rightMaterial = transform.root.GetComponent<RightMaterial>();
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -20,13 +27,14 @@ public class CollorPads : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 tempMaterial = gameObject.GetComponent<MeshRenderer>().sharedMaterial;
-                Debug.Log("press1");
+                //Debug.Log("press1");
 
                 if (tempMaterial.Equals(material1))
                 {
                     Debug.Log(tempMaterial);
                     Debug.Log("press");
                     gameObject.GetComponent<Renderer>().material = material2;
+                    //rightMaterial.CheckMaterial();
                 }
                 else if (tempMaterial.Equals(material2))
                 {
@@ -34,12 +42,17 @@ public class CollorPads : MonoBehaviour
                     Debug.Log(tempMaterial);
                     Debug.Log("press");
                     gameObject.GetComponent<Renderer>().material = material3;
+                    //rightMaterial.CheckMaterial();
+
                 }
                 else if (tempMaterial.Equals(material3))
                 {
                     Debug.Log(tempMaterial);
                     Debug.Log("press");
                     gameObject.GetComponent<Renderer>().material = material1;
+                    //rightMaterial.CheckMaterial();
+
+
                 }
 
 
@@ -50,7 +63,20 @@ public class CollorPads : MonoBehaviour
 
         }
 
+
+ 
+
     }
+    public void CheckMaterial(bool b)
+    {
+        if (GetComponent<Material>().Equals(Rm))
+        {
+            b = true;
+        }
+        else
+        {
+            b = false;
+        }
 
 
 
@@ -58,4 +84,7 @@ public class CollorPads : MonoBehaviour
 
 
 
+
+    }
 }
+
