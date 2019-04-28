@@ -7,7 +7,7 @@ public class TriggerScript : MonoBehaviour
     public GameObject TriggerObject;
     public LayerMask layerMask;
     public float timer;
-    
+
 
 
     private void OnTriggerStay(Collider other)
@@ -15,15 +15,18 @@ public class TriggerScript : MonoBehaviour
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+
             try
             {
                 TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
                 StartCoroutine(Timer());
 
-            } catch (Exception e) { }
+            }
+            catch (Exception e) { }
+
 
         }
-        
+
 
     }
 
