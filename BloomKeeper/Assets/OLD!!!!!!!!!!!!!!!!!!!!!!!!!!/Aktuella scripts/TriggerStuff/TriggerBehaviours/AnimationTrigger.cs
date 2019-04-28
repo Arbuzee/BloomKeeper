@@ -8,11 +8,13 @@ public class AnimationTrigger: TriggeredObject
     private void Start()
     {
         anim = GetComponent<Animator>();
+        
     }
    
     public override void OnTrigger()
     {
-        anim.SetBool("Activate", true);
+        anim.SetBool("Active", true);
+        
     }
 
     public override void OnDeTrigger()
@@ -20,7 +22,7 @@ public class AnimationTrigger: TriggeredObject
         if (!hasDeactivation)
             return;
 
-        anim.SetBool("Activate", false);
+        anim.SetBool("Active", false);
 
     }
 }

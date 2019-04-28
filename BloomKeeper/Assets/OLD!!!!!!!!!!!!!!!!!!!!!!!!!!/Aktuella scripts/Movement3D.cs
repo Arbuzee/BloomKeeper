@@ -15,7 +15,7 @@ public class Movement3D : MonoBehaviour
     [Header("Attack")]
     public Ability decoy;
     public Transform dropPoint;
-    public float forceMultiplier = 0.1f, forceStep;
+    public float forceMultiplier, forceStep;
     public Image forceMeter;
 
     [Header("Physics")]
@@ -127,7 +127,7 @@ public class Movement3D : MonoBehaviour
         else if(Input.GetKeyUp(KeyCode.Q)) {
 
             decoy.Execute(dropPoint, forceMultiplier);
-            forceMultiplier = forceStep;
+            forceMultiplier = 0;
             forceMeter.fillAmount = 0;
 
         }

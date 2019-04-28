@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8486019273770042615}
   - component: {fileID: 3675500567398255598}
   - component: {fileID: 120973723695262632}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Decoy
   m_TagString: Decoy
   m_Icon: {fileID: 0}
