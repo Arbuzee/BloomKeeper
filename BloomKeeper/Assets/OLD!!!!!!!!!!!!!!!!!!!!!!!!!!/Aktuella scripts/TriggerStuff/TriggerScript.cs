@@ -6,10 +6,7 @@ public class TriggerScript : MonoBehaviour
 {
     public GameObject TriggerObject;
     public LayerMask layerMask;
-    public float timer;
     
-
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,8 +19,6 @@ public class TriggerScript : MonoBehaviour
             {
                
                 TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
-                if(timer != 0)
-                    StartCoroutine(Timer());
 
             }
             catch (Exception e) { }
@@ -39,7 +34,7 @@ public class TriggerScript : MonoBehaviour
     {
 
 
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player") && timer == 0)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
 
             try
@@ -55,15 +50,5 @@ public class TriggerScript : MonoBehaviour
 
 
     }
-
-
-
-    public IEnumerator Timer()
-    {
-
-        yield return new WaitForSeconds(timer);
-        TriggerObject.GetComponent<TriggeredObject>().OnDeTrigger();
-    }
-
 
 }
