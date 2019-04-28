@@ -13,9 +13,12 @@ public class MenuButtonController : MonoBehaviour
     [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject optionsMenu;
 
+    private Animator menuAnim;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        menuAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -65,10 +68,12 @@ public class MenuButtonController : MonoBehaviour
                 switch (index)
                 {
                     case 0:
-                        StartGame();
+                        menuAnim.SetTrigger("startGame");
+                        //StartGame();
                         break;
                     case 1:
-                        Options();
+                        menuAnim.SetBool("optionsOpen", true);
+                        //Options();
                         break;
                     case 2:
                         QuitGame();
@@ -84,7 +89,7 @@ public class MenuButtonController : MonoBehaviour
         {
             if (Input.GetAxis("Cancel") == 1)
             {
-                Options();
+                menuAnim.SetBool("optionsOpen", false);
             }
         }
     }
@@ -94,6 +99,7 @@ public class MenuButtonController : MonoBehaviour
         SceneManager.LoadScene(1); // LoadSceneMode.Single is the Default
     }
 
+    /*
     private void Options()
     {
         if (startMenu.activeSelf)
@@ -107,7 +113,7 @@ public class MenuButtonController : MonoBehaviour
             optionsMenu.SetActive(false);
         }
             
-    }
+    }*/
 
     private void QuitGame()
     {
