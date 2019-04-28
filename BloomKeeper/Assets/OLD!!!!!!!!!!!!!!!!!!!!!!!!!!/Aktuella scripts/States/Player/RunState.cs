@@ -12,7 +12,7 @@ public class RunState : BaseState
         Movement3D.Instance_3d.walk(moveSpeed);
         Movement3D.Instance_3d.jump();
         Movement3D.Instance_3d.collidertest();
-        Movement3D.Instance_3d.SetDecoy();
+
         if (!Movement3D.Instance_3d.groundColl())
         {
             owner.Transition<JumpState>();

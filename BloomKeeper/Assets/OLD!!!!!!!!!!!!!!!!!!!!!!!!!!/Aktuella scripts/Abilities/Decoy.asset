@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Decoy
   m_EditorClassIdentifier: 
   attack: {fileID: 7956860868481764276, guid: 65c1fdd0530e9e64fbb5d3f3811e60df, type: 3}
+  maxThrowForce: 500

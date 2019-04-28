@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.UI;
 using UnityEngine;
 
 
@@ -16,6 +15,8 @@ public class Movement3D : MonoBehaviour
     [Header("Attack")]
     public Ability decoy;
     public Transform dropPoint;
+    public float forceMultiplier = 0.1f, forceStep;
+    public Image forceMeter;
 
     [Header("Physics")]
     public LayerMask collisionLayer;
@@ -42,7 +43,6 @@ public class Movement3D : MonoBehaviour
 
     public static Movement3D Instance_3d;
 
-    Bezier bezier;
 
     [Header("Camera")]
     public Camera cam3rdPerson;
@@ -60,12 +60,9 @@ public class Movement3D : MonoBehaviour
 
     void Awake()
     {
-        bezier = gameObject.AddComponent<Bezier>();
-        gameObject.AddComponent<LineRenderer>();
         
         cameraPositionToPlayer = new Vector3(0, 1, -cameraDistance);
         Instance_3d = this;
-        //boxSize2 = gameObject.GetComponent<BoxCollider>().size;
         capsuleSize = gameObject.GetComponent<CapsuleCollider>().radius;
         capsule = GetComponent<CapsuleCollider>();
     }
@@ -74,6 +71,7 @@ public class Movement3D : MonoBehaviour
     {
         capsule1 = transform.position + capsule.center + Vector3.up * -capsule.height * skinWidth;
         capsule2 = capsule1 + Vector3.up * capsule.height;
+        SetDecoy();
     }
    
 
@@ -106,7 +104,6 @@ public class Movement3D : MonoBehaviour
         RaycastHit hit;
         Physics.SphereCast(transform.position, 0.5f, rotation * cameraPositionToPlayer, out hit, cameraPositionToPlayer.magnitude - 0.5f, collisionLayer);
         Vector3 hitPoint = hit.point - new Vector3(1f, 0f, 1f);
-        //Vector3 newVector = new Vector3(hitPoint.x - 1, hitPoint.y - 1);
 
         if (hit.collider != null)
         {
@@ -121,21 +118,18 @@ public class Movement3D : MonoBehaviour
 
     public void SetDecoy()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            bezier = gameObject.AddComponent<Bezier>();
-            gameObject.AddComponent<LineRenderer>();
-            
-        }
-        if (Input.GetKey(KeyCode.Q)) {
-            
-            bezier.DrawBezier(dropPoint);
 
-        }
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q) && forceMultiplier < 1)
         {
-            decoy.Execute(dropPoint);
-            Destroy(GetComponent<LineRenderer>());
+            forceMultiplier += forceStep * Time.deltaTime;
+            forceMeter.fillAmount = forceMultiplier;
+        }
+        else if(Input.GetKeyUp(KeyCode.Q)) {
+
+            decoy.Execute(dropPoint, forceMultiplier);
+            forceMultiplier = forceStep;
+            forceMeter.fillAmount = 0;
+
         }
     }
 
