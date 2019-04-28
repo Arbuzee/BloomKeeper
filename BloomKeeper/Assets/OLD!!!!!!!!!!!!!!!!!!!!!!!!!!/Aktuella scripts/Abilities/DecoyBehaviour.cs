@@ -7,6 +7,8 @@ public class DecoyBehaviour : MonoBehaviour
 
     public void Start()
     {
+        
+
         DestroyDecoy();
         StartCoroutine(timer());
     }

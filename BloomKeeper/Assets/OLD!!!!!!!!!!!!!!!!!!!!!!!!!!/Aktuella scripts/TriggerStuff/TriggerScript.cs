@@ -10,7 +10,7 @@ public class TriggerScript : MonoBehaviour
 
 
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
