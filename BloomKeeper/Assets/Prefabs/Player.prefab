@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 7116882411636087268}
   - component: {fileID: 7116882411636087272}
   - component: {fileID: 7116882411636087273}
+  - component: {fileID: 4278820812736733877}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -112,6 +113,25 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7116882411636087269}
   m_Enabled: 1
+--- !u!114 &4278820812736733877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116882411636087269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24bfcd19513704744be3ec330c9c68e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraDistance: 0
+  maxAngle: 90
+  minAngle: -2
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  playerTransform: {fileID: 7116882412392993433}
 --- !u!1 &7116882412392993430
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +231,9 @@ MonoBehaviour:
   EnemyDirection: {x: 0, y: 0, z: 0}
   decoy: {fileID: 0}
   dropPoint: {fileID: 4693148151972984865}
+  forceMultiplier: 0
+  forceStep: 0
+  forceMeter: {fileID: 0}
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1536
@@ -218,15 +241,8 @@ MonoBehaviour:
   Speed: 1.98
   skinWidth: 0.006
   groundCheckDistance: 0.1
-  staticFric: 0.23
-  dynamicFric: 0.19
-  airFric: 0.05
   PlayerVelocity: {x: 0, y: 0, z: 0}
   jumpforce: {x: 0, y: 7, z: 0}
-  cam3rdPerson: {fileID: 7116882411636087272}
-  cameraDistance: 0
-  maxAngle: 85.07
-  minAngle: -10
 --- !u!114 &7116882412392993432
 MonoBehaviour:
   m_ObjectHideFlags: 0

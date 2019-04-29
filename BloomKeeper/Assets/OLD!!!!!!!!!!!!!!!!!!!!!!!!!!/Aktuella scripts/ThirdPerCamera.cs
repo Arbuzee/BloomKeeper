@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class ThirdPerCamera : MonoBehaviour
 {
-
-    public LayerMask layerMask;
-    //Kamera
-    //public Camera cam1stPerson;
-    public Camera cam3rdPerson;
+    [Header("Camera")]
+    //public Camera cam3rdPerson;
     private float mouseSensitivity = 6f;
     Quaternion rotation;
-    private Vector3 cameraPositionToPlayer = new Vector3(0, 1, -3);
+
+    [Range(0, 10)]
+    public float cameraDistance;
+
+    private Vector3 cameraPositionToPlayer;
     private float rotationX;
     private float rotationY;
-    private float maxAngle = 90f;
-    private float minAngle = -10f;
+    public float maxAngle = 90f;
+    public float minAngle = -2f;
 
-    private void Update()
+    public LayerMask collisionLayer;
+    public Transform playerTransform;
+
+    public static ThirdPerCamera Instance;
+
+    public void Awake()
     {
-        CameraInput();
-        CameraMovementThirdPerson();
+        cameraPositionToPlayer = new Vector3(0, 1, -cameraDistance);
+        Instance = this;
     }
 
     public void CameraInput()
@@ -33,23 +39,27 @@ public class ThirdPerCamera : MonoBehaviour
 
         rotationX = Mathf.Clamp(rotationX, minAngle, maxAngle);
         rotation = Quaternion.Euler(rotationX, rotationY, 0);
-
     }
 
 
     public void CameraMovementThirdPerson()
     {
-        cam3rdPerson.transform.forward = rotation * Vector3.forward;
+        playerTransform.eulerAngles = new Vector3(0, rotationY, 0);
+        transform.forward = rotation * Vector3.forward;
+
         RaycastHit hit;
-        Physics.SphereCast(transform.position, 0.5f, rotation * cameraPositionToPlayer, out hit, cameraPositionToPlayer.magnitude - 0.5f, layerMask);
+        Physics.SphereCast(playerTransform.position, 0.5f, rotation * cameraPositionToPlayer, out hit, cameraPositionToPlayer.magnitude - 0.5f, collisionLayer);
+        Vector3 hitPoint = hit.point - new Vector3(1f, 0f, 1f);
+
         if (hit.collider != null)
         {
-            cam3rdPerson.transform.position = hit.point;
+            transform.position = hitPoint;
         }
         else
         {
-            Vector3 cameraPos = transform.position + rotation * cameraPositionToPlayer;
-            cam3rdPerson.transform.position = cameraPos;
+            Vector3 cameraPos = playerTransform.position + rotation * cameraPositionToPlayer;
+            transform.position = cameraPos;
         }
     }
 }
+

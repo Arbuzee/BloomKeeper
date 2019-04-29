@@ -19,8 +19,8 @@ public class StaggerState : BaseState
 
     public override void HandleUpdate()
     {
-        Movement3D.Instance_3d.CameraInput();
-        Movement3D.Instance_3d.CameraMovementThirdPerson();
+        ThirdPerCamera.Instance.CameraInput();
+        ThirdPerCamera.Instance.CameraMovementThirdPerson();
 
         wait += Time.deltaTime;
         if(wait > cooldown)

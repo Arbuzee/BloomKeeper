@@ -22,8 +22,8 @@ public class BaseState : PlayerState
 
     public override void HandleUpdate()
     {
-        Movement3D.Instance_3d.CameraInput();
-        Movement3D.Instance_3d.CameraMovementThirdPerson();
+        ThirdPerCamera.Instance.CameraInput();
+        ThirdPerCamera.Instance.CameraMovementThirdPerson();
         Movement3D.Instance_3d.walk(moveSpeed);
         Movement3D.Instance_3d.jump();
         Movement3D.Instance_3d.collidertest();
