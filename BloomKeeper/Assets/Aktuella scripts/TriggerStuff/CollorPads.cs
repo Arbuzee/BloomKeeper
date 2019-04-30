@@ -6,13 +6,22 @@ public class CollorPads : MonoBehaviour
 {
     public Material material1, material2, material3;
     private Material tempMaterial;
+
+    public GameObject pad1, pad2;
+
     private void Awake()
     {
 
-        
-
-
     }
+
+    private void Update()
+    {
+        if (checkIfCorrect())
+        {
+            //Do something
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -30,7 +39,6 @@ public class CollorPads : MonoBehaviour
                 }
                 else if (tempMaterial.Equals(material2))
                 {
-
                     Debug.Log(tempMaterial);
                     Debug.Log("press");
                     gameObject.GetComponent<Renderer>().material = material3;
@@ -41,21 +49,16 @@ public class CollorPads : MonoBehaviour
                     Debug.Log("press");
                     gameObject.GetComponent<Renderer>().material = material1;
                 }
-
-
-
-
-
             }
-
         }
-
     }
 
-
-
-
-
-
-
+    bool checkIfCorrect()
+    {
+        if(gameObject.GetComponent<Renderer>().material == material1 && pad1.GetComponent<Renderer>().material == material1 && pad2.GetComponent<Renderer>().material == material1)
+        {
+            return true;
+        }
+        return false;
+    }
 }

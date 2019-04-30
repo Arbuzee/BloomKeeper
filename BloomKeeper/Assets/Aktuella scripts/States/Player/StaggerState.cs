@@ -10,8 +10,6 @@ public class StaggerState : BaseState
 
     public override void Enter()
     {
-        //owner.transform.position += -Movement3D.Instance_3d.EnemyDirection.normalized * 100f;
-        //förflytta spelare här
         Debug.Log("Stagger");
         owner.Renderer.material = material;
        
@@ -25,6 +23,7 @@ public class StaggerState : BaseState
         wait += Time.deltaTime;
         if(wait > cooldown)
         {
+            Debug.Log("To basestate");
             owner.Transition<BaseState>();
         }
     }

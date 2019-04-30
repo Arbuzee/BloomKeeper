@@ -17,9 +17,7 @@ public class DecoyBehaviour : MonoBehaviour
     public IEnumerator timer() {
 
         yield return new WaitForSeconds(10);
-        Destroy(gameObject);
-
-        
+        Destroy(gameObject);        
     }
 
     public void DestroyDecoy() {
