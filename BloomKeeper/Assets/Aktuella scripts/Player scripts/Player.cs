@@ -16,7 +16,7 @@ public class Player : PlayerStatemachine
         if (other.CompareTag("EnemyWeakSpot"))
         {
             other.transform.parent.root.GetComponent<Enemy>().Transition<EnemyProneState>();
-            Movement3D.Instance_3d.PlayerVelocity += new Vector3(0, 50, 0);
+            PlayerPhysics.instance.PlayerVelocity += new Vector3(0, 50, 0);
 
         }
     }

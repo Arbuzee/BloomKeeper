@@ -13,7 +13,7 @@ public class JumpPad : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Vector3 PadForce = new Vector3(0, JumpForce, 0);
-            Player.GetComponent<Movement3D>().PlayerVelocity += PadForce;
+            PlayerPhysics.instance.PlayerVelocity += PadForce;
         }
 
     }

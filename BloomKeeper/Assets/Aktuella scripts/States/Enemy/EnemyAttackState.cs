@@ -53,7 +53,7 @@ public class EnemyAttackState : EnemyBaseState
         bool collide = Physics.BoxCast(collider.bounds.center, owner.transform.localScale, owner.transform.forward, out hit, Quaternion.identity, 1);
         if (collide && hit.collider.gameObject.CompareTag("Player"))
         {
-            owner.player.GetComponent<Movement3D>().PlayerVelocity = owner.player.transform.TransformDirection(Vector3.back) * 100;
+            PlayerPhysics.instance.PlayerVelocity = owner.player.transform.TransformDirection(Vector3.back) * 100;
         }
     }
 
