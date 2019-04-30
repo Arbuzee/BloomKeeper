@@ -69,10 +69,7 @@ public class TriggerScript : MonoBehaviour
             catch (Exception e) { }
    
     }
-    //Raycast för att titta efter spelare/decoy, osäker om detta funkar bra 
-    //då det blir svårt att kontinuerligt raycasta efter träff men bara trigga bron en gång
-    public void colliderCheck()
-    {
+
 
 
 }
