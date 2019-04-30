@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8486019273770042615}
   - component: {fileID: 3675500567398255598}
   - component: {fileID: 120973723695262632}
+  - component: {fileID: 646675732978787156}
   m_Layer: 10
   m_Name: Decoy
   m_TagString: Decoy
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7956860868481764276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.05, y: 2.491, z: -1.76}
-  m_LocalScale: {x: 0.5, y: 0.25, z: 0.5}
+  m_LocalScale: {x: 1.06, y: 0.98, z: 0.89}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -42,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7956860868481764276}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &7956860868481764274
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -89,7 +90,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 7956860868481764276}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -122,3 +123,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f729d1782971e4e982d8ef727d2731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &646675732978787156
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7956860868481764276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.0000001}
+  m_Center: {x: 0, y: 0, z: 0}

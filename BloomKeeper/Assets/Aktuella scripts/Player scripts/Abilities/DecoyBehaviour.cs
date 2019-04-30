@@ -10,14 +10,16 @@ public class DecoyBehaviour : MonoBehaviour
         
 
         DestroyDecoy();
-        StartCoroutine(timer());
+        StartCoroutine(timer(5));
     }
 
 
-    public IEnumerator timer() {
-
-        yield return new WaitForSeconds(10);
-        Destroy(gameObject);        
+    public IEnumerator timer(float t) {
+        
+        yield return new WaitForSeconds(t);
+        moveDecoy(gameObject);
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
     public void DestroyDecoy() {
@@ -27,16 +29,22 @@ public class DecoyBehaviour : MonoBehaviour
         foreach (GameObject decoy in decoys) {
 
             if (gameObject == decoy)
-                return; 
+                return;
 
-            Destroy(decoy);
+            moveDecoy(decoy);
+
 
         }
 
     }
 
 
-   
+   private void moveDecoy(GameObject decoy)
+    {
+        decoy.GetComponent<Collider>().enabled = false;
+        decoy.GetComponent<MeshRenderer>().enabled = false;
+        decoy.transform.position += new Vector3(0, 100, 0);
+    }
 
 
 
