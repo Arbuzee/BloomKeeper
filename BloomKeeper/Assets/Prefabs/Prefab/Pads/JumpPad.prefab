@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 864747257234069345}
   - component: {fileID: 864747257234069351}
   - component: {fileID: 864747257234069350}
+  - component: {fileID: 699463960716405455}
+  - component: {fileID: 5571514920785691827}
+  - component: {fileID: 2582862109333370080}
   m_Layer: 0
   m_Name: JumpPad
   m_TagString: Untagged
@@ -123,3 +126,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   JumpForce: 100
+--- !u!65 &699463960716405455
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864747257234069349}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 20.109537}
+  m_Center: {x: 0, y: 0, z: 9.554768}
+--- !u!65 &5571514920785691827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864747257234069349}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2582862109333370080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864747257234069349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d97cffe6febaca4387b3c69a0f0bb28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material1: {fileID: 2100000, guid: 347e00745906dd84ebdda8bdb578b3ac, type: 2}
+  material2: {fileID: 2100000, guid: 392388b10ec49fb46be8b144fb920299, type: 2}
+  material3: {fileID: 2100000, guid: 0ab2b279c582c8144ac4845af8455b02, type: 2}
