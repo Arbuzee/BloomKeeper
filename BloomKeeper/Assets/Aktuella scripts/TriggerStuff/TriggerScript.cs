@@ -54,7 +54,7 @@ public class TriggerScript : MonoBehaviour
         if(!decoyActive && !activated)
         {
             doTriggerExit();
-            Debug.Log("exit");
+            //Debug.Log("exit");
         }
 
     }

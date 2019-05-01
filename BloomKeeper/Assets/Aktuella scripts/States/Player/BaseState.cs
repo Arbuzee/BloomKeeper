@@ -12,7 +12,7 @@ public class BaseState : PlayerState
 
     public override void Enter()
     {
-        Debug.Log("Entering basestate");
+        //Debug.Log("Entering basestate");
         owner.Renderer.material = material;
     }
 
