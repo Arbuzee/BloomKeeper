@@ -5,7 +5,7 @@ public class PlayerPhysics : MonoBehaviour
 
     [Header("Physics")]
     public LayerMask collisionLayer;
-    public float Speed = 3f;
+    public float Speed = 1f;
 
     private Vector3 capsule1, capsule2;
     CapsuleCollider capsule;
@@ -15,6 +15,7 @@ public class PlayerPhysics : MonoBehaviour
     public float groundCheckDistance = 0.1f;
     public Vector3 PlayerVelocity;
 
+    public GameObject Enemy;
 
     public static PlayerPhysics instance;
 
@@ -56,6 +57,11 @@ public class PlayerPhysics : MonoBehaviour
             }
         }
         transform.position += PlayerVelocity * Time.deltaTime;
+    }
+
+    public void EnemyCollision()
+    {
+
     }
 
     public bool groundColl()

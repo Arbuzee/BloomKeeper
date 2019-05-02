@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7581339738520705547}
   m_Layer: 0
   m_Name: PressurePad
-  m_TagString: Untagged
+  m_TagString: PressurePad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7581339738520705525}
-  m_LocalRotation: {x: -0, y: 0.0020908364, z: -0, w: 0.99999785}
+  m_LocalRotation: {x: 0, y: 0.0020944288, z: 0, w: 0.99999785}
   m_LocalPosition: {x: 7.97, y: 12.55, z: 8.73}
   m_LocalScale: {x: 2, y: 0.2, z: 2}
   m_Children: []
@@ -91,8 +91,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 6.110089, z: 1}
+  m_Center: {x: 0, y: 2.5550442, z: 0}
 --- !u!114 &7581339738520705546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +109,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
-  timer: 0
+  playerActivated: 0
+  decoyActive: 0
 --- !u!54 &7581339738520705547
 Rigidbody:
   m_ObjectHideFlags: 0

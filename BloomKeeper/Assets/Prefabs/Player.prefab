@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4693148151972984865}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DropPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -42,7 +42,8 @@ GameObject:
   - component: {fileID: 7116882411636087272}
   - component: {fileID: 7116882411636087273}
   - component: {fileID: 4278820812736733877}
-  m_Layer: 0
+  - component: {fileID: 46108123}
+  m_Layer: 10
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -132,6 +133,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   playerTransform: {fileID: 7116882412392993433}
+--- !u!114 &46108123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116882411636087269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24bfcd19513704744be3ec330c9c68e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraDistance: 6
+  maxAngle: 90
+  minAngle: -2
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  playerTransform: {fileID: 7116882412392993433}
 --- !u!1 &7116882412392993430
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,9 +166,11 @@ GameObject:
   - component: {fileID: 7116882412392993429}
   - component: {fileID: 142494721840352320}
   - component: {fileID: 7116882412392993432}
-  m_Layer: 0
+  - component: {fileID: 918484168}
+  - component: {fileID: 918484169}
+  m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,19 +252,11 @@ MonoBehaviour:
   SpawnPoint: {fileID: 0}
   enemy: {fileID: 0}
   EnemyDirection: {x: 0, y: 0, z: 0}
-  decoy: {fileID: 0}
+  decoy: {fileID: 11400000, guid: 4edd0bfb07aea44419ce49b5d701ab33, type: 2}
   dropPoint: {fileID: 4693148151972984865}
-  forceMultiplier: 0
-  forceStep: 0
+  forceMultiplier: 0.2
+  forceStep: 0.2
   forceMeter: {fileID: 0}
-  collisionLayer:
-    serializedVersion: 2
-    m_Bits: 1536
-  gravityForce: 19.3
-  Speed: 1.98
-  skinWidth: 0.006
-  groundCheckDistance: 0.1
-  PlayerVelocity: {x: 0, y: 0, z: 0}
   jumpforce: {x: 0, y: 7, z: 0}
 --- !u!114 &142494721840352320
 MonoBehaviour:
@@ -276,3 +290,36 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7d3425809dfe5fa47afbd1b7513075ff, type: 2}
   - {fileID: 11400000, guid: 0af6105f0e5b93640947522476ef9f62, type: 2}
   Renderer: {fileID: 0}
+--- !u!136 &918484168
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116882412392993430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &918484169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116882412392993430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ab43b7873b7d0449fafa64c39f5a40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  Speed: 1.98
+  skinWidth: 0.01
+  groundCheckDistance: 0.1
+  PlayerVelocity: {x: 0, y: 0, z: 0}

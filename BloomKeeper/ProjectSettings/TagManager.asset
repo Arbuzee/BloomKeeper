@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - EnemyWeakSpot
   - Log
+  - Spitter
+  - PressurePad
   layers:
   - Default
   - TransparentFX
