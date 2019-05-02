@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class DecoyBehaviour : MonoBehaviour
 {
+    private bool move = false;
 
+    private GameObject pressurePad;
 
     public void Start()
     {
@@ -13,13 +16,12 @@ public class DecoyBehaviour : MonoBehaviour
         StartCoroutine(timer(5));
     }
 
-
     public IEnumerator timer(float t) {
         
         yield return new WaitForSeconds(t);
-        moveDecoy(gameObject);
-        yield return new WaitForSeconds(1);
+
         Destroy(gameObject);
+        
     }
 
     public void DestroyDecoy() {
@@ -31,21 +33,33 @@ public class DecoyBehaviour : MonoBehaviour
             if (gameObject == decoy)
                 return;
 
-            moveDecoy(decoy);
-
+            Destroy(decoy);
 
         }
 
     }
 
-
-   private void moveDecoy(GameObject decoy)
+    private void OnDestroy()
     {
-        decoy.GetComponent<Collider>().enabled = false;
-        decoy.GetComponent<MeshRenderer>().enabled = false;
-        decoy.transform.position += new Vector3(0, 100, 0);
+
+        try
+        {
+            pressurePad.GetComponent<TriggerScript>().doTriggerExit();
+            pressurePad.GetComponent<TriggerScript>().decoyActive = false;
+        }
+        catch(Exception e) { }
+
     }
 
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("PressurePad"))
+        {
+            pressurePad = other.gameObject;
+        }
+    }
 
 
 }

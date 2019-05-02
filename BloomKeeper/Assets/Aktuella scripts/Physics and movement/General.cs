@@ -5,10 +5,10 @@ using UnityEngine;
 public static class General
 {
 
-    private static float staticFric = 0.23f;
-    private static float dynamicFric = 0.19f;
-    private static float airFric = 0.05f;
-    public static float gravityForce = 19.3f;
+    private static float staticFric = 0.6f;
+    private static float dynamicFric = 0.5f;
+    private static float airFric = 0.1f;
+    public static float gravityForce = 20f;
 
     public static Vector3 normalKraft3d(Vector3 velocity, Vector3 normal)
     {

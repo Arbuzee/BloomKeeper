@@ -6,19 +6,17 @@ public class TriggerScript : MonoBehaviour
 {
     public GameObject TriggerObject;
     public LayerMask layerMask;
-    public bool activated = false;
+    public bool playerActivated = false;
     public bool decoyActive = false;
-
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (other.CompareTag("Player"))
         {
-            activated = true;
+            playerActivated = true;
             try
             {
                 TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
-                activated = true;
                 //colliderCheck();
             }
             catch (Exception e) { }
@@ -31,7 +29,6 @@ public class TriggerScript : MonoBehaviour
             try
             {
                 TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
-                activated = true;
                 //colliderCheck();
             }
             catch (Exception e) { }
@@ -44,22 +41,22 @@ public class TriggerScript : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") && other.CompareTag("Player") )
         {
-            activated = false;
+            playerActivated = false;
         }
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") && other.CompareTag("Decoy"))
         {
             decoyActive = false;
         }
 
-        if(!decoyActive && !activated)
+        if(!decoyActive && !playerActivated)
         {
             doTriggerExit();
-            //Debug.Log("exit");
+            Debug.Log("exit");
         }
 
     }
 
-    private void doTriggerExit()
+    public void doTriggerExit()
     {
        
             try
@@ -67,7 +64,7 @@ public class TriggerScript : MonoBehaviour
                 TriggerObject.GetComponent<TriggeredObject>().OnDeTrigger();
             }
             catch (Exception e) { }
-   
+
     }
 
 
