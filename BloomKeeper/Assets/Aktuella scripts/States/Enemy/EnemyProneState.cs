@@ -23,7 +23,7 @@ public class EnemyProneState : EnemyBaseState
 
        if (time > Cooldown)
         {
-            GameController.instance.setFinisherText(false);
+            //GameController.instance.setFinisherText(false);
             owner.prone = false;
             owner.Transition<EnemyChaseState>();
             return;
@@ -31,7 +31,7 @@ public class EnemyProneState : EnemyBaseState
         
         if(Vector3.Distance(owner.player.transform.position, owner.transform.position) < 15)
         {
-            GameController.instance.setFinisherText(true);
+            //GameController.instance.setFinisherText(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
 
@@ -46,7 +46,7 @@ public class EnemyProneState : EnemyBaseState
         }
         else
         {
-            GameController.instance.setFinisherText(false);
+            //GameController.instance.setFinisherText(false);
         }
     }
 
@@ -55,7 +55,7 @@ public class EnemyProneState : EnemyBaseState
         owner.prone = false;
         base.Exit();
         
-        GameController.instance.setFinisherText(false);
+        //GameController.instance.setFinisherText(false);
         owner.gameObject.transform.Rotate(originalRotation, Space.Self);
         time = 0f;
     }

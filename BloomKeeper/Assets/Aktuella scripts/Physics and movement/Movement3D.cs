@@ -75,17 +75,19 @@ public class Movement3D : MonoBehaviour
 
         //following the camera orientation
         input = ThirdPerCamera.Instance.transform.rotation * input;
+        input = Vector3.ProjectOnPlane(input, PlayerPhysics.Instance.GroundNormal());
         input.y = 0;
+        Debug.DrawRay(transform.position, input.normalized*10);
 
         //gravity
         float grav = General.gravityForce * Time.deltaTime;
         gravity = Vector3.down * grav;
-        PlayerPhysics.instance.PlayerVelocity += gravity + input;
+        PlayerPhysics.Instance.PlayerVelocity += gravity + input;
 
         //check for max speed
-        if (PlayerPhysics.instance.PlayerVelocity.magnitude > Speed)
+        if (PlayerPhysics.Instance.PlayerVelocity.magnitude > Speed)
         {
-            PlayerPhysics.instance.PlayerVelocity = Vector3.ClampMagnitude(PlayerPhysics.instance.PlayerVelocity, Speed);
+            PlayerPhysics.Instance.PlayerVelocity = Vector3.ClampMagnitude(PlayerPhysics.Instance.PlayerVelocity, Speed);
         }
     }
 
@@ -94,7 +96,7 @@ public class Movement3D : MonoBehaviour
         //jump
         if (Input.GetKeyDown(KeyCode.Space) && GetComponent<PlayerPhysics>().groundColl())
         {
-            PlayerPhysics.instance.PlayerVelocity += jumpforce;
+            PlayerPhysics.Instance.PlayerVelocity += jumpforce;
         }
     }
 

@@ -19,6 +19,8 @@ public class StaggerState : BaseState
     {
         ThirdPerCamera.Instance.CameraInput();
         ThirdPerCamera.Instance.CameraMovementThirdPerson();
+        Movement3D.Instance_3d.walk(30);
+        PlayerPhysics.Instance.collidertest();
 
         wait += Time.deltaTime;
         if(wait > cooldown)

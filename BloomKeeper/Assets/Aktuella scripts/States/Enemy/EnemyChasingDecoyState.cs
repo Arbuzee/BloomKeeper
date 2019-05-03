@@ -11,7 +11,7 @@ public class EnemyChasingDecoyState : EnemyBaseState
     {
         if (Movement3D.Instance_3d.decoy.GetInstance())
         {
-            Debug.Log(" chasing decoy in sate");
+            Debug.Log(" chasing decoy in sTate");
             owner.agent.SetDestination(Movement3D.Instance_3d.decoy.GetInstance().transform.position);
         }
         else

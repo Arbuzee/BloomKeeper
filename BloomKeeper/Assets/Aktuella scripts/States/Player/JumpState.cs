@@ -18,8 +18,8 @@ public class JumpState : BaseState
         ThirdPerCamera.Instance.CameraMovementThirdPerson();
         Movement3D.Instance_3d.walk(moveSpeed);
         
-        PlayerPhysics.instance.collidertest();
-        if (PlayerPhysics.instance.groundColl())
+        PlayerPhysics.Instance.collidertest();
+        if (PlayerPhysics.Instance.groundColl())
         {
             owner.Transition<BaseState>();
         }

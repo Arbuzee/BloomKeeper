@@ -16,10 +16,10 @@ public class PlayerPhysics : MonoBehaviour
     public Vector3 PlayerVelocity;
 
 
-    public static PlayerPhysics instance;
+    public static PlayerPhysics Instance;
 
 
-    Vector3 GroundNormal()
+    public Vector3 GroundNormal()
     {
         RaycastHit hit;
         Physics.CapsuleCast(capsule1, capsule2, capsuleSize, Vector3.down, out hit, groundCheckDistance, collisionLayer);
@@ -28,7 +28,7 @@ public class PlayerPhysics : MonoBehaviour
 
     public void Awake()
     {
-        instance = this;
+        Instance = this;
         capsuleSize = gameObject.GetComponent<CapsuleCollider>().radius;
         capsule = GetComponent<CapsuleCollider>();
     }

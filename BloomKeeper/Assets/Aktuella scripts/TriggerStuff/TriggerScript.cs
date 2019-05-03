@@ -9,6 +9,10 @@ public class TriggerScript : MonoBehaviour
     public bool playerActivated = false;
     public bool decoyActive = false;
 
+    public Material inactive;
+    public Material active;
+    public GameObject cable;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -67,6 +71,9 @@ public class TriggerScript : MonoBehaviour
 
     }
 
+    private void changeCable()
+    {
 
+    }
 
 }

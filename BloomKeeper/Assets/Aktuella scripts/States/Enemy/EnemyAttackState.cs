@@ -21,9 +21,14 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void HandleUpdate()
     {
+        if (currentCool > 0)
+            currentCool -= Time.deltaTime;
+        else
+            Attack();
+
+
         base.HandleUpdate();
         owner.agent.SetDestination(owner.player.transform.position);
-        Attack();
         if (!CanSeePlayer() || Vector3.Distance(owner.transform.position, owner.player.transform.position) > chaseDistance)
             owner.Transition<EnemyChaseState>();
         else if (CanSeeDecoy())
@@ -33,14 +38,7 @@ public class EnemyAttackState : EnemyBaseState
 
     private void Attack()
     {
-        currentCool -= Time.deltaTime;
-
-        
-        if (currentCool > 0)
-            return;
-
         OnCollision();
-        owner.player.Transition<StaggerState>();
         owner.player.GetComponent<Health>().TakeDamage();
         currentCool = cooldown;
     }
@@ -48,12 +46,10 @@ public class EnemyAttackState : EnemyBaseState
  
     public void OnCollision()
     {
-        Collider collider = owner.GetComponent<Collider>();
-        RaycastHit hit;
-        bool collide = Physics.BoxCast(collider.bounds.center, owner.transform.localScale, owner.transform.forward, out hit, Quaternion.identity, 1);
-        if (collide && hit.collider.gameObject.CompareTag("Player"))
+        if (Vector3.Distance(owner.transform.position, owner.player.transform.position) < 3)
         {
-            PlayerPhysics.instance.PlayerVelocity = owner.player.transform.TransformDirection(Vector3.back) * 100;
+            PlayerPhysics.Instance.PlayerVelocity = owner.player.transform.TransformDirection(new Vector3(0,100,100));
+            owner.player.Transition<StaggerState>();
         }
     }
 

@@ -44,7 +44,7 @@ public class Health : MonoBehaviour
         }
         health = hearts.Length;
 
-        transform.position = GameObject.Find("PlayerSpawnPoint").transform.position;
+       // transform.position = GameObject.Find("PlayerSpawnPoint").transform.position;
 
     }
 }
