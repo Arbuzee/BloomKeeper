@@ -15396,6 +15396,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1511187380576574403, guid: ffdca759ad1d7044b9274b617ce21685,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1511187380576574407, guid: ffdca759ad1d7044b9274b617ce21685,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15453,9 +15458,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1511187380576574405, guid: ffdca759ad1d7044b9274b617ce21685,
         type: 3}
+      propertyPath: states.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511187380576574405, guid: ffdca759ad1d7044b9274b617ce21685,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 918484170}
+    - target: {fileID: 1511187380576574405, guid: ffdca759ad1d7044b9274b617ce21685,
+        type: 3}
+      propertyPath: states.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: cef249317c104db4aaa8d25e8bcb2c97,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffdca759ad1d7044b9274b617ce21685, type: 3}
 --- !u!1 &571671894
@@ -24629,10 +24645,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.66418934
+  m_Height: 1.3283787
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.0026893616, y: 0, z: -0.03325343}
 --- !u!114 &918484169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24681,7 +24697,7 @@ Rigidbody:
   m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
@@ -38460,7 +38476,7 @@ PrefabInstance:
     - target: {fileID: 7116882412392993433, guid: 51b767ad226477e4bbbe4db9b816243b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 72.13
+      value: 88.7
       objectReference: {fileID: 0}
     - target: {fileID: 7116882412392993433, guid: 51b767ad226477e4bbbe4db9b816243b,
         type: 3}

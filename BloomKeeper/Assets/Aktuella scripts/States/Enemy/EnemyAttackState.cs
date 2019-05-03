@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 [CreateAssetMenu(menuName = "Enemy/EnemyAttackState")]
 public class EnemyAttackState : EnemyBaseState
 {
     // Attributes
     [SerializeField] private float chaseDistance;
     [SerializeField] private float cooldown = 2f;
+    [SerializeField] private float freezPostime = 2f;
 
     [SerializeField] private float currentCool;
 
@@ -21,14 +24,10 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void HandleUpdate()
     {
-        if (currentCool > 0)
-            currentCool -= Time.deltaTime;
-        else
-            Attack();
-
 
         base.HandleUpdate();
         owner.agent.SetDestination(owner.player.transform.position);
+        Attack();
         if (!CanSeePlayer() || Vector3.Distance(owner.transform.position, owner.player.transform.position) > chaseDistance)
             owner.Transition<EnemyChaseState>();
         else if (CanSeeDecoy())
@@ -38,21 +37,23 @@ public class EnemyAttackState : EnemyBaseState
 
     private void Attack()
     {
-        OnCollision();
-        owner.player.GetComponent<Health>().TakeDamage();
-        currentCool = cooldown;
+        if (Vector3.Distance(owner.transform.position, owner.player.transform.position) < 3)
+        {
+            OnCollision();
+            owner.player.GetComponent<Health>().TakeDamage();
+            owner.Transition<IdleState>();
+        }
     }
 
  
     public void OnCollision()
     {
-        if (Vector3.Distance(owner.transform.position, owner.player.transform.position) < 3)
-        {
-            PlayerPhysics.Instance.PlayerVelocity = owner.player.transform.TransformDirection(new Vector3(0,100,100));
+       
+            PlayerPhysics.Instance.PlayerVelocity = owner.player.transform.TransformDirection(new Vector3(0,100,-100)); //Blir alltid pushad bakåt för spelaren. dvs om man står riktad framåt så flyger man fortfarande bakåt.
             owner.player.Transition<StaggerState>();
-        }
+        
     }
 
-
+   
 
 }
