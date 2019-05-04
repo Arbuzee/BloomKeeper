@@ -5,13 +5,15 @@ using System.Collections;
 public class TriggerScript : MonoBehaviour
 {
     public GameObject TriggerObject;
-    public LayerMask layerMask;
     public bool playerActivated = false;
     public bool decoyActive = false;
 
-    public Material inactive;
-    public Material active;
-    public GameObject cable;
+    [Header("Cabels")]
+    public Material deActivatedMaterial;
+    public Material activeMaterial;
+    public bool cabelActive;
+    public GameObject [] cables ;
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,10 +23,12 @@ public class TriggerScript : MonoBehaviour
             try
             {
                 TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
+
                 //colliderCheck();
             }
             catch (Exception e) { }
-
+            activateCable();
+            cabelActive = true;
         }
 
         if (other.gameObject.CompareTag("Decoy"))
@@ -36,6 +40,8 @@ public class TriggerScript : MonoBehaviour
                 //colliderCheck();
             }
             catch (Exception e) { }
+            cabelActive = true;
+            activateCable();
 
         }
     }
@@ -55,6 +61,7 @@ public class TriggerScript : MonoBehaviour
         if(!decoyActive && !playerActivated)
         {
             doTriggerExit();
+            cabelActive = false;
             Debug.Log("exit");
         }
 
@@ -68,12 +75,23 @@ public class TriggerScript : MonoBehaviour
                 TriggerObject.GetComponent<TriggeredObject>().OnDeTrigger();
             }
             catch (Exception e) { }
+        deActivateCabel();
 
     }
 
-    private void changeCable()
+    private void activateCable()
     {
-
+        foreach(GameObject cabel in cables)
+        {
+            cabel.GetComponent<Renderer>().material = activeMaterial;
+        }
     }
 
+    private void deActivateCabel()
+    {
+        foreach(GameObject cabel in cables)
+        {
+            cabel.GetComponent<Renderer>().material = deActivatedMaterial;
+        }
+    }
 }

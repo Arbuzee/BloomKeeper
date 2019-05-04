@@ -5,6 +5,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
 
+    public ParticleSystem HitParticle;
+    public Transform hitpos;
     [SerializeField] private GameObject[] hearts;
     public static int health;
 
@@ -27,8 +29,9 @@ public class Health : MonoBehaviour
             
 
         health--;
+        ParticleSystem particleInstance = Instantiate(HitParticle, hitpos.position, Quaternion.identity);
         hearts[health].SetActive(false);
-
+        Destroy(particleInstance.gameObject, 1.5f);
 
     }
 

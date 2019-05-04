@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3959723856309623077}
-  m_LocalRotation: {x: -0, y: 0.0020908364, z: -0, w: 0.99999785}
+  m_LocalRotation: {x: 0, y: 0.0020944288, z: 0, w: 0.99999785}
   m_LocalPosition: {x: 2.09, y: 12.55, z: 8.75}
   m_LocalScale: {x: 2, y: 0.2, z: 2}
   m_Children: []
@@ -123,3 +123,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 7116882412392993430, guid: 51b767ad226477e4bbbe4db9b816243b, type: 3}
   JumpForce: 20
+  JumpParticle: {fileID: 1701449761757208503, guid: b1bb2b7414d1aa245ba78caea9fb48c0,
+    type: 3}

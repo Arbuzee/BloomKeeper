@@ -75,7 +75,7 @@ public class Movement3D : MonoBehaviour
 
         //following the camera orientation
         input = ThirdPerCamera.Instance.transform.rotation * input;
-        input = Vector3.ProjectOnPlane(input, PlayerPhysics.Instance.GroundNormal());
+        //input = Vector3.ProjectOnPlane(input, PlayerPhysics.Instance.GroundNormal());
         input.y = 0;
         Debug.DrawRay(transform.position, input.normalized*10);
 
