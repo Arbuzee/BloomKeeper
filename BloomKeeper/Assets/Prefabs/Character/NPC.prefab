@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135597407281173025}
-  m_LocalRotation: {x: -0.03130936, y: -0.25868306, z: -0.008389316, w: 0.9654183}
+  m_LocalRotation: {x: -0.031309422, y: -0.25868303, z: -0.008389332, w: 0.9654183}
   m_LocalPosition: {x: 87.2, y: -1.7, z: 10.2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 135597408077154595}
+  interactionAudio: {fileID: 8300000, guid: ddbb5a03e03426148b0f25a8e967af5f, type: 3}
 --- !u!54 &135597407281173031
 Rigidbody:
   m_ObjectHideFlags: 0

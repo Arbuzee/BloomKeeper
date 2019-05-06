@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Health : MonoBehaviour
 {
@@ -9,6 +7,7 @@ public class Health : MonoBehaviour
     public Transform hitpos;
     [SerializeField] private GameObject[] hearts;
     public static int health;
+    public AudioClip hitAudio;
 
 
     public void Awake()
@@ -19,6 +18,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage()
     {
+        SoundManager.instance.PlaySound(hitAudio);
         if (health <= 1) {
 
             ResetHealth();

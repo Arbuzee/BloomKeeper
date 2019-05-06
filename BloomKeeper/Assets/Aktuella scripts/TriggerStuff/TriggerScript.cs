@@ -13,12 +13,16 @@ public class TriggerScript : MonoBehaviour
     public Material activeMaterial;
     public bool cabelActive;
     public GameObject [] cables ;
-    
+
 
     private void OnTriggerEnter(Collider other)
     {
+
+        
+
         if (other.CompareTag("Player"))
         {
+            
             playerActivated = true;
             try
             {

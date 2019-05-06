@@ -19,7 +19,7 @@ public class RunState : BaseState
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            owner.Transition<BaseState>();
+            owner.Transition<WalkState>();
         }
 
     }

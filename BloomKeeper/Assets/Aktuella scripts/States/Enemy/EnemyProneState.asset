@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   material: {fileID: 2100000, guid: efcf2438a114d104e9e75f3ce0bcdbdf, type: 2}
+  attackDistance: 0
+  lostTargetDistance: 0
+  prone: {x: 0, y: 0, z: 90}
+  hitSound: {fileID: 8300000, guid: ddbb5a03e03426148b0f25a8e967af5f, type: 3}

@@ -8,12 +8,17 @@ public class EnemyProneState : EnemyBaseState
 {
     Vector3 originalRotation = new Vector3(0, 0, 0);
     public Vector3 prone = new Vector3(0 , 0, 90);
+    public AudioClip hitSound;
 
     private float Cooldown = 5f;
     float time = 0f;
 
+
+
     public override void Enter()
     {
+
+        SoundManager.instance.PlaySound(hitSound);
         
     }
     public override void HandleUpdate()

@@ -11,8 +11,8 @@ public class PlayerPhysics : MonoBehaviour
     CapsuleCollider capsule;
     private float capsuleSize;
 
-    [SerializeField] public float skinWidth = 0.2f;
-    public float groundCheckDistance = 0.1f;
+    [SerializeField] public float skinWidth;
+    public float groundCheckDistance;
     public Vector3 PlayerVelocity;
 
 

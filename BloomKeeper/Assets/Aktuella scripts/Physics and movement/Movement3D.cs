@@ -17,6 +17,7 @@ public class Movement3D : MonoBehaviour
     public Transform dropPoint;
     public float forceMultiplier, forceStep;
     public Image forceMeter;
+    public AudioClip decoyAudio;
 
     
     [SerializeField] public Vector3 jumpforce = new Vector3(0, 7f, 0);
@@ -54,12 +55,13 @@ public class Movement3D : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q) && forceMultiplier < 1)
         {
+            
             forceMultiplier += forceStep * Time.deltaTime;
             forceMeter.fillAmount = forceMultiplier;
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
-
+            SoundManager.instance.PlaySound(decoyAudio);
             decoy.Execute(dropPoint, forceMultiplier);
             forceMultiplier = 0;
             forceMeter.fillAmount = 0;

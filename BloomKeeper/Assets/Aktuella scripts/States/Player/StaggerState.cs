@@ -25,8 +25,8 @@ public class StaggerState : BaseState
         wait += Time.deltaTime;
         if(wait > cooldown)
         {
-            Debug.Log("To basestate");
-            owner.Transition<BaseState>();
+            Debug.Log("To walkstate");
+            owner.Transition<WalkState>();
         }
     }
 }

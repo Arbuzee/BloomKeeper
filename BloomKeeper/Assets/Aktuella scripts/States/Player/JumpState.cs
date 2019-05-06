@@ -21,7 +21,7 @@ public class JumpState : BaseState
         PlayerPhysics.Instance.collidertest();
         if (PlayerPhysics.Instance.groundColl())
         {
-            owner.Transition<BaseState>();
+            owner.Transition<WalkState>();
         }
     }
 }
