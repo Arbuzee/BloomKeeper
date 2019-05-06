@@ -26,7 +26,7 @@ public class StaggerState : BaseState
 
         else Movement3D.Instance_3d.walk(moveSpeed);
 
-        PlayerPhysics.Instance.collidertest();
+        
 
         wait += Time.deltaTime;
         if(wait > cooldown)
@@ -35,4 +35,11 @@ public class StaggerState : BaseState
             owner.Transition<WalkState>();
         }
     }
+
+    public override void HandleFixedUpdate()
+    {
+        base.HandleFixedUpdate();
+        PlayerPhysics.Instance.Collidertest();
+    }
+
 }

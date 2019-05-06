@@ -34,13 +34,13 @@ public class PlayerPhysics : MonoBehaviour
     }
 
 
-    public void Update()
+    public void FixedUpdate()
     {
         capsule1 = transform.position + capsule.center + Vector3.up * -capsule.height * skinWidth;
         capsule2 = capsule1 + Vector3.up * capsule.height;
     }
 
-    public void collidertest()
+    public void Collidertest()
     {
         for (int i = 0; i < 20; i++)
         {

@@ -78,7 +78,7 @@ public class Movement3D : MonoBehaviour
         //following the camera orientation
         
         input = transform.TransformDirection(new Vector3(input.x, 0, input.z));
-        //input = Vector3.ProjectOnPlane(input, PlayerPhysics.Instance.GroundNormal());
+        input = Vector3.ProjectOnPlane(input, PlayerPhysics.Instance.GroundNormal());
         //input.y = 0;
         Debug.DrawRay(transform.position, input.normalized*10);
 

@@ -11,7 +11,7 @@ public class RunState : BaseState
         ThirdPerCamera.Instance.CameraMovementThirdPerson();
         Movement3D.Instance_3d.walk(moveSpeed);
         Movement3D.Instance_3d.jump();
-        PlayerPhysics.Instance.collidertest();
+        
 
         if (!PlayerPhysics.Instance.groundColl())
         {
@@ -22,5 +22,10 @@ public class RunState : BaseState
             owner.Transition<WalkState>();
         }
 
+    }
+    public override void HandleFixedUpdate()
+    {
+        base.HandleFixedUpdate();
+        PlayerPhysics.Instance.Collidertest();
     }
 }

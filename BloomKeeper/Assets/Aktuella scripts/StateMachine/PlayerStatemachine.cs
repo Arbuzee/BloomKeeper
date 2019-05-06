@@ -36,5 +36,10 @@ public abstract class PlayerStatemachine : MonoBehaviour
     {
         currentState.HandleUpdate();
     }
-    
+
+    private void FixedUpdate()
+    {
+        currentState.HandleFixedUpdate();
+    }
+
 }
