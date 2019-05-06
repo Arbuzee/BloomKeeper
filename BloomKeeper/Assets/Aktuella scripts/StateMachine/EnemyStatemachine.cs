@@ -33,7 +33,6 @@ public abstract class EnemyStatemachine : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(currentState);
         currentState.HandleUpdate();
     }
 

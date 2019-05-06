@@ -48,7 +48,7 @@ public class EnemyAttackState : EnemyBaseState
  
     public void OnCollision()
     {
-       
+        Debug.Log("ÄPPELPAJ");
             PlayerPhysics.Instance.PlayerVelocity = owner.player.transform.TransformDirection(new Vector3(0,100,-100)); //Blir alltid pushad bakåt för spelaren. dvs om man står riktad framåt så flyger man fortfarande bakåt.
             owner.player.Transition<StaggerState>();
         

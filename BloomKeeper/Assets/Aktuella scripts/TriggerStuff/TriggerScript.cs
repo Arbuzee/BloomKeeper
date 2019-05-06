@@ -28,7 +28,7 @@ public class TriggerScript : MonoBehaviour
             {
                 TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
 
-                //colliderCheck();
+                
             }
             catch (Exception e) { }
             activateCable();
@@ -41,7 +41,7 @@ public class TriggerScript : MonoBehaviour
             try
             {
                 TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
-                //colliderCheck();
+                
             }
             catch (Exception e) { }
             cabelActive = true;

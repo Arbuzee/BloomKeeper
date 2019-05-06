@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a293eb419306e9a46abdcdab1257f715, type: 3}
   m_Name: WalkState
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 83c15bf76d3a0bf4591e405f5363dcab, type: 2}
+  material: {fileID: 2100000, guid: 3d226a632ccbb04469bf406e53c28e44, type: 2}
   moveSpeed: 30

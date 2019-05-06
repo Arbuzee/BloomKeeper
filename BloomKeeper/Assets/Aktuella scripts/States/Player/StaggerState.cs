@@ -10,6 +10,7 @@ public class StaggerState : BaseState
 
     public override void Enter()
     {
+        wait = 0;
         Debug.Log("Stagger");
         owner.Renderer.material = material;
        
@@ -19,7 +20,7 @@ public class StaggerState : BaseState
     {
         ThirdPerCamera.Instance.CameraInput();
         ThirdPerCamera.Instance.CameraMovementThirdPerson();
-        Movement3D.Instance_3d.walk(30);
+        Movement3D.Instance_3d.walk(0);
         PlayerPhysics.Instance.collidertest();
 
         wait += Time.deltaTime;
