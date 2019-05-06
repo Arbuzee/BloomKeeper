@@ -20,7 +20,12 @@ public class StaggerState : BaseState
     {
         ThirdPerCamera.Instance.CameraInput();
         ThirdPerCamera.Instance.CameraMovementThirdPerson();
-        Movement3D.Instance_3d.walk(0);
+
+        if (PlayerPhysics.Instance.groundColl())
+            Movement3D.Instance_3d.walk(0);
+
+        else Movement3D.Instance_3d.walk(moveSpeed);
+
         PlayerPhysics.Instance.collidertest();
 
         wait += Time.deltaTime;

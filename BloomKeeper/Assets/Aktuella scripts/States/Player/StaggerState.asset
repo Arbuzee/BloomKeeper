@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: StaggerState
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 392388b10ec49fb46be8b144fb920299, type: 2}
-  moveSpeed: 0
+  moveSpeed: 30

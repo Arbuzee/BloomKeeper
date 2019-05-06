@@ -76,9 +76,10 @@ public class Movement3D : MonoBehaviour
         Vector3 input = inputVelocity(Speed);
 
         //following the camera orientation
-        input = ThirdPerCamera.Instance.transform.rotation * input;
+        
+        input = transform.TransformDirection(new Vector3(input.x, 0, input.z));
         //input = Vector3.ProjectOnPlane(input, PlayerPhysics.Instance.GroundNormal());
-        input.y = 0;
+        //input.y = 0;
         Debug.DrawRay(transform.position, input.normalized*10);
 
         //gravity
