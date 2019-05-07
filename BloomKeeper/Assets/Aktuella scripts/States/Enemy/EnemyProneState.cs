@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+
 
 [CreateAssetMenu(menuName = "Enemy/EnemyProneState")]
 public class EnemyProneState : EnemyBaseState
@@ -42,7 +40,7 @@ public class EnemyProneState : EnemyBaseState
 
                 Destroy(owner.transform.root.gameObject);
                 owner.prone = false;
-                GameController.instance.setFinisherText(false);
+
                 EnemyCounter.KillEnemy();
 
                 if(EnemyCounter.GetEnemyCount() == 0)

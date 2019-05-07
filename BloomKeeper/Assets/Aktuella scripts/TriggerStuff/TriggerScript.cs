@@ -66,7 +66,7 @@ public class TriggerScript : MonoBehaviour
         {
             doTriggerExit();
             cabelActive = false;
-            Debug.Log("exit");
+
         }
 
     }

@@ -6,28 +6,21 @@ using UnityEngine;
 public class EnemyChaseState : EnemyBaseState
 {
 
-    // Attributes
-    //[SerializeField] private float attackDistance;
-    //[SerializeField] private float lostTargetDistance;
+
     public bool decoy = false;
     // Methods
 
     public override void Enter()
     {
         base.Enter();
-        //Debug.Log("ChaseState");
+        Debug.Log("ChaseState");
+        
     }
 
     public override void HandleUpdate()
     {
         base.HandleUpdate();
-        //if (CanSeeDecoy())
-        //{
-        //    //owner.agent.isStopped = true;
 
-        //    //owner.agent.SetDestination(Movement3D.Instance_3d.clone.transform.position);
-        //    owner.Transition<EnemyChasingDecoyState>();
-        //}
 
         owner.agent.SetDestination(owner.player.transform.position);
 
@@ -48,7 +41,7 @@ public class EnemyChaseState : EnemyBaseState
                 owner.Transition<SpittState>();
             }
         }
-        else if (Vector3.Distance(owner.transform.position, owner.player.transform.position) < attackDistance)
+        else if (Vector3.Distance(owner.transform.position, owner.player.transform.position) < attackDistance && !owner.CompareTag("Spitter"))
         {
             owner.Transition<EnemyAttackState>();
         }           
@@ -60,18 +53,6 @@ public class EnemyChaseState : EnemyBaseState
 
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    Debug.Log("collider trigger");
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        owner.Transition<EnemyProneState>();
-    //    }
-    //    if (other.CompareTag("Log"))
-    //    {
-    //        owner.Transition<EnemyProneState>();
-    //    }
 
-    //    }
 
     }

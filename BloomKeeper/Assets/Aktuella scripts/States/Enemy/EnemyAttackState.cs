@@ -51,7 +51,6 @@ public class EnemyAttackState : EnemyBaseState
         
             PlayerPhysics.Instance.PlayerVelocity = Camera.main.transform.TransformDirection(new Vector3(0,100,-300)); //Blir alltid pushad bakåt för spelaren. dvs om man står riktad framåt så flyger man fortfarande bakåt.
 
-       //  owner.player.Transition<StaggerState>();
 
     }
 

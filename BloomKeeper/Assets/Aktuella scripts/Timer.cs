@@ -5,6 +5,7 @@ public class Timer : MonoBehaviour
 {
     Enemy owner;
     float time;
+
     public void SetupTimer(Enemy owner, float time)
     {
         this.owner = owner;
@@ -12,15 +13,41 @@ public class Timer : MonoBehaviour
         
     }
 
-    public void RunTimer()
+    public void RunTimer(string methodName)
     {
-        StartCoroutine(timer());
+
+        Debug.Log("testar switch");
+        switch (methodName.ToLower())
+        {
+            case "transitiontoattacktimer":
+                StartCoroutine(TransitionToAttackTimer());
+                break;
+
+            case "spittimer":
+                StartCoroutine(SpitTimer());
+                break;
+
+            default:
+                Debug.Log("");
+                break;
+
+
+
+        }
     }
-    public IEnumerator timer()
+    public IEnumerator TransitionToAttackTimer()
     {
+        
         yield return new WaitForSeconds(time);
         owner.Transition<EnemyAttackState>();
         Destroy(this);
         
+    }
+
+    public IEnumerator SpitTimer() {
+
+        yield return new WaitForSeconds(3);
+        Spitter.CanSpitt = true;
+        Destroy(this);
     }
 }
