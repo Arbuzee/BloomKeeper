@@ -46297,6 +46297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RuinsHouse
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b1fdd98b53848534db81941c52f1b678, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b1fdd98b53848534db81941c52f1b678, type: 3}
       propertyPath: m_LocalPosition.x
       value: 103.2
