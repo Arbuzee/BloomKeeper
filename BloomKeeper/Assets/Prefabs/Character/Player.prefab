@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 142494721840352320}
   - component: {fileID: 7116882412392993432}
   - component: {fileID: 918484176}
-  - component: {fileID: 918484168}
   - component: {fileID: 918484169}
   m_Layer: 10
   m_Name: Player
@@ -269,6 +268,7 @@ MonoBehaviour:
   forceMultiplier: 0.2
   forceStep: 1
   forceMeter: {fileID: 0}
+  decoyAudio: {fileID: 0}
   jumpforce: {x: 0, y: 7, z: 0}
 --- !u!114 &142494721840352320
 MonoBehaviour:
@@ -289,6 +289,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  hitAudio: {fileID: 0}
 --- !u!114 &7116882412392993432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,20 +325,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &918484168
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7116882412392993430}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.66418934
-  m_Height: 1.3283787
-  m_Direction: 1
-  m_Center: {x: -0.0026893616, y: 0, z: -0.03325343}
 --- !u!114 &918484169
 MonoBehaviour:
   m_ObjectHideFlags: 0
