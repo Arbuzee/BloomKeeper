@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
 
         health--;
         ParticleSystem particleInstance = Instantiate(HitParticle, hitpos.position, Quaternion.identity);
-        //hearts[health].SetActive(false);
+        hearts[health].SetActive(false);
         Destroy(particleInstance.gameObject, 1.5f);
 
     }
@@ -43,11 +43,11 @@ public class Health : MonoBehaviour
         
         foreach (GameObject heart in hearts)
         {
-            //heart.SetActive(true);
+            heart.SetActive(true);
         }
         health = hearts.Length;
 
-       // transform.position = GameObject.Find("PlayerSpawnPoint").transform.position;
+       transform.position = GameObject.Find("PlayerSpawnPoint").transform.position;
 
     }
 }

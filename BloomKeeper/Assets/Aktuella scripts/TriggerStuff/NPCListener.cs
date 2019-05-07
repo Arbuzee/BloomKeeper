@@ -1,11 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NPCListener : MonoBehaviour
 {
     public GameObject textBox;
     public AudioClip interactionAudio;
+
+
+    public void Update()
+    {
+        textBox.transform.LookAt(new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z));
+    }
 
     private void OnTriggerStay(Collider other)
     {        

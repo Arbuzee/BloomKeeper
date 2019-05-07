@@ -9,7 +9,7 @@ public class WalkState : BaseState
 
     public override void Enter()
     {
-        Debug.Log("Entering walkstate");
+        //Debug.Log("Entering walkstate");
         owner.Renderer.material = material;
      
     }

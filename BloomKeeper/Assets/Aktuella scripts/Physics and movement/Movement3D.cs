@@ -57,14 +57,14 @@ public class Movement3D : MonoBehaviour
         {
             
             forceMultiplier += forceStep * Time.deltaTime;
-            //forceMeter.fillAmount = forceMultiplier;
+            forceMeter.fillAmount = forceMultiplier;
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
             SoundManager.instance.PlaySound(decoyAudio);
             decoy.Execute(dropPoint, forceMultiplier);
             forceMultiplier = 0;
-            //forceMeter.fillAmount = 0;
+            forceMeter.fillAmount = 0;
 
         }
     }
