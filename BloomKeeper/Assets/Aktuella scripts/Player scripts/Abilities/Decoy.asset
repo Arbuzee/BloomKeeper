@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb28190e50836c4c995882f8780ff44, type: 3}
   m_Name: Decoy
   m_EditorClassIdentifier: 
-  attack: {fileID: 7956860868481764276, guid: 65c1fdd0530e9e64fbb5d3f3811e60df, type: 3}
+  attack: {fileID: 308748476599310167, guid: dab15b72ab4e71f4dbe45a2d907de2b8, type: 3}
   maxThrowForce: 500
