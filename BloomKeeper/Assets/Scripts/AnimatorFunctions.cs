@@ -18,5 +18,4 @@ public class AnimatorFunctions : MonoBehaviour
             disableOnce = false;
         }
     }
-    
 }

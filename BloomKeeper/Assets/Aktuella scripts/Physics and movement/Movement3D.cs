@@ -61,7 +61,8 @@ public class Movement3D : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
-            SoundManager.instance.PlaySound(decoyAudio);
+            // Make sure it plays decoy sound in the appropriate script, PlayerAnimController
+            //SoundManager.instance.PlaySound(decoyAudio);
             decoy.Execute(dropPoint, forceMultiplier);
             forceMultiplier = 0;
             forceMeter.fillAmount = 0;

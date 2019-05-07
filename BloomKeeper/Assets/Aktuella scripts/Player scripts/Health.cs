@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage()
     {
-        SoundManager.instance.PlaySound(hitAudio);
+        GetComponentInChildren<PlayerAnimController>().PlayHurtSound();
         if (health <= 1) {
 
             ResetHealth();
