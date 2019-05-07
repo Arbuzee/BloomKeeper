@@ -89,9 +89,9 @@ public class PlayerAnimController : MonoBehaviour
         {
             jumpSoundsIndex = 0;
         }
-
+        audioSource.volume = 0.3f;
         PlaySound(jumpSounds[jumpSoundsIndex]);
-        // Set AudioMixer group or change the code so it plays from different audio components
+        
     }
 
     private void PlayIdleSound()
@@ -104,7 +104,7 @@ public class PlayerAnimController : MonoBehaviour
         {
             idleSoundsIndex = 0;
         }
-
+        audioSource.volume = 1f;
         PlaySound(idleSounds[idleSoundsIndex]);
     }
 
@@ -118,7 +118,7 @@ public class PlayerAnimController : MonoBehaviour
         {
             decoySoundsIndex = 0;
         }
-
+        audioSource.volume = 1f;
         PlaySound(decoySounds[decoySoundsIndex]);
     }
 
@@ -132,7 +132,7 @@ public class PlayerAnimController : MonoBehaviour
         {
             hurtSoundsIndex = 0;
         }
-
+        audioSource.volume = 0.3f;
         PlaySound(hurtSounds[hurtSoundsIndex]);
     }
 }
