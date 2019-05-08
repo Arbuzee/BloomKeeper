@@ -11,13 +11,27 @@ public class NPCListener : MonoBehaviour
 
     private bool isPrinting = false;
 
+    private void Update()
+    {
+        if (isPrinting)
+        {
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                SoundManager.instance.PlaySound(interactionAudio);
+                textBox.SetActive(true);
+                background.SetActive(true);
+                StartCoroutine(TypeWriter());
+            }
+            
+        }
+        
+    }
+
     private void OnTriggerStay(Collider other)
     {        
-        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.F) && !isPrinting){
-            SoundManager.instance.PlaySound(interactionAudio);
-            textBox.SetActive(true);
-            background.SetActive(true);
-            StartCoroutine(TypeWriter());
+        if (other.CompareTag("Player") &&  !isPrinting){
+
             isPrinting = true;
         }     
     }
