@@ -26,31 +26,12 @@ public class EnemyProneState : EnemyBaseState
 
        if (time > Cooldown)
         {
-            //GameController.instance.setFinisherText(false);
+           
             owner.prone = false;
             owner.Transition<EnemyChaseState>();
             return;
         }
         
-        if(Vector3.Distance(owner.player.transform.position, owner.transform.position) < 15)
-        {
-            //GameController.instance.setFinisherText(true);
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-
-                Destroy(owner.transform.root.gameObject);
-                owner.prone = false;
-
-                EnemyCounter.KillEnemy();
-
-                if(EnemyCounter.GetEnemyCount() == 0)
-                    GameController.instance.openDoor();
-            }
-        }
-        else
-        {
-            //GameController.instance.setFinisherText(false);
-        }
     }
 
     public override void Exit()
@@ -58,7 +39,6 @@ public class EnemyProneState : EnemyBaseState
         owner.prone = false;
         base.Exit();
         
-        //GameController.instance.setFinisherText(false);
         owner.gameObject.transform.Rotate(originalRotation, Space.Self);
         time = 0f;
     }
