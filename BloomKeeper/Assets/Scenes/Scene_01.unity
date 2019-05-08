@@ -3097,7 +3097,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111236032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 91.807, y: 14.849, z: 9.512}
+  m_LocalPosition: {x: 76.18, y: 10.67, z: 9.512}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43720,6 +43720,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -7.08
       objectReference: {fileID: 0}
+    - target: {fileID: 7116882411636087272, guid: 51b767ad226477e4bbbe4db9b816243b,
+        type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7116882412392993429, guid: 51b767ad226477e4bbbe4db9b816243b,
         type: 3}
       propertyPath: forceMeter
@@ -59697,6 +59702,7 @@ GameObject:
   - component: {fileID: 2047375393}
   - component: {fileID: 2047375392}
   - component: {fileID: 2047375391}
+  - component: {fileID: 2047375394}
   - component: {fileID: 2047375390}
   m_Layer: 0
   m_Name: Water
@@ -59705,20 +59711,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2047375390
-MeshCollider:
+--- !u!65 &2047375390
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047375389}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 11.81, z: 10}
+  m_Center: {x: 0, y: -5.66, z: 0}
 --- !u!23 &2047375391
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59778,6 +59783,19 @@ Transform:
   m_Father: {fileID: 119001398}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2047375394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047375389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4c33fad44dd9e4d993ac406e3df9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 111236033}
 --- !u!1001 &2049430476
 PrefabInstance:
   m_ObjectHideFlags: 0
