@@ -287,7 +287,6 @@ GameObject:
   - component: {fileID: 7581339738520705526}
   - component: {fileID: 7581339738520705527}
   - component: {fileID: 7581339738520705546}
-  - component: {fileID: 7581339738520705547}
   - component: {fileID: 1423217692}
   - component: {fileID: 1423217695}
   - component: {fileID: 1423217697}
@@ -352,22 +351,6 @@ MonoBehaviour:
   cabelActive: 0
   cables:
   - {fileID: 1453474102}
---- !u!54 &7581339738520705547
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7581339738520705525}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!95 &1423217692
 Animator:
   serializedVersion: 3
@@ -536,11 +519,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7581339738520705526}
     m_Modifications:
-    - target: {fileID: 5253793328245764738, guid: e000b23759d1e254589a53847f59442d,
-        type: 3}
-      propertyPath: m_Name
-      value: Point Light
-      objectReference: {fileID: 0}
     - target: {fileID: 5253793328245764741, guid: e000b23759d1e254589a53847f59442d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -611,6 +589,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5253793328245764738, guid: e000b23759d1e254589a53847f59442d,
+        type: 3}
+      propertyPath: m_Name
+      value: Point Light
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e000b23759d1e254589a53847f59442d, type: 3}
 --- !u!4 &249052445 stripped
@@ -626,11 +609,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7581339738520705526}
     m_Modifications:
-    - target: {fileID: 523459503295772474, guid: 9c470aeba7543e942820511ab690a19a,
-        type: 3}
-      propertyPath: m_Name
-      value: PP_PS
-      objectReference: {fileID: 0}
     - target: {fileID: 523459503295772477, guid: 9c470aeba7543e942820511ab690a19a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -685,6 +663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 523459503295772474, guid: 9c470aeba7543e942820511ab690a19a,
+        type: 3}
+      propertyPath: m_Name
+      value: PP_PS
       objectReference: {fileID: 0}
     - target: {fileID: 523459503139437844, guid: 9c470aeba7543e942820511ab690a19a,
         type: 3}

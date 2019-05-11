@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 392388b10ec49fb46be8b144fb920299, type: 2}
+  - {fileID: 2100000, guid: fc4eeb77c0724074dbf9ac46c564d89f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -171,7 +171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efcf2438a114d104e9e75f3ce0bcdbdf, type: 2}
+  - {fileID: 2100000, guid: 3abda8709b012cc45b362839a1a94a9c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -210,6 +210,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c4cff2996358542438c3c090802263d9, type: 2}
   - {fileID: 11400000, guid: a6cbac919ebdc354a8f43410032a87b8, type: 2}
   - {fileID: 11400000, guid: 069b6b7a1b24bb7419d3322b59171eaf, type: 2}
+  - {fileID: 11400000, guid: cef249317c104db4aaa8d25e8bcb2c97, type: 2}
   Renderer: {fileID: 0}
   agent: {fileID: 0}
   visionMask:
@@ -236,7 +237,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -266,7 +267,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511187380576574403}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1e+9
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -4928,8 +4929,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: fc4eeb77c0724074dbf9ac46c564d89f, type: 2}
+  - {fileID: 2100000, guid: fc4eeb77c0724074dbf9ac46c564d89f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

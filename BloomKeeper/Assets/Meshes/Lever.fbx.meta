@@ -18,9 +18,11 @@ ModelImporter:
     3300002: pPlane2
     4300000: pCube2
     4300002: pPlane2
+    6400000: pCube2
+    6400002: pPlane2
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -51,7 +53,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 20
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
