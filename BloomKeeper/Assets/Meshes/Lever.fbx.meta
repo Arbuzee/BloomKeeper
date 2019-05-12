@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 61c403bc2c0754f4dad5ee78d4b51473
+guid: 75e5c26fda4c6274e94371d951b19c62
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCube2
-    100004: pPlane2
+    100002: LeverBase
+    100004: LeverHandle
     400000: //RootNode
-    400002: pCube2
-    400004: pPlane2
+    400002: LeverBase
+    400004: LeverHandle
     2100000: Lever
     2100002: Glow
     2100004: Base
-    2300000: pCube2
-    2300002: pPlane2
-    3300000: pCube2
-    3300002: pPlane2
-    4300000: pCube2
-    4300002: pPlane2
-    6400000: pCube2
-    6400002: pPlane2
+    2300000: LeverBase
+    2300002: LeverHandle
+    3300000: LeverBase
+    3300002: LeverHandle
+    4300000: LeverHandle
+    4300002: LeverBase
+    6400000: LeverBase
+    6400002: LeverHandle
   externalObjects: {}
   materials:
     importMaterials: 0
