@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraDistance: 6
-  maxAngle: 90
-  minAngle: -2
+  maxAngle: 60
+  minAngle: -10
   collisionLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -227,7 +227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3d226a632ccbb04469bf406e53c28e44, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
