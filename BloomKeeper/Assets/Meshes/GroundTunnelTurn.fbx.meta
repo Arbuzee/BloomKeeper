@@ -1,31 +1,17 @@
 fileFormatVersion: 2
-guid: f8c90323eda43eb44a5236e1d2543fd6
+guid: a55b006d31db8d846a1953658506b110
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: pCube1
-    100002: pCube2
-    100004: transform3
-    100006: transform4
-    100008: Tree6
-    100010: //RootNode
-    100012: Tree_01
-    400000: pCube1
-    400002: pCube2
-    400004: transform3
-    400006: transform4
-    400008: Tree6
-    400010: //RootNode
-    400012: Tree_01
-    2100000: leaves
-    2100002: lambert1
-    2300000: Tree_01
-    3300000: Tree_01
-    4300000: Tree_01
-    6400000: Tree_01
+    100000: //RootNode
+    400000: //RootNode
+    2100000: lambert8
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: GroundTunnel2
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -54,9 +40,9 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 40
+    globalScale: 15
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

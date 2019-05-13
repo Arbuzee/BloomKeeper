@@ -1,34 +1,17 @@
 fileFormatVersion: 2
-guid: b1f5549c09303ce4ca2ea5867aedffc5
+guid: 6f5aef2c1f7bbab48bd49629304e2aad
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: JumpPadFlower_04
-    100002: NPCHouse
-    100004: NPCHouse1
-    100006: //RootNode
-    100008: transform1
-    100010: transform2
-    400000: JumpPadFlower_04
-    400002: NPCHouse
-    400004: NPCHouse1
-    400006: //RootNode
-    400008: transform1
-    400010: transform2
-    2100000: Flower
-    2100002: dirt
-    2100004: dirt2
-    2100006: floweredge
-    2100008: lambert1
-    2100010: leaves
-    2100012: guldoga
-    2100014: dirt3
-    2300000: NPCHouse1
-    3300000: NPCHouse1
-    4300000: NPCHouse1
+    100000: //RootNode
+    400000: //RootNode
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Ground_Half
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -57,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 50
+    globalScale: 20
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
