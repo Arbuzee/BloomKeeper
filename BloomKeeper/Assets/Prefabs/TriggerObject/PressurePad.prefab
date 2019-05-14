@@ -182,7 +182,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 8abf8d2a13e05e04097eb6eed04008b2, type: 3}
 --- !u!1 &7581339738520705525
@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 7581339738520705525}
   m_LocalRotation: {x: 0, y: 0.0020944288, z: 0, w: 0.99999785}
   m_LocalPosition: {x: 7.97, y: 12.55, z: 8.73}
-  m_LocalScale: {x: 1.40498, y: 1, z: 1.3375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 520129623458090016}
   - {fileID: 520129623458090020}
@@ -237,8 +237,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.75, z: 0}
+  m_Size: {x: 1.5, y: 1, z: 1.5}
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!114 &7581339738520705546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,21 +576,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 523459503139437844, guid: 9c470aeba7543e942820511ab690a19a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 523459503139437844, guid: 9c470aeba7543e942820511ab690a19a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 523459503139437844, guid: 9c470aeba7543e942820511ab690a19a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 523459503492502120, guid: 9c470aeba7543e942820511ab690a19a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -617,6 +602,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 523459504993101519, guid: 9c470aeba7543e942820511ab690a19a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 523459503139437844, guid: 9c470aeba7543e942820511ab690a19a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 523459503139437844, guid: 9c470aeba7543e942820511ab690a19a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 523459503139437844, guid: 9c470aeba7543e942820511ab690a19a,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
