@@ -68,7 +68,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
-  active: 0
+  isActivated: 0
   playerInsideCollider: 0
   deActivatedMaterial: {fileID: 0}
   activeMaterial: {fileID: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  active: 0
+  isActivated: 0
   playerInsideCollider: 0
   deActivatedMaterial: {fileID: 0}
   activeMaterial: {fileID: 0}
@@ -296,8 +296,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6149135dd152ba74ebce98a86229db06, type: 2}
-  - {fileID: 2100000, guid: 8fcafe00459f12645aa0186c9270dd50, type: 2}
+  - {fileID: 2100000, guid: 71a6b5146f464184e93ce1d293f7b184, type: 2}
+  - {fileID: 2100000, guid: bee76a57671f66d488a8b930c206e4fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -389,7 +389,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: abe398cb4299f694d908b408b6419986, type: 2}
+  - {fileID: 2100000, guid: f31bfc5fa9ea96346b7907b25426952b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
