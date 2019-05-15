@@ -49,7 +49,7 @@ public class ThirdPerCamera : MonoBehaviour
         transform.forward = rotation * Vector3.forward;
 
         RaycastHit hit;
-        Physics.SphereCast(playerTransform.position, 0.5f, rotation * cameraPositionToPlayer, out hit, cameraPositionToPlayer.magnitude - 0.5f, collisionLayer);
+        Physics.SphereCast(playerTransform.position, 0.1f, rotation * cameraPositionToPlayer, out hit, cameraPositionToPlayer.magnitude - 0.5f, collisionLayer);
         
 
         //if camera hits wall
