@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Timer : MonoBehaviour
 {
-    Enemy owner;
-    float time;
+    private Enemy owner;
+    private float time;
 
     public void SetupTimer(Enemy owner, float time)
     {

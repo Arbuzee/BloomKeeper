@@ -48,11 +48,11 @@ public class PlayerPhysics : MonoBehaviour
             if (Physics.CapsuleCast(capsule1, capsule2, capsuleSize, PlayerVelocity.normalized, out colliderHit, PlayerVelocity.magnitude * Time.deltaTime + skinWidth, collisionLayer))
             {
                 Vector3 normal = colliderHit.normal;
-                Vector3 projection = General.normalKraft3d(PlayerVelocity, normal);
+                Vector3 projection = normalForce3D(PlayerVelocity, normal);
                 transform.position += PlayerVelocity.normalized * (colliderHit.distance - skinWidth);
                 PlayerVelocity += projection;
-                PlayerVelocity = General.friction(projection, PlayerVelocity);
-                PlayerVelocity = General.airFriction(PlayerVelocity);
+                PlayerVelocity = friction(projection, PlayerVelocity);
+                PlayerVelocity = calculateAirFriction(PlayerVelocity);
             }
         }
         transform.position += PlayerVelocity * Time.deltaTime;
@@ -68,5 +68,40 @@ public class PlayerPhysics : MonoBehaviour
         return false;
     }
 
+
+    //From General
+    private static float staticFriction = 0.6f;
+    private static float dynamicFriction = 0.5f;
+    private static float airFriction = 0.1f;
+
+    public static Vector3 normalForce3D(Vector3 velocity, Vector3 normal)
+    {
+        float scale = Vector3.Dot(velocity, normal);
+        if (Vector3.Dot(velocity, normal) >= 0)
+        {
+            scale = 0;
+        }
+        Vector3 projection = scale * normal;
+        return -projection;
+    }
+
+    public static Vector3 friction(Vector3 projection, Vector3 PlayerVelocity)
+    {
+        Vector3 frictionVelocity;
+        if (PlayerVelocity.magnitude < (staticFriction * projection.magnitude))
+        {
+            frictionVelocity = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            frictionVelocity = PlayerVelocity + -PlayerVelocity.normalized * (dynamicFriction * projection.magnitude);
+        }
+        return frictionVelocity;
+    }
+
+    public static Vector3 calculateAirFriction(Vector3 velocity)
+    {
+        return velocity *= Mathf.Pow(airFriction, Time.deltaTime);
+    }
 
 }

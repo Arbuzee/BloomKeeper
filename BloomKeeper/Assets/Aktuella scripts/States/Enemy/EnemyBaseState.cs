@@ -44,7 +44,7 @@ public class EnemyBaseState : EnemyState
     {
         try
         {
-            return !Physics.Linecast(owner.transform.position, Movement3D.Instance_3d.decoy.GetInstance().transform.position, owner.visionMask);
+            return !Physics.Linecast(owner.transform.position, Movement3D.Instance_3d.Decoy.GetInstance().transform.position, owner.visionMask);
         }
         catch (Exception e) { return false; }
     }

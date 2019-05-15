@@ -5,28 +5,29 @@ using UnityEngine;
 public class ThirdPerCamera : MonoBehaviour
 {
     [Header("Camera")]
-    //public Camera cam3rdPerson;
-    private float mouseSensitivity = 6f;
-    Quaternion rotation;
+    [SerializeField] private float mouseSensitivity = 6f;
+    private Quaternion rotation;
 
     [Range(0, 10)]
-    public float cameraDistance;
+    [SerializeField] private float cameraDistance;
 
     private Vector3 cameraPositionToPlayer;
     private float rotationX;
     private float rotationY;
-    public float maxAngle = 90f;
-    public float minAngle = -2f;
+    [SerializeField] private float maxAngle = 90f;
+    [SerializeField] private float minAngle = -2f;
 
-    public LayerMask collisionLayer;
-    public Transform playerTransform;
+    [SerializeField] private LayerMask collisionLayer;
+    [SerializeField] private Transform playerTransform;
 
     public static ThirdPerCamera Instance;
 
-    public void Awake()
+    private void Awake()
     {
         cameraPositionToPlayer = new Vector3(0, 1, -cameraDistance);
         Instance = this;
+        //Funkar?? Kanske måste kolla i build
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void CameraInput()

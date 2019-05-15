@@ -7,14 +7,14 @@ public class Enemy : EnemyStatemachine
 {
     [HideInInspector] public MeshRenderer Renderer;
     [HideInInspector] public NavMeshAgent agent;
-    public LayerMask visionMask;
-    public CapsuleCollider capCollider;
-    public BoxCollider boxCollider;
-    public Player player;
-    public GameObject decoy;
-    public int Dmg = 1;
-    public bool prone = false;
-    public Transform Mouth;
+    [SerializeField] public LayerMask visionMask;
+    [SerializeField] public CapsuleCollider capCollider;
+    [SerializeField] public BoxCollider boxCollider;
+    [SerializeField] public Player player;
+    [SerializeField] public GameObject decoy;
+    [SerializeField] public int Dmg = 1;
+    [SerializeField] public bool prone = false;
+    [SerializeField] public Transform Mouth;
 
     protected override void Awake()
     {

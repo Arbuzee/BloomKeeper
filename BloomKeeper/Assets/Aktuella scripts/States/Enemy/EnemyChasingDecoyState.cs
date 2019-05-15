@@ -9,10 +9,10 @@ public class EnemyChasingDecoyState : EnemyBaseState
 
     public override void HandleUpdate()
     {
-        if (Movement3D.Instance_3d.decoy.GetInstance())
+        if (Movement3D.Instance_3d.Decoy.GetInstance())
         {
 
-            owner.agent.SetDestination(Movement3D.Instance_3d.decoy.GetInstance().transform.position);
+            owner.agent.SetDestination(Movement3D.Instance_3d.Decoy.GetInstance().transform.position);
         }
         else
         {
