@@ -48,24 +48,33 @@ public class Movement3D : MonoBehaviour
         return direction * distance;
     }
 
+    //Method for executing decoy with force multiplier
+    //private void SetDecoy()
+    //{
 
+    //    if (Input.GetKey(KeyCode.Q) && forceMultiplier < 1)
+    //    {
+            
+    //        forceMultiplier += forceStep * Time.deltaTime;
+    //        forceMeter.fillAmount = forceMultiplier;
+    //    }
+    //    else if (Input.GetKeyUp(KeyCode.Q))
+    //    {
+    //        // Make sure it plays decoy sound in the appropriate script, PlayerAnimController
+    //        //SoundManager.instance.PlaySound(decoyAudio);
+    //        Decoy.Execute(dropPoint, forceMultiplier);
+    //        forceMultiplier = 0;
+    //        forceMeter.fillAmount = 0;
+
+    //    }
+    //}
+
+    //Method for executing decoy without force
     private void SetDecoy()
     {
-
-        if (Input.GetKey(KeyCode.Q) && forceMultiplier < 1)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            
-            forceMultiplier += forceStep * Time.deltaTime;
-            forceMeter.fillAmount = forceMultiplier;
-        }
-        else if (Input.GetKeyUp(KeyCode.Q))
-        {
-            // Make sure it plays decoy sound in the appropriate script, PlayerAnimController
-            //SoundManager.instance.PlaySound(decoyAudio);
-            Decoy.Execute(dropPoint, forceMultiplier);
-            forceMultiplier = 0;
-            forceMeter.fillAmount = 0;
-
+            Decoy.Execute(dropPoint);
         }
     }
 
