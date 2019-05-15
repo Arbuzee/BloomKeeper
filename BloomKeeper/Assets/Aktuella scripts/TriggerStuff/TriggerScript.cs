@@ -4,38 +4,46 @@ using System.Collections;
 
 public class TriggerScript : MonoBehaviour
 {
-    public GameObject TriggerObject;
-    public bool playerActivated = false;
-    public bool decoyActive = false;
+    [SerializeField]public GameObject TriggerObject;
+    private bool playerActivated = false;
+    [HideInInspector] public bool decoyActive = false;
+    [SerializeField] public bool isLocked = false;
+    [Header("Lägg på spak/låsande objekt som har PressFTriggerScript på sig")]
 
-    [Header("Cabels")]
-    public Material deActivatedMaterial;
-    public Material activeMaterial;
-    public bool cabelActive;
-    public GameObject [] cables ;
+    [SerializeField] private GameObject lockingObject;
 
+    [Header("Cables")]
+
+    [SerializeField] private Material deActivatedMaterial;
+    [SerializeField] private Material activeMaterial;
+    private bool cabelActive;
+    [SerializeField] private GameObject [] cables;
+
+
+    public void Update()
+    {
+        setLocked();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
 
-        
-
-        if (other.CompareTag("Player"))
+        //om vi vill inte bryr oss om att den ska aktiveras när den är locked -> ta bort isLocked (fråga Sebbe)
+        //Finns en bugg där pad:en blir inaktiv när man låser upp spaken (DoExit körs men inte OnEnter så playerActivated/deocyActivated är inte true även om någon av dem står på pad:en). Annars fungerar det som det ska.
+        if (other.CompareTag("Player") && !isLocked)
         {
             
             playerActivated = true;
             try
             {
                 TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
-
-                
             }
             catch (Exception e) { }
             activateCable();
             cabelActive = true;
         }
 
-        if (other.gameObject.CompareTag("Decoy"))
+        if (other.gameObject.CompareTag("Decoy") && !isLocked)
         {
             decoyActive = true;
             try
@@ -53,7 +61,7 @@ public class TriggerScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player") && other.CompareTag("Player") )
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player") && other.CompareTag("Player"))
         {
             playerActivated = false;
         }
@@ -62,14 +70,16 @@ public class TriggerScript : MonoBehaviour
             decoyActive = false;
         }
 
-        if(!decoyActive && !playerActivated)
+        if(!decoyActive && !playerActivated && !isLocked)
         {
             doTriggerExit();
             cabelActive = false;
 
         }
-
+        
     }
+
+    
 
     public void doTriggerExit()
     {
@@ -97,5 +107,21 @@ public class TriggerScript : MonoBehaviour
         {
             cabel.GetComponent<Renderer>().material = deActivatedMaterial;
         }
+    }
+
+    private void setLocked()
+    {
+        if (lockingObject != null && lockingObject.GetComponent<PressFTriggerScript>().isActivated)
+        {
+            isLocked = true;
+        } else 
+        {
+            isLocked = false;
+            if (!playerActivated && !decoyActive)
+            {
+                doTriggerExit();
+            }
+        }
+        
     }
 }

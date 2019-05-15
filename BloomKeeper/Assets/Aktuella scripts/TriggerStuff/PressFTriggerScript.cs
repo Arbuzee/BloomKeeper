@@ -8,10 +8,10 @@ public class PressFTriggerScript : MonoBehaviour
 {
     public GameObject TriggerObject;
     public LayerMask layerMask;
-    public bool active;
+    public bool isActivated;
     public bool playerInsideCollider;
 
-    [Header("Cabels")]
+    [Header("Cables")]
     public Material deActivatedMaterial;
     public Material activeMaterial;
     public bool cabelActive;
@@ -21,11 +21,11 @@ public class PressFTriggerScript : MonoBehaviour
     {
         if (playerInsideCollider)
         {
-            if (Input.GetKeyDown(KeyCode.F) && !active)
+            if (Input.GetKeyDown(KeyCode.F) && !isActivated)
             {
                 try
                 {
-                    active = true;
+                    isActivated = true;
                     TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
                     //StartCoroutine(Timer());
                     cabelActive = true;
@@ -34,11 +34,11 @@ public class PressFTriggerScript : MonoBehaviour
                 catch (Exception e) { }
                 return;
             }
-            if (Input.GetKeyDown(KeyCode.F) && active)
+            if (Input.GetKeyDown(KeyCode.F) && isActivated)
             {
                 try
                 {
-                    active = false;
+                    isActivated = false;
                     TriggerObject.GetComponent<TriggeredObject>().OnDeTrigger();
                     deActivateCabel();
                     cabelActive = false;
