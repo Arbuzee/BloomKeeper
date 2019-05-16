@@ -2,25 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupRotator : MonoBehaviour
+namespace EventCallbacks
 {
-    [SerializeField] private ParticleSystem onPickUpParticles;
-
-    void Update()
+    public class PickupRotator : MonoBehaviour
     {
-        transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
-    }
+        [SerializeField] private ParticleSystem onPickUpParticles;
+        [SerializeField] private AudioClip pickupSound;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        void Update()
         {
-            Debug.Log("collision");
-            //add to counter
-            CanvasController.Instance.addPickup();
-            ParticleSystem particleInstance = Instantiate(onPickUpParticles, transform.position, Quaternion.identity);
-            Destroy(particleInstance.gameObject, 2.5f);
-            Destroy(gameObject);
+            transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+
+                SoundEvent soundevent = new SoundEvent();
+                soundevent.sound = pickupSound;
+                soundevent.FireEvent();
+
+                Debug.Log("collision");
+                //add to counter
+                CanvasController.Instance.addPickup();
+                ParticleSystem particleInstance = Instantiate(onPickUpParticles, transform.position, Quaternion.identity);
+                Destroy(particleInstance.gameObject, 2.5f);
+                Destroy(gameObject);
+
+            }
         }
     }
 }

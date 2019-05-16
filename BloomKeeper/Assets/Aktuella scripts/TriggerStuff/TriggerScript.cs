@@ -19,6 +19,7 @@ public class TriggerScript : MonoBehaviour
     private bool cabelActive;
     [SerializeField] private GameObject [] cables;
 
+    private bool Active;
 
     public void Update()
     {
@@ -41,6 +42,7 @@ public class TriggerScript : MonoBehaviour
             catch (Exception e) { }
             activateCable();
             cabelActive = true;
+            Active = true;
         }
 
         if (other.gameObject.CompareTag("Decoy") && !isLocked)
@@ -54,7 +56,7 @@ public class TriggerScript : MonoBehaviour
             catch (Exception e) { }
             cabelActive = true;
             activateCable();
-
+            Active = true;
         }
     }
 
@@ -64,16 +66,19 @@ public class TriggerScript : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") && other.CompareTag("Player"))
         {
             playerActivated = false;
+          
         }
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") && other.CompareTag("Decoy"))
         {
             decoyActive = false;
+            
         }
 
         if(!decoyActive && !playerActivated && !isLocked)
         {
             doTriggerExit();
             cabelActive = false;
+            Active = false;
 
         }
         
