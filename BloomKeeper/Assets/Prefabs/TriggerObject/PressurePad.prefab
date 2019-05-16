@@ -254,8 +254,8 @@ MonoBehaviour:
   decoyActive: 0
   isLocked: 0
   lockingObject: {fileID: 0}
-  deActivatedMaterial: {fileID: 2100000, guid: b2b60be31bebdd949acc960b9e42d5ee, type: 2}
-  activeMaterial: {fileID: 2100000, guid: cee8832245b17ea439ba297ec77ddbce, type: 2}
+  deActivatedMaterial: {fileID: 2100000, guid: dd6fdedf1f5594c41af3bf0eadf7728b, type: 2}
+  activeMaterial: {fileID: 2100000, guid: a69e51f57298bc14e8c0036c4a4fc13d, type: 2}
   cables: []
 --- !u!95 &1423217692
 Animator:
