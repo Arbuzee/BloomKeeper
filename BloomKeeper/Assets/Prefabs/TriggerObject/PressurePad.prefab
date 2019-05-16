@@ -236,8 +236,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1, z: 1.5}
-  m_Center: {x: 0, y: 0.7, z: 0}
+  m_Size: {x: 1.2, y: 0.5, z: 1.2}
+  m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!114 &7581339738520705546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,10 +250,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95057c35e5edbdc4783df4527c982a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TriggerObject: {fileID: 7581339738520705525}
+  triggerObject: []
+  playerActivated: 0
   decoyActive: 0
-  isLocked: 0
   lockingObject: {fileID: 0}
+  isLocked: 0
+  isActive: 0
   deActivatedMaterial: {fileID: 2100000, guid: dd6fdedf1f5594c41af3bf0eadf7728b, type: 2}
   activeMaterial: {fileID: 2100000, guid: a69e51f57298bc14e8c0036c4a4fc13d, type: 2}
   cables: []
