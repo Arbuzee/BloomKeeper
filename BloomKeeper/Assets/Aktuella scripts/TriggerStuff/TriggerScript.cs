@@ -4,22 +4,22 @@ using System.Collections;
 
 public class TriggerScript : MonoBehaviour
 {
-    [SerializeField]public GameObject TriggerObject;
-    private bool playerActivated = false;
+    [SerializeField]public GameObject [] triggerObject;
+    public bool playerActivated = false;
     [HideInInspector] public bool decoyActive = false;
-    [SerializeField] public bool isLocked = false;
-    [Header("Lägg på spak/låsande objekt som har PressFTriggerScript på sig")]
+
+    [Header("Lock")]
 
     [SerializeField] private GameObject lockingObject;
+    [SerializeField] public bool isLocked = false;
+    public bool isActive;
 
     [Header("Cables")]
 
     [SerializeField] private Material deActivatedMaterial;
     [SerializeField] private Material activeMaterial;
-    private bool cabelActive;
     [SerializeField] private GameObject [] cables;
 
-    private bool Active;
 
     public void Update()
     {
@@ -37,12 +37,16 @@ public class TriggerScript : MonoBehaviour
             playerActivated = true;
             try
             {
-                TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
+
+                foreach (GameObject animObject in triggerObject) //startar alla animations objekt i listan
+                {
+                    animObject.GetComponent<TriggeredObject>().OnTrigger();
+                }
             }
             catch (Exception e) { }
             activateCable();
-            cabelActive = true;
-            Active = true;
+            isActive = true;
+
         }
 
         if (other.gameObject.CompareTag("Decoy") && !isLocked)
@@ -50,13 +54,15 @@ public class TriggerScript : MonoBehaviour
             decoyActive = true;
             try
             {
-                TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
-                
+                foreach (GameObject animObject in triggerObject)
+                {
+                    animObject.GetComponent<TriggeredObject>().OnTrigger();
+                }
+
             }
             catch (Exception e) { }
-            cabelActive = true;
+            isActive = true;
             activateCable();
-            Active = true;
         }
     }
 
@@ -77,8 +83,7 @@ public class TriggerScript : MonoBehaviour
         if(!decoyActive && !playerActivated && !isLocked)
         {
             doTriggerExit();
-            cabelActive = false;
-            Active = false;
+            isActive = false;
 
         }
         
@@ -91,11 +96,13 @@ public class TriggerScript : MonoBehaviour
        
             try
             {
-                TriggerObject.GetComponent<TriggeredObject>().OnDeTrigger();
+            foreach (GameObject animObject in triggerObject)
+            {
+                animObject.GetComponent<TriggeredObject>().OnDeTrigger();
             }
+        }
             catch (Exception e) { }
         deActivateCabel();
-
     }
 
     private void activateCable()
@@ -114,7 +121,8 @@ public class TriggerScript : MonoBehaviour
         }
     }
 
-    private void setLocked()
+
+    public void setLocked()
     {
         if (lockingObject != null && lockingObject.GetComponent<PressFTriggerScript>().isActivated)
         {

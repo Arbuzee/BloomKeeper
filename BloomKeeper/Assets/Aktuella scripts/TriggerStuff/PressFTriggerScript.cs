@@ -6,40 +6,59 @@ using System.Collections;
 
 public class PressFTriggerScript : MonoBehaviour
 {
-    public GameObject TriggerObject;
-    public LayerMask layerMask;
-    public bool isActivated;
-    public bool playerInsideCollider;
+    [SerializeField] private GameObject[] triggerObject;
+    [SerializeField] private LayerMask layerMask;
+    [SerializeField] public bool isActivated;
+    private bool playerInsideCollider;
+
+    [Header("Lock")]
+    [SerializeField] private GameObject lockingObject;
+    [SerializeField] private bool isLocked = false;
+
 
     [Header("Cables")]
-    public Material deActivatedMaterial;
-    public Material activeMaterial;
-    public bool cabelActive;
-    public GameObject[] cables;
+    [SerializeField] private Material deActivatedMaterial;
+    [SerializeField] private Material activeMaterial;
+    [SerializeField] private bool cabelActive;
+    [SerializeField] private GameObject[] cables;
 
     private void Update()
     {
+        setLocked();
+        PressLever();
+    }
+
+    private void PressLever()
+    {
         if (playerInsideCollider)
         {
-            if (Input.GetKeyDown(KeyCode.F) && !isActivated)
+            if (Input.GetKeyDown(KeyCode.F) && !isActivated && !isLocked)
             {
                 try
                 {
                     isActivated = true;
-                    TriggerObject.GetComponent<TriggeredObject>().OnTrigger();
-                    //StartCoroutine(Timer());
+                    foreach(GameObject animObject in triggerObject) //startar alla animations objekt i listan
+                    {
+                        animObject.GetComponent<TriggeredObject>().OnTrigger();
+                    }
+
                     cabelActive = true;
                     activateCable();
                 }
                 catch (Exception e) { }
                 return;
             }
-            if (Input.GetKeyDown(KeyCode.F) && isActivated)
+            if (Input.GetKeyDown(KeyCode.F) && isActivated && !isLocked)
             {
                 try
                 {
                     isActivated = false;
-                    TriggerObject.GetComponent<TriggeredObject>().OnDeTrigger();
+                    foreach (GameObject animObject in triggerObject)
+                    {
+                        animObject.GetComponent<TriggeredObject>().OnDeTrigger();
+                    }
+
+
                     deActivateCabel();
                     cabelActive = false;
 
@@ -49,6 +68,7 @@ public class PressFTriggerScript : MonoBehaviour
             }
         }
     }
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -82,15 +102,27 @@ public class PressFTriggerScript : MonoBehaviour
             cabel.GetComponent<Renderer>().material = deActivatedMaterial;
         }
     }
-    //public IEnumerator Timer()
-    //{
-    //    if(timer == 999)
-    //{
-    //    yield break;
-    //}
-    //    yield return new WaitForSeconds(timer);
-    //    TriggerObject.GetComponent<TriggeredObject>().OnDeTrigger();
-    //}
+
+
+    private void setLocked()
+    {
+        if(lockingObject != null && lockingObject.GetComponent<TriggerScript>().isActive)
+        {
+            isLocked = true;
+        }
+        else
+        {
+            isLocked = false;
+            if (!isActivated)
+            {
+                foreach (GameObject animObject in triggerObject)
+                {
+                    animObject.GetComponent<TriggeredObject>().OnDeTrigger();
+                }
+                //triggerObject.GetComponent<TriggeredObject>().OnDeTrigger();
+            }
+        }
+    }
 
 
 }
