@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 6
-  cameraDistance: 4
+  cameraDistance: 2
   maxAngle: 60
   minAngle: -30
   collisionLayer:
