@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 308748476601416183}
   - component: {fileID: 1070634308728402400}
   - component: {fileID: 7450700231082179031}
+  - component: {fileID: 4206230628147287885}
   m_Layer: 10
   m_Name: Decoy
   m_TagString: Decoy
@@ -60,10 +61,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d32d2cf90b26a664caade4a49c769409, type: 2}
-  - {fileID: 2100000, guid: d32d2cf90b26a664caade4a49c769409, type: 2}
-  - {fileID: 2100000, guid: d32d2cf90b26a664caade4a49c769409, type: 2}
-  - {fileID: 2100000, guid: d32d2cf90b26a664caade4a49c769409, type: 2}
+  - {fileID: 2100000, guid: d36f329fad619c143bed3b7ac001bbda, type: 2}
+  - {fileID: 2100000, guid: d36f329fad619c143bed3b7ac001bbda, type: 2}
+  - {fileID: 2100000, guid: e1553ba9da2fd0c4eba378283a34806d, type: 2}
+  - {fileID: 2100000, guid: cee8832245b17ea439ba297ec77ddbce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,3 +126,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f729d1782971e4e982d8ef727d2731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &4206230628147287885
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308748476599310167}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8bc6e4bbeb5c61e4a8d826ffa0ac04aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
