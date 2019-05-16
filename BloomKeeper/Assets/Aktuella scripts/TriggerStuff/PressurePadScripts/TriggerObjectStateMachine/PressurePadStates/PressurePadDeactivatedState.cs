@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "PressurePad/PressurePadDeactivatedState")]
-public class PressurePadDeactivatedState : TriggerStatusState
+public class PressurePadDeactivatedState : TriggerBaseState
 {
-    protected PressurePad owner;
 
-    public override void Initialize(TriggerObjectStateMachine owner)
+    public override void Enter()
     {
-        this.owner = (PressurePad)owner;
+        Debug.Log("PressurePadDeActivated -> enter");
     }
 
+    public override void Exit()
+    {
+        Debug.Log("PressurePadDeActivated -> exit");
+    }
     public override void HandleUpdate()
     {
-        if (owner.controllingObject != null)
+
+        if (PlayerDecoyColliding())
         {
-            //sätt den här pressurepaden till låst i ett visst state
+            owner.Transition<PressurePadActivatedState>();
         }
 
 

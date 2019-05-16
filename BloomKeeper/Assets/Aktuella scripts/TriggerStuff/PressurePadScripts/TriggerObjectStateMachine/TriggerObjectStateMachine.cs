@@ -35,4 +35,9 @@ public abstract class TriggerObjectStateMachine : MonoBehaviour
         currentState.HandleUpdate();
     }
 
+    private void FixedUpdate()
+    {
+        currentState.FixedHandelUpdate();
+    }
+
 }
