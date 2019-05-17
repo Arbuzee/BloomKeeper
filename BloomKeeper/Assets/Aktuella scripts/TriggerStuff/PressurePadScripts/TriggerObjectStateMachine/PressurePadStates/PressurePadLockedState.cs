@@ -3,7 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "PressurePad/PressurePadLockedState")]
-public class PressurePadLockedState : TriggerStatusState
+public class PressurePadLockedState : TriggerBaseState
 {
-    protected PressurePad owner;
+
+    public override void Enter()
+    {
+        Debug.Log("PressurePadLockState -> enter");
+
+    }
+
+    public override void Exit()
+    {
+        Debug.Log("PressurePadLockState -> exit");
+
+    }
+
+    public override void FixedHandelUpdate()
+    {
+        if (!owner.LockObject.isActive)
+        {
+            if (!BoxCheck())
+            {
+                owner.Transition<PressurePadDeactivatedState>();
+            }
+            else
+            {
+                owner.Transition<PressurePadActivatedState>();
+            }
+        }
+    }
+
 }

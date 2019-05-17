@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1070634308728402400}
   - component: {fileID: 7450700231082179031}
   - component: {fileID: 4206230628147287885}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Decoy
   m_TagString: Decoy
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 6669034456949510726}
   - component: {fileID: 8597933336022182371}
   - component: {fileID: 1005301361805278553}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Particle System_Crown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4968,7 +4968,7 @@ GameObject:
   - component: {fileID: 7010027493616809148}
   - component: {fileID: 6919982180604476732}
   - component: {fileID: 823508135906197516}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Particle System_Poof
   m_TagString: Untagged
   m_Icon: {fileID: 0}

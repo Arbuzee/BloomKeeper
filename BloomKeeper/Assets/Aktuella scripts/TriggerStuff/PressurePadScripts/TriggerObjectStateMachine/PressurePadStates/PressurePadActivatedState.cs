@@ -5,9 +5,20 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PressurePad/PressurePadActivatedState")]
 public class PressurePadActivatedState : TriggerBaseState
 {
+
     public override void Enter()
     {
         Debug.Log("PressurePadActivatedState -> Enter");
+        if(owner.AnimObject != null)
+        {
+            foreach (GameObject animGO in owner.AnimObject)
+            {
+                animGO.GetComponent<TriggeredObject>().OnTrigger();
+            }
+        }
+        
+        owner.isActive = true;    
+        
     }
 
     public override void Exit()
@@ -17,33 +28,16 @@ public class PressurePadActivatedState : TriggerBaseState
 
     public override void FixedHandelUpdate()
     {
-
-        if (!PlayerDecoyColliding())
+        if (owner.LockObject != null)
+        {
+            if (owner.LockObject.isActive)
+            {
+                owner.Transition<PressurePadLockedState>();
+            }
+        }
+        if (!BoxCheck())
         {
             owner.Transition<PressurePadDeactivatedState>();
         }
-
-        //if (PlayerDecoyColliding())
-        //{
-        //    Debug.Log("PlayerDecoyColliding == true");
-        //}
-        //else
-        //{
-        //    Debug.Log("PlayerDecoyColliding == false");
-        //}
-
-        //if(boxOverlap().Length > 0)
-        //{
-        //    foreach (Collider collider in boxOverlap())
-        //    {
-        //        Debug.Log(collider.name);
-        //    }
-        //}
-        //else
-        //{
-        //    Debug.Log("boxOverlapp.length = 0");
-        //}
-            
-
     }
 }

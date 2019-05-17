@@ -5,16 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Triggers/TriggerBaseState")]
 public class TriggerBaseState : TriggerStatusState
 {
-    protected RaycastHit hit;
-    protected Collider[] colliders;
-    //= new Collider[1]
+    protected Collider[] colliders = new Collider[2];
     protected ThisTrigger owner;
 
-    private bool hitBool;
+
+
+    protected bool isInLeverRange = false;     //LeverBool
+
 
     public override void Enter()
     {
         Debug.Log("TriggerBaseState -> enter ");
+        
     }
 
 
@@ -31,74 +33,54 @@ public class TriggerBaseState : TriggerStatusState
     protected Collider[] boxOverlap()
     {
         colliders = Physics.OverlapBox(owner.transform.position, owner.boxCollider.size / 2, Quaternion.identity, owner.TriggerLayerMask);
-
+        //Debug.Log(colliders[0] + " " + colliders[1]);
         return colliders;
         
         
             
+    }
+
+
+
+    protected bool BoxCheck()
+    {
+        if(Physics.CheckBox(owner.transform.position, owner.boxCollider.size / 2, Quaternion.identity, owner.TriggerLayerMask))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     protected bool PlayerDecoyColliding()
     {
         boxOverlap();
         if(colliders.Length < 1)
         {
+            //Debug.Log(colliders[1].name);
 
-            //Debug.Log(colliders.Length.ToString());
+            Debug.Log(colliders.Length.ToString());
             return false;
         }
         else
         {
-            //Debug.Log(colliders.Length.ToString());
+            Debug.Log(colliders.Length.ToString());
             //Debug.Log(colliders[0].name);
             return true;
         }
-        //foreach(Collider collider in boxOverlap())
-        //{
-        //    Debug.Log(collider.name);
-        //}
-        //return true;
-        //if(boxOverlap())
-        //{
-            
-        //    return false;
-        //}
-        //else
-        //{
-        //    return true;
-        //}
-         
-    }
-
-    protected RaycastHit BoxCast()
-    {
-        Vector3 vector = new Vector3(0, 0, 0);
-        hitBool = Physics.BoxCast(owner.transform.position, owner.boxCollider.size / 2, Vector3.up, out hit, Quaternion.identity, 1f, owner.TriggerLayerMask);
-        OnDrawGizmos();
-        return hit;
-
-        //if(Physics.BoxCast(owner.transform.position, owner.boxCollider.size / 2, Vector3.up, out hit, Quaternion.identity, 0f, owner.TriggerLayerMask))
-        //{
-        //    OnDrawGizmos();
-        //    return hit;
-
-        //}else
-        //{
-        //    OnDrawGizmos();
-        //    Debug.Log("triggerBaseState/BoxCast -> BoxCast");
-        //    return hit ;
-        //}
-
-        //Debug.Log("TriggerBaseSate -> hit " + hit.collider.name);
     }
 
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        //Check that it is being run in Play Mode, so it doesn't try to draw this in Editor mode
-            //Draw a cube where the OverlapBox is (positioned where your GameObject is as well as a size)
-            Gizmos.DrawWireCube(owner.transform.position, owner.boxCollider.size);
-    }
+
+
+    //void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    //Check that it is being run in Play Mode, so it doesn't try to draw this in Editor mode
+    //        //Draw a cube where the OverlapBox is (positioned where your GameObject is as well as a size)
+    //        Gizmos.DrawWireCube(owner.transform.position, owner.boxCollider.size);
+    //}
 
     //void OnDrawGizmos()
     //{
