@@ -250,7 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95057c35e5edbdc4783df4527c982a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerObject: []
+  triggerObject:
+  - {fileID: 7581339738520705525}
   playerActivated: 0
   decoyActive: 0
   lockingObject: {fileID: 0}
