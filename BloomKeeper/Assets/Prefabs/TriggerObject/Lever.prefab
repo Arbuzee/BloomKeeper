@@ -64,14 +64,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93a575f8bb09af46b6b4450e2cacf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TriggerObject: {fileID: 0}
+  triggerObject: []
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
   isActivated: 0
-  playerInsideCollider: 0
-  deActivatedMaterial: {fileID: 0}
-  activeMaterial: {fileID: 0}
+  lockingObject: {fileID: 0}
+  isLocked: 0
+  deActivatedMaterial: {fileID: 2100000, guid: dd6fdedf1f5594c41af3bf0eadf7728b, type: 2}
+  activeMaterial: {fileID: 2100000, guid: a69e51f57298bc14e8c0036c4a4fc13d, type: 2}
   cabelActive: 0
   cables: []
 --- !u!95 &175464827
@@ -105,12 +106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93a575f8bb09af46b6b4450e2cacf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TriggerObject: {fileID: 1796007412389614339}
+  triggerObject: []
   layerMask:
     serializedVersion: 2
     m_Bits: 0
   isActivated: 0
-  playerInsideCollider: 0
+  lockingObject: {fileID: 0}
+  isLocked: 0
   deActivatedMaterial: {fileID: 0}
   activeMaterial: {fileID: 0}
   cabelActive: 0
