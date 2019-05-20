@@ -12,91 +12,112 @@ public class MenuButtonController : MonoBehaviour
 
     [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject optionsMenu;
+    [SerializeField] private GameObject continueButton;
 
     private Animator menuAnim;
+
+    private bool gameStartAnimationFinished = false;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         menuAnim = GetComponent<Animator>();
+
+        // Check if game has a saved state, if so create the continue button
+        if (PlayerPrefs.GetInt("GameSaved", 0) > 0)
+        {
+            maxIndex += 1;
+        } else
+        {
+            continueButton.SetActive(false);
+        }
+
+        StartCoroutine("UnlockMenuAfterTime");
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetAxis("Vertical") != 0)
+        if (gameStartAnimationFinished)
         {
-            if (!keyDown)
+            if (Input.GetAxis("Vertical") != 0)
             {
-                if (startMenu.activeSelf)
+                if (!keyDown)
                 {
-                    if (Input.GetAxis("Vertical") < 0)
+                    if (startMenu.activeSelf)
                     {
-                        if (index < maxIndex)
+                        if (Input.GetAxis("Vertical") < 0)
                         {
-                            index++;
+                            if (index < maxIndex)
+                            {
+                                index++;
+                            }
+                            else
+                            {
+                                index = 0;
+                            }
                         }
-                        else
+                        else if (Input.GetAxis("Vertical") > 0)
                         {
-                            index = 0;
+                            if (index > 0)
+                            {
+                                index--;
+                            }
+                            else
+                            {
+                                index = maxIndex;
+                            }
                         }
+
                     }
-                    else if (Input.GetAxis("Vertical") > 0)
-                    {
-                        if (index > 0)
-                        {
-                            index--;
-                        }
-                        else
-                        {
-                            index = maxIndex;
-                        }
-                    }
-                    
                 }
+                keyDown = true;
             }
-            keyDown = true;
-        }
-        else
-        {
-            keyDown = false;
-        }
-
-
-
-        if (Input.GetAxis("Submit") == 1)
-        {
-            if (!keyDown)
+            else
             {
-                switch (index)
+                keyDown = false;
+            }
+
+            if (Input.GetAxis("Submit") == 1)
+            {
+                if (!keyDown)
                 {
-                    case 0:
-                        menuAnim.SetTrigger("startGame");
-                        //StartGame();
-                        break;
-                    case 1:
-                        menuAnim.SetBool("optionsOpen", true);
-                        //Options();
-                        break;
-                    case 2:
-                        QuitGame();
-                        break;
-                    default:
-                        break;
+                    switch (index)
+                    {
+                        case 0:
+                            menuAnim.SetTrigger("startGame");
+                            break;
+                        case 1:
+                            menuAnim.SetBool("optionsOpen", true);
+                            break;
+                        case 2:
+                            QuitGame();
+                            break;
+                        case 3:
+                            ContinueGame();
+                            break;
+                        default:
+                            break;
+                    }
                 }
-            } 
-            keyDown = true;
-        }
+                keyDown = true;
+            }
 
-        if (optionsMenu.activeSelf)
-        {
-            if (Input.GetAxis("Cancel") == 1)
+            if (optionsMenu.activeSelf)
             {
-                menuAnim.SetBool("optionsOpen", false);
+                if (Input.GetAxis("Cancel") == 1)
+                {
+                    menuAnim.SetBool("optionsOpen", false);
+                }
             }
         }
     }
+
+    private void SetGameStartAnimationFinished()
+    {
+        gameStartAnimationFinished = true;
+    }
+
 
     private void StartGame()
     {
@@ -130,4 +151,11 @@ public class MenuButtonController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    IEnumerator UnlockMenuAfterTime()
+    {
+        yield return new WaitForSeconds(4);
+    }
 }
+
+
