@@ -56,4 +56,8 @@ namespace EventCallbacks
     {
         public ParticleSystem particles;
     }
+
+    public class TutorialMovementEvent : Event<TutorialMovementEvent>
+    {
+    }
 }
