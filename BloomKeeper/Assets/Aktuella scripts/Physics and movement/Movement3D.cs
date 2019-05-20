@@ -76,6 +76,20 @@ public class Movement3D : MonoBehaviour
         {
             Decoy.Execute(dropPoint);
         }
+        Switcheroo();
+    }
+
+    private void Switcheroo()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && GameObject.FindGameObjectWithTag("Decoy"))
+        {
+            GameObject decoy = GameObject.FindGameObjectWithTag("Decoy");
+            GameObject temporaryPosition = new GameObject();
+            temporaryPosition.transform.position = transform.position;
+            transform.position = decoy.transform.position + new Vector3(0, 2, 0);
+            decoy.transform.position = temporaryPosition.transform.position;
+            DestroyImmediate(temporaryPosition);
+        }
     }
 
     public void walk(float Speed)
