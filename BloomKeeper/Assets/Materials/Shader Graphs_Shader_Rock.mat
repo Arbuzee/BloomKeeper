@@ -25,5 +25,5 @@ Material:
     - Vector1_DEB603C3: 20
     - Vector1_E01EE06D: -0.83
     m_Colors:
-    - Color_8CC84D9B: {r: 1, g: 0.12014367, b: 0, a: 0}
-    - Color_A09FB24B: {r: 0, g: 1, b: 0.5633967, a: 0}
+    - Color_8CC84D9B: {r: 0.5294118, g: 0, b: 0.030259358, a: 0}
+    - Color_A09FB24B: {r: 1, g: 1, b: 1, a: 0}

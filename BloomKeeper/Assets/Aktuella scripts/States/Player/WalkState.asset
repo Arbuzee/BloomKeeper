@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WalkState
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 3d226a632ccbb04469bf406e53c28e44, type: 2}
-  moveSpeed: 30
+  moveSpeed: 35

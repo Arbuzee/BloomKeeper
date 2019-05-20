@@ -499,6 +499,9 @@ MonoBehaviour:
   skinWidth: 0.1
   groundCheckDistance: 0.13
   PlayerVelocity: {x: 0, y: 0, z: 0}
+  staticFriction: 0.6
+  dynamicFriction: 0.5
+  airFriction: 0.1
 --- !u!136 &625604953
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -664,6 +667,42 @@ PrefabInstance:
     - target: {fileID: 400000, guid: cedd4265a157958498598216191e75d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cedd4265a157958498598216191e75d0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cedd4265a157958498598216191e75d0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cedd4265a157958498598216191e75d0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400118, guid: cedd4265a157958498598216191e75d0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400118, guid: cedd4265a157958498598216191e75d0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400118, guid: cedd4265a157958498598216191e75d0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400126, guid: cedd4265a157958498598216191e75d0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400126, guid: cedd4265a157958498598216191e75d0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400126, guid: cedd4265a157958498598216191e75d0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: cedd4265a157958498598216191e75d0, type: 3}
       propertyPath: m_Controller

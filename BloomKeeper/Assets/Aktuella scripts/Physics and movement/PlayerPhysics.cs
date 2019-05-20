@@ -70,11 +70,11 @@ public class PlayerPhysics : MonoBehaviour
 
 
     //From General
-    private static float staticFriction = 0.6f;
-    private static float dynamicFriction = 0.5f;
-    private static float airFriction = 0.1f;
+    [SerializeField] private float staticFriction = 0.6f;
+    [SerializeField] private float dynamicFriction = 0.5f;
+    [SerializeField] private float airFriction = 0.1f;
 
-    public static Vector3 normalForce3D(Vector3 velocity, Vector3 normal)
+    public Vector3 normalForce3D(Vector3 velocity, Vector3 normal)
     {
         float scale = Vector3.Dot(velocity, normal);
         if (Vector3.Dot(velocity, normal) >= 0)
@@ -85,7 +85,7 @@ public class PlayerPhysics : MonoBehaviour
         return -projection;
     }
 
-    public static Vector3 friction(Vector3 projection, Vector3 PlayerVelocity)
+    public Vector3 friction(Vector3 projection, Vector3 PlayerVelocity)
     {
         Vector3 frictionVelocity;
         if (PlayerVelocity.magnitude < (staticFriction * projection.magnitude))
@@ -99,7 +99,7 @@ public class PlayerPhysics : MonoBehaviour
         return frictionVelocity;
     }
 
-    public static Vector3 calculateAirFriction(Vector3 velocity)
+    public Vector3 calculateAirFriction(Vector3 velocity)
     {
         return velocity *= Mathf.Pow(airFriction, Time.deltaTime);
     }
