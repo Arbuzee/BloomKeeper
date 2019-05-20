@@ -24,11 +24,12 @@ public class MenuButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startMenu.activeSelf)
+
+        if (Input.GetAxis("Vertical") != 0)
         {
-            if (Input.GetAxis("Vertical") != 0)
+            if (!keyDown)
             {
-                if (!keyDown)
+                if (startMenu.activeSelf)
                 {
                     if (Input.GetAxis("Vertical") < 0)
                     {
@@ -52,14 +53,17 @@ public class MenuButtonController : MonoBehaviour
                             index = maxIndex;
                         }
                     }
-                    keyDown = true;
+                    
                 }
             }
-            else
-            {
-                keyDown = false;
-            }
+            keyDown = true;
         }
+        else
+        {
+            keyDown = false;
+        }
+
+
 
         if (Input.GetAxis("Submit") == 1)
         {
@@ -97,6 +101,13 @@ public class MenuButtonController : MonoBehaviour
     private void StartGame()
     {
         SceneManager.LoadScene(1); // LoadSceneMode.Single is the Default
+    }
+
+    private void ContinueGame()
+    {
+        SceneManager.LoadScene(1); // LoadSceneMode.Single is the Default
+        //
+        // Make sure it loads Player prefs and works with the checkpoint system
     }
 
     /*
