@@ -27,7 +27,8 @@ public class ThirdPerCamera : MonoBehaviour
         cameraPositionToPlayer = new Vector3(0, 1, -cameraDistance);
         Instance = this;
         //Funkar?? Kanske måste kolla i build
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void CameraInput()
