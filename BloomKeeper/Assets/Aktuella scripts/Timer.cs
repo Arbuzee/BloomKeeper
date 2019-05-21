@@ -44,6 +44,8 @@ public class Timer : MonoBehaviour
         
     }
 
+ 
+
     public IEnumerator SpitTimer() {
 
         yield return new WaitForSeconds(3);

@@ -5,13 +5,13 @@ using System;
 public class DecoyBehaviour : MonoBehaviour
 {
     private bool move = false;
+    private int health = 3;
+    public ParticleSystem damageTaken;
 
     private GameObject pressurePad;
 
     public void Start()
     {
-        
-
         DestroyDecoy();
         StartCoroutine(timer(30));
     }
@@ -51,7 +51,26 @@ public class DecoyBehaviour : MonoBehaviour
 
     }
 
+    public void TakeDamage(Enemy enemy)
+    {
+        if (health > 0)
+        {
+            health--;
+            Instantiate(damageTaken, transform.position, Quaternion.identity);
+            
+        }
+        else
+            Explode(enemy);
+    }
 
+    public void Explode(Enemy enemy)
+    {
+        Instantiate(damageTaken, transform.position, Quaternion.identity);
+        OnDestroy();
+        Destroy(gameObject, 0.1f);
+        enemy.Transition<EnemyProneState>();       
+        //Destroy(gameObject);
+    }
 
     private void OnTriggerStay(Collider other)
     {
