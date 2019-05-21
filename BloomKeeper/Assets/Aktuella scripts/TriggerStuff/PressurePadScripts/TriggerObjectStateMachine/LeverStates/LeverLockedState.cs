@@ -15,7 +15,7 @@ public class LeverLockedState : TriggerBaseState
         Debug.Log("LeverLockedState -> exit ");
 
     }
-    public override void FixedHandelUpdate()
+    public override void HandleUpdate()
     {
         if (!owner.LockObject.isActive)
         {
