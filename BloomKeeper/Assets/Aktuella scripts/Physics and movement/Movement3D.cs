@@ -81,7 +81,7 @@ public class Movement3D : MonoBehaviour
 
     private void Switcheroo()
     {
-        if (Input.GetKeyDown(KeyCode.R) && GameObject.FindGameObjectWithTag("Decoy"))
+        if (Input.GetKeyDown(KeyCode.R) && GameObject.FindGameObjectWithTag("Decoy") && PlayerPhysics.Instance.groundColl())
         {
             GameObject decoy = GameObject.FindGameObjectWithTag("Decoy");
             GameObject temporaryPosition = new GameObject();

@@ -46,7 +46,7 @@ public class ThirdPerCamera : MonoBehaviour
 
     public void CameraMovementThirdPerson()
     {
-        playerTransform.eulerAngles = new Vector3(0, rotationY, 0);
+        playerTransform.root.eulerAngles = new Vector3(0, rotationY, 0);
         transform.forward = rotation * Vector3.forward;
 
         RaycastHit hit;
@@ -57,13 +57,15 @@ public class ThirdPerCamera : MonoBehaviour
         if (hit.collider != null)
         {           
             Vector3 hitPoint = hit.point.normalized * (hit.point.magnitude - 0.5f);
-            transform.position = hitPoint;            
+            transform.position = Vector3.Lerp(transform.position, hitPoint, Time.deltaTime * 100);
+            //transform.position = hitPoint;            
         }
         //if camera doesn't hit wall
         else
         {
             Vector3 cameraPos = playerTransform.position + rotation * cameraPositionToPlayer;
-            transform.position = cameraPos;
+            transform.position = Vector3.Lerp(transform.position, cameraPos, Time.deltaTime * 100);
+            //transform.position = cameraPos;
         }
 
 

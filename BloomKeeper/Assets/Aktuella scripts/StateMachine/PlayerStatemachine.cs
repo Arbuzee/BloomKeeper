@@ -42,4 +42,9 @@ public abstract class PlayerStatemachine : MonoBehaviour
         currentState.HandleFixedUpdate();
     }
 
+    private void LateUpdate()
+    {
+        currentState.HandleLateUpdate();
+    }
+
 }

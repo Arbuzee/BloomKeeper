@@ -7,8 +7,6 @@ public class RunState : BaseState
 {
     public override void HandleUpdate()
     {
-        ThirdPerCamera.Instance.CameraInput();
-        ThirdPerCamera.Instance.CameraMovementThirdPerson();
         Movement3D.Instance_3d.walk(moveSpeed);
         Movement3D.Instance_3d.jump();
         
@@ -27,5 +25,12 @@ public class RunState : BaseState
     {
         base.HandleFixedUpdate();
         PlayerPhysics.Instance.Collidertest();
+    }
+
+    public override void HandleLateUpdate()
+    {
+        base.HandleLateUpdate();
+        ThirdPerCamera.Instance.CameraInput();
+        ThirdPerCamera.Instance.CameraMovementThirdPerson();
     }
 }

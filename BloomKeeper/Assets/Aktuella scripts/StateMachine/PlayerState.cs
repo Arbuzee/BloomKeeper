@@ -10,4 +10,5 @@ public abstract class PlayerState : ScriptableObject
     public virtual void Exit() { }
     public virtual void HandleUpdate() { }
     public virtual void HandleFixedUpdate() { }
+    public virtual void HandleLateUpdate() { }
 }
