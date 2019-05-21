@@ -101,6 +101,8 @@ public class Movement3D : MonoBehaviour
         }
     }
 
+   
+
     public void walk(float Speed)
     {
 
@@ -109,7 +111,7 @@ public class Movement3D : MonoBehaviour
 
         input = transform.TransformDirection(new Vector3(input.x, 0, input.z));
         input = Vector3.ProjectOnPlane(input, PlayerPhysics.Instance.GroundNormal());
-        input = input.normalized;
+        //input = input.normalized;
 
         //gravity
         float grav = gravityForce * Time.deltaTime;

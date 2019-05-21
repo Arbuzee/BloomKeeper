@@ -11,7 +11,7 @@ public class WalkState : BaseState
     {
         //Debug.Log("Entering walkstate");
         owner.Renderer.material = material;
-     
+        PlayerPhysics.Instance.PlayerVelocity = PlayerPhysics.Instance.PlayerVelocity.normalized;
     }
 
     public override void HandleUpdate()

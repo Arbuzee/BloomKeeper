@@ -5,8 +5,8 @@ using System;
 public class DecoyBehaviour : MonoBehaviour
 {
     private bool move = false;
-    private int health = 3;
-    public ParticleSystem damageTaken;
+    [SerializeField] private int health = 3;
+    [SerializeField] private ParticleSystem damageTaken;
 
     private GameObject pressurePad;
 
@@ -69,7 +69,6 @@ public class DecoyBehaviour : MonoBehaviour
         OnDestroy();
         Destroy(gameObject, 0.1f);
         enemy.Transition<EnemyProneState>();       
-        //Destroy(gameObject);
     }
 
     private void OnTriggerStay(Collider other)
@@ -80,7 +79,8 @@ public class DecoyBehaviour : MonoBehaviour
         }
     }
 
-    /*THIS IS USED FOR GETTING THE Z DISTANCE TO THE DECOY DROP POINT, USED TO SET PREVIEW*/
+    /*THIS IS USED FOR GETTING THE Z DISTANCE TO THE DECOY DROP POINT, USED TO SET THE PREVIEW POINT*/
+
     //private void OnCollisionEnter(Collision collision)
     //{
     //    Debug.Log(Vector3.Distance(transform.position, GameObject.Find("PlayerV2").transform.position));

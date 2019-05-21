@@ -60,4 +60,9 @@ namespace EventCallbacks
     public class TutorialMovementEvent : Event<TutorialMovementEvent>
     {
     }
+
+    public class DecoyDestroyEvent : Event<DecoyDestroyEvent>
+    {
+        
+    }
 }
