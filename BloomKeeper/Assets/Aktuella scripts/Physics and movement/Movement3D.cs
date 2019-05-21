@@ -18,7 +18,11 @@ public class Movement3D : MonoBehaviour
     [SerializeField] private Transform dropPoint;
     [SerializeField] private float forceMultiplier, forceStep;
     [SerializeField] private Image forceMeter;
+    [Header("Decoy")]
     [SerializeField] private AudioClip decoyAudio;
+    [Range(0, 0.25f)]
+    [SerializeField] private float decoyForce;
+    [SerializeField] private GameObject decoyPreviewPoint;
 
     private Vector3 boxSize2;
     private Vector3 gravity = new Vector3(0, 0, 0);
@@ -74,7 +78,12 @@ public class Movement3D : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Decoy.Execute(dropPoint);
+            decoyPreviewPoint.SetActive(true);  
+        }
+        else if (Input.GetKeyUp(KeyCode.Q))
+        {
+            Decoy.Execute(dropPoint, decoyForce);
+            decoyPreviewPoint.SetActive(false);
         }
         Switcheroo();
     }

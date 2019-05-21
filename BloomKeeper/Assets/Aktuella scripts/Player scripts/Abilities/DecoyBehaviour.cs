@@ -80,5 +80,10 @@ public class DecoyBehaviour : MonoBehaviour
         }
     }
 
+    /*THIS IS USED FOR GETTING THE Z DISTANCE TO THE DECOY DROP POINT, USED TO SET PREVIEW*/
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log(Vector3.Distance(transform.position, GameObject.Find("PlayerV2").transform.position));
+    //}
 
 }
