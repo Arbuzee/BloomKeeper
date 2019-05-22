@@ -27,6 +27,7 @@ public class EnemyBaseState : EnemyState
         {
             owner.Transition<EnemyProneState>();
         }
+        owner.GetComponentInChildren<Animator>().SetFloat("MovementSpeed", moveSpeed);
     }
 
 

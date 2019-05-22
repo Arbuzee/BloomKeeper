@@ -40,6 +40,7 @@ public class EnemyAttackState : EnemyBaseState
         if (Vector3.Distance(owner.transform.position, owner.player.transform.position) < 3)
         {
             OnCollision();
+            owner.GetComponentInChildren<Animator>().SetTrigger("AttackTrigger"); // Triggers the animation
             owner.player.GetComponent<Health>().TakeDamage();
             owner.Transition<IdleState>();
         }
