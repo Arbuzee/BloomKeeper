@@ -111,17 +111,22 @@ public class Movement3D : MonoBehaviour
 
         input = transform.TransformDirection(new Vector3(input.x, 0, input.z));
         input = Vector3.ProjectOnPlane(input, PlayerPhysics.Instance.GroundNormal());
-        //input = input.normalized;
+
+        //if (PlayerPhysics.Instance.groundColl())
+        //{
+        //    input = input.normalized;
+        //}
 
         //gravity
         float grav = gravityForce * Time.deltaTime;
         gravity = Vector3.down * grav;
         PlayerPhysics.Instance.PlayerVelocity += gravity + input;
+        Debug.Log(PlayerPhysics.Instance.PlayerVelocity.magnitude);
 
         //check for max speed
-        if (PlayerPhysics.Instance.PlayerVelocity.magnitude > Speed)
+        if (PlayerPhysics.Instance.PlayerVelocity.magnitude > 10)
         {
-            PlayerPhysics.Instance.PlayerVelocity = Vector3.ClampMagnitude(PlayerPhysics.Instance.PlayerVelocity, Speed);
+            PlayerPhysics.Instance.PlayerVelocity = Vector3.ClampMagnitude(PlayerPhysics.Instance.PlayerVelocity, 10);
         }
     }
 

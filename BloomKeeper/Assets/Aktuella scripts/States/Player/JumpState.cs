@@ -15,7 +15,12 @@ public class JumpState : BaseState
     public override void HandleUpdate()
     {
         Movement3D.Instance_3d.walk(moveSpeed);
-        
+        //clampa till nåt rimligt värde här när vi vet precis hur fort man ska gå
+        //if (PlayerPhysics.Instance.PlayerVelocity.magnitude > moveSpeed)
+        //{
+        //    PlayerPhysics.Instance.PlayerVelocity = Vector3.ClampMagnitude(PlayerPhysics.Instance.PlayerVelocity, moveSpeed);
+        //}
+
         if (PlayerPhysics.Instance.groundColl())
         {
             owner.Transition<WalkState>();
