@@ -9,52 +9,64 @@ public class EnemyAttackState : EnemyBaseState
 {
     // Attributes
     [SerializeField] private float chaseDistance;
-    [SerializeField] private float cooldown = 2f;
-    [SerializeField] private float freezPostime = 2f;
+    Animator animator;
 
-    [SerializeField] private float currentCool;
-
+    float attackCooldown = 2.5f;
     // Methods
     public override void Enter()
     {
         base.Enter();
-        currentCool = cooldown;
-        
+        owner.GetComponentInChildren<EnemyColliderCheck>().RegisterOnHitPlayer(OnCollision);
+        animator = owner.GetComponentInChildren<Animator>();
+
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        owner.GetComponentInChildren<EnemyColliderCheck>().UnRegisterOnHitPlayer(OnCollision);
     }
 
     public override void HandleUpdate()
     {
 
-        base.HandleUpdate();
-        owner.agent.SetDestination(owner.player.transform.position);
-        Attack();
+        //base.HandleUpdate();
+        //owner.agent.SetDestination(owner.player.transform.position);
+        //Hur få att inte röra sig??
+
+        if (attackCooldown <= 0)
+        {
+            Attack();
+            attackCooldown = 2.5f;
+        }
+
+        attackCooldown -= Time.deltaTime;
+
         if (!CanSeePlayer() || Vector3.Distance(owner.transform.position, owner.player.transform.position) > chaseDistance)
             owner.Transition<EnemyChaseState>();
         else if (CanSeeDecoy())
             owner.Transition<EnemyChasingDecoyState>();
-      
+
     }
 
     private void Attack()
     {
         if (Vector3.Distance(owner.transform.position, owner.player.transform.position) < 3)
         {
-            OnCollision();
-            owner.GetComponentInChildren<Animator>().SetTrigger("AttackTrigger"); // Triggers the animation
-            owner.player.GetComponent<Health>().TakeDamage();
-            owner.Transition<IdleState>();
+            animator.SetTrigger("AttackTrigger"); // Triggers the animation
         }
+
+
     }
 
- 
+
     public void OnCollision()
     {
-        
-            PlayerPhysics.Instance.PlayerVelocity = Camera.main.transform.TransformDirection(new Vector3(0,100,-300)); //Blir alltid pushad bakåt för spelaren. dvs om man står riktad framåt så flyger man fortfarande bakåt.
-
-
+        //owner.player.GetComponent<Health>().TakeDamage();
+        PlayerPhysics.Instance.PlayerVelocity = Camera.main.transform.TransformDirection(new Vector3(0,100,-300)); //Blir alltid pushad bakåt för spelaren. dvs om man står riktad framåt så flyger man fortfarande bakåt.
+        Debug.Log("Collision");
     }
 
-   
+
 
 }

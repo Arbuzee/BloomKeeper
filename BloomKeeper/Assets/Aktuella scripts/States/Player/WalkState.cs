@@ -42,8 +42,12 @@ public class WalkState : BaseState
     public override void HandleLateUpdate()
     {
         base.HandleLateUpdate();
-        ThirdPerCamera.Instance.CameraInput();
-        ThirdPerCamera.Instance.CameraMovementThirdPerson();
+        if (ThirdPerCamera.Instance != null)
+        {
+            ThirdPerCamera.Instance.CameraInput();
+            ThirdPerCamera.Instance.CameraMovementThirdPerson();
+
+        }
     }
 
 
