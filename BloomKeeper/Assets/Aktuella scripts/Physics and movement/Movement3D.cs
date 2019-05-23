@@ -121,7 +121,7 @@ public class Movement3D : MonoBehaviour
         float grav = gravityForce * Time.deltaTime;
         gravity = Vector3.down * grav;
         PlayerPhysics.Instance.PlayerVelocity += gravity + input;
-        Debug.Log(PlayerPhysics.Instance.PlayerVelocity.magnitude);
+
 
         //check for max speed
         if (PlayerPhysics.Instance.PlayerVelocity.magnitude > 10)
