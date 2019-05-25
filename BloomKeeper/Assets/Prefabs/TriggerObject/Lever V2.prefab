@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5632409833920977995}
   - component: {fileID: 2237808618029099578}
   - component: {fileID: 2909468773069886559}
+  - component: {fileID: 5633942040964561920}
   - component: {fileID: 2909468773069886556}
-  - component: {fileID: 5831274673301458833}
   - component: {fileID: 1219750968545749058}
+  - component: {fileID: 5831274673301458833}
   m_Layer: 0
   m_Name: Lever V2
   m_TagString: Untagged
@@ -69,6 +70,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5633942040964561920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498225259233601063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d45721348861ad4093dc4a66fccf676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  hasDeactivation: 1
 --- !u!114 &2909468773069886556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +96,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71afb3589ff03246a387217c7dd1e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1219750968545749058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498225259233601063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0936bb2d6e5c9524fb7ef1dca3b65c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states:
+  - {fileID: 11400000, guid: 2a6e558167624f341aa2d46d59dcd303, type: 2}
+  - {fileID: 11400000, guid: 689dda4d795bfd1489a58735c11ec598, type: 2}
+  isActive: 0
+  boxCollider: {fileID: 0}
+  TriggerLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  AnimObject:
+  - {fileID: 3498225259233601063}
+  LockObject: {fileID: 0}
 --- !u!82 &5831274673301458833
 AudioSource:
   m_ObjectHideFlags: 0
@@ -178,28 +216,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1219750968545749058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3498225259233601063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0936bb2d6e5c9524fb7ef1dca3b65c3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  states:
-  - {fileID: 11400000, guid: 2a6e558167624f341aa2d46d59dcd303, type: 2}
-  - {fileID: 11400000, guid: 689dda4d795bfd1489a58735c11ec598, type: 2}
-  isActive: 0
-  boxCollider: {fileID: 0}
-  TriggerLayerMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  AnimObject: []
-  LockObject: {fileID: 0}
 --- !u!1 &6046572295534275697
 GameObject:
   m_ObjectHideFlags: 0

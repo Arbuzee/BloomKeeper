@@ -64,7 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93a575f8bb09af46b6b4450e2cacf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerObject: []
+  triggerObject:
+  - {fileID: 1796007412389614339}
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -106,7 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93a575f8bb09af46b6b4450e2cacf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerObject: []
+  triggerObject:
+  - {fileID: 1796007412389614339}
   layerMask:
     serializedVersion: 2
     m_Bits: 0

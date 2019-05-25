@@ -386,7 +386,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 9216
   AnimObject:
-  - {fileID: 0}
+  - {fileID: 6432905540049024147}
   LockObject: {fileID: 0}
 --- !u!1001 &5499773753614271125
 PrefabInstance:
