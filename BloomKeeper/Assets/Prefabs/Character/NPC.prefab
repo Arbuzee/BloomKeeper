@@ -60,7 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 0}
+  background: {fileID: 0}
   interactionAudio: {fileID: 8300000, guid: ddbb5a03e03426148b0f25a8e967af5f, type: 3}
+  NPCGreeting: 
 --- !u!54 &135597407281173031
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,6 +150,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.50000024
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bb4ad1515fdd00449e72e0604ce7f9c, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 389d9b0d818fe85458323a2adf6a7bea, type: 2}
+    - target: {fileID: 2300000, guid: 6bb4ad1515fdd00449e72e0604ce7f9c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f717a97f3a4c26646a09a156ee28075e, type: 2}
+    - target: {fileID: 2300000, guid: 6bb4ad1515fdd00449e72e0604ce7f9c, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 697137f51dea2754eab84f479d64ed6b, type: 2}
+    - target: {fileID: 2300000, guid: 6bb4ad1515fdd00449e72e0604ce7f9c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1553ba9da2fd0c4eba378283a34806d, type: 2}
+    - target: {fileID: 2300000, guid: 6bb4ad1515fdd00449e72e0604ce7f9c, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: cee8832245b17ea439ba297ec77ddbce, type: 2}
+    - target: {fileID: 2300000, guid: 6bb4ad1515fdd00449e72e0604ce7f9c, type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: b536417240633294cb242cc4f96e0b5e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bb4ad1515fdd00449e72e0604ce7f9c, type: 3}
 --- !u!4 &64822361 stripped

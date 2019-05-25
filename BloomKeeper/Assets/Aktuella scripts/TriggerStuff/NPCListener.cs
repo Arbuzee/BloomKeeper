@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class NPCListener : MonoBehaviour
 {
-    public GameObject textBox, background;
+    public GameObject textBox, background, textHelp;
     public AudioClip interactionAudio;
     [TextArea]
     public string NPCGreeting;
@@ -17,26 +17,40 @@ public class NPCListener : MonoBehaviour
     {
         if (playerKnows)
         {
-            if (Input.GetButtonDown("Cancel"))
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                CloseTextbox();
+                if (textBox.activeSelf)
+                {
+                    CloseTextbox();
+                }
+                else
+                {
+                    OpenTextbox();
+                }
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!playerKnows)
+        if (other.CompareTag("Player"))
         {
-            OpenTextbox();
+            if (!playerKnows)
+            {
+                OpenTextbox();
+            } else
+            {
+                textHelp.SetActive(true);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && textBox.activeSelf == true)
+        if (other.CompareTag("Player"))
         {
             CloseTextbox();
+            textHelp.SetActive(false);
         }
     }
 
@@ -68,6 +82,7 @@ public class NPCListener : MonoBehaviour
             greeting.text += NPCGreeting[i];
             
         }
+        playerKnows = true;
         isPrinting = false;
     }
 }
