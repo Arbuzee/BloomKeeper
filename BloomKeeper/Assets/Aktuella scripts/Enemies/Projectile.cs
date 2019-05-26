@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
             return;
 
 
-        other.GetComponent<Health>().TakeDamage();
+        other.GetComponent<Player>().TakeDamage();
 
 
     }

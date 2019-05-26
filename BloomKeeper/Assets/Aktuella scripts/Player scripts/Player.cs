@@ -1,27 +1,53 @@
 ﻿using UnityEngine;
 
-public class Player : PlayerStatemachine
+public class Player : MonoBehaviour
 {
-    [HideInInspector] public MeshRenderer Renderer;
-    
 
-    protected override void Awake()
+    public ParticleSystem HitParticle;
+    public Transform hitpos;
+    [SerializeField] private GameObject[] hearts;
+    public int health;
+    public AudioClip hitAudio;
+
+
+    public void Awake()
     {
-        Renderer = GetComponent<MeshRenderer>();
-        base.Awake();
+        health = hearts.Length;
     }
 
-    public void OnTriggerEnter(Collider other)
+
+    public void TakeDamage()
     {
-        if (other.CompareTag("EnemyWeakSpot"))
-        {
-            other.transform.parent.root.GetComponent<Enemy>().Transition<EnemyProneState>();
-            PlayerPhysics.Instance.PlayerVelocity += new Vector3(0, 50, 0);
+        GetComponentInChildren<PlayerAnimController>().PlayHurtSound();
+        if (health <= 1) {
+
+            ResetHealth();
+            return;
 
         }
+           
+            
+
+        health--;
+        ParticleSystem particleInstance = Instantiate(HitParticle, hitpos.position, Quaternion.identity);
+        hearts[health].SetActive(false);
+        Destroy(particleInstance.gameObject, 1.5f);
+
     }
 
 
-   
 
+
+    public void ResetHealth()
+    {
+        
+        foreach (GameObject heart in hearts)
+        {
+            heart.SetActive(true);
+        }
+        health = hearts.Length;
+
+       transform.position = GameObject.Find("PlayerSpawnPoint").transform.position;
+
+    }
 }

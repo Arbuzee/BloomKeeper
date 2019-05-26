@@ -4,7 +4,7 @@
 [CreateAssetMenu(menuName = "Player/BaseState")]
 public class BaseState : PlayerState
 {
-    protected Player owner;
+    protected PlayerStateOwner owner;
     [SerializeField] protected Material material;
     [SerializeField] protected float moveSpeed;
 
@@ -15,7 +15,7 @@ public class BaseState : PlayerState
 
     public override void Initialize(PlayerStatemachine owner)
     {
-        this.owner = (Player)owner;
+        this.owner = (PlayerStateOwner)owner;
     }
 
     

@@ -10,7 +10,7 @@ public class Enemy : EnemyStatemachine
     [SerializeField] public LayerMask visionMask;
     [SerializeField] public CapsuleCollider capCollider;
     [SerializeField] public BoxCollider boxCollider;
-    [SerializeField] public Player player;
+    [SerializeField] public PlayerStateOwner player;
     [SerializeField] public GameObject decoy;
     [SerializeField] public int Dmg = 1;
     [SerializeField] public bool prone = false;
