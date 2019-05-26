@@ -13,16 +13,9 @@ public class ThisTrigger : TriggerObjectStateMachine
     [Header("Object to lock")]
     [SerializeField] public ThisTrigger LockObject;
 
-    [Header("Cabels")]
-    [SerializeField] public GameObject[] cabels;
-    [SerializeField] public Material DeActivatedMaterial;
-    [SerializeField] public Material ActivatedMaterial;
-
     protected override void Awake()
     {
         base.Awake();
         boxCollider = GetComponent<BoxCollider>();
     }
-
-
 }

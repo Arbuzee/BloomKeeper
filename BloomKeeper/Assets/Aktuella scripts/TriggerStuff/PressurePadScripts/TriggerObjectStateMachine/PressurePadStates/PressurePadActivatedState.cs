@@ -15,9 +15,6 @@ public class PressurePadActivatedState : TriggerBaseState
             {
                 animGO.GetComponent<TriggeredObject>().OnTrigger();
             }
-
-            ActivateCable();
-
         }
         
         owner.isActive = true;    

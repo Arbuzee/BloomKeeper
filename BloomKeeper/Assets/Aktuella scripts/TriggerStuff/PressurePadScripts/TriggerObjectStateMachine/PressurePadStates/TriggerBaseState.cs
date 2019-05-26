@@ -71,21 +71,7 @@ public class TriggerBaseState : TriggerStatusState
         }
     }
 
-    protected void ActivateCable()
-    {
-        foreach (GameObject cabel in owner.cabels)
-        {
-            cabel.GetComponent<Renderer>().material = owner.ActivatedMaterial;
-            cabel.GetComponentInChildren<ParticleSystem>().Play();
-        }
-    }
-    protected void DeActivateCabel()
-    {
-        foreach (GameObject cabel in owner.cabels)
-        {
-            cabel.GetComponent<Renderer>().material = owner.DeActivatedMaterial;
-        }
-    }
+
 
 
     //void OnDrawGizmos()
