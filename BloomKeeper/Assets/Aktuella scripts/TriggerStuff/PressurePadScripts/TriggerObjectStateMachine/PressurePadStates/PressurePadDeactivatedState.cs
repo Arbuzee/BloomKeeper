@@ -16,6 +16,7 @@ public class PressurePadDeactivatedState : TriggerBaseState
                 animGO.GetComponent<TriggeredObject>().OnDeTrigger();
             }
 
+            DeActivateCabel();
         }
         owner.isActive = false;   
     }
