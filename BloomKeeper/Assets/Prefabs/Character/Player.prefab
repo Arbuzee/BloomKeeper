@@ -184,6 +184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: {fileID: 6314011831389044908}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &7116882412392993430
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +200,6 @@ GameObject:
   - component: {fileID: 7116882412392993435}
   - component: {fileID: 7116882412392993429}
   - component: {fileID: 142494721840352320}
-  - component: {fileID: 7116882412392993432}
   - component: {fileID: 918484176}
   - component: {fileID: 918484169}
   - component: {fileID: 625604953}
@@ -314,26 +316,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  health: 0
   hitAudio: {fileID: 8300000, guid: ddbb5a03e03426148b0f25a8e967af5f, type: 3}
---- !u!114 &7116882412392993432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7116882412392993430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c1196562e53bd24688f143571f3b181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  states:
-  - {fileID: 11400000, guid: b29a21c3992ffdb41a2158964a9da9d6, type: 2}
-  - {fileID: 11400000, guid: 6370ed135fb543e4c9aa4d1b2af1ac19, type: 2}
-  - {fileID: 11400000, guid: 1bd2aa4bc83ef5844a9fa206c2d2e53e, type: 2}
-  - {fileID: 11400000, guid: 7d3425809dfe5fa47afbd1b7513075ff, type: 2}
-  - {fileID: 11400000, guid: 0af6105f0e5b93640947522476ef9f62, type: 2}
-  Renderer: {fileID: 0}
 --- !u!54 &918484176
 Rigidbody:
   m_ObjectHideFlags: 0
