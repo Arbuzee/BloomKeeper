@@ -21,6 +21,7 @@ public class EnemyPatrolState : EnemyBaseState
         base.Enter();
         ChooseClosest();
         body = owner.GetComponent<Rigidbody>();
+        Debug.Log("Patrol");
        
     }
 

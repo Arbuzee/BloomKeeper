@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   material: {fileID: 2100000, guid: 845b638d5b449634abf2c2afad81d79b, type: 2}
-  attackDistance: 15
+  attackDistance: 5
   lostTargetDistance: 35
-  chaseDistance: 15.66
-  cooldown: 3
-  currentCool: 0
+  chaseDistance: 5

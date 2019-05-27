@@ -7,7 +7,7 @@ public class DecoyBehaviour : MonoBehaviour
     private bool move = false;
     [SerializeField] private int health = 3;
     [SerializeField] private ParticleSystem damageTaken;
-
+    [SerializeField] private int timeToDestroy;
     private GameObject pressurePad;
 
     public void Start()

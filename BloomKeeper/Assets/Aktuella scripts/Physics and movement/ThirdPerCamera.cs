@@ -22,6 +22,9 @@ public class ThirdPerCamera : MonoBehaviour
 
     public static ThirdPerCamera Instance;
 
+
+    Vector3 refVelocity = Vector3.zero;
+
     private void Awake()
     {
         cameraPositionToPlayer = new Vector3(0, 1, -cameraDistance);
@@ -57,14 +60,18 @@ public class ThirdPerCamera : MonoBehaviour
         if (hit.collider != null)
         {           
             Vector3 hitPoint = hit.point.normalized * (hit.point.magnitude - 0.5f);
-            transform.position = Vector3.Lerp(transform.position, hitPoint, Time.deltaTime * 100);
+            //transform.position = Vector3.Lerp(transform.position, hitPoint, Time.deltaTime * 100);
+            transform.position = Vector3.SmoothDamp(transform.position, hitPoint, ref refVelocity , 0.01f);
+            
             //transform.position = hitPoint;            
         }
         //if camera doesn't hit wall
         else
         {
             Vector3 cameraPos = playerTransform.position + rotation * cameraPositionToPlayer;
-            transform.position = Vector3.Lerp(transform.position, cameraPos, Time.deltaTime * 100);
+            //transform.position = Vector3.Lerp(transform.position, cameraPos, Time.deltaTime * 100);
+            transform.position = Vector3.SmoothDamp(transform.position, cameraPos, ref refVelocity, 0.01f);
+
             //transform.position = cameraPos;
         }
 

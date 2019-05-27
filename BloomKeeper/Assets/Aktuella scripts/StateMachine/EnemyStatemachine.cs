@@ -8,11 +8,12 @@ public abstract class EnemyStatemachine : MonoBehaviour
     [SerializeField] private EnemyState[] states;
 
     private Dictionary<Type, EnemyState> stateDictionary = new Dictionary<Type, EnemyState>();
-    private EnemyState currentState;
+    protected EnemyState currentState;
     private EnemyState baseS;
 
     protected virtual void Awake()
     {
+        Debug.Log("Awake/EnemyStateMachine");
         foreach (EnemyState state in states)
         {
             EnemyState instance = Instantiate(state);
@@ -22,6 +23,7 @@ public abstract class EnemyStatemachine : MonoBehaviour
                 currentState = instance;
         }
         currentState.Enter();
+        Debug.Log("Awake/EnemyStateMachine");
     }
 
     public void Transition<T>() where T : EnemyState

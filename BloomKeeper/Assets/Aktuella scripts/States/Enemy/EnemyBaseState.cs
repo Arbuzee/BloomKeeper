@@ -15,7 +15,7 @@ public class EnemyBaseState : EnemyState
     // Methods
     public override void Enter()
     {
-        owner.Renderer.material = material;
+        //owner.Renderer.material = material;
         owner.agent.speed = moveSpeed;
         //owner.capCollider = owner.GetComponent<CapsuleCollider>();
 
