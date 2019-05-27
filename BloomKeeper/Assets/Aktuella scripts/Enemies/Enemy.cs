@@ -15,6 +15,7 @@ public class Enemy : EnemyStatemachine
     [SerializeField] public int Dmg = 1;
     [SerializeField] public bool prone = false;
     [SerializeField] public Transform Mouth;
+    [SerializeField] public BoxCollider AttackCollider;
 
     protected override void Awake()
     {

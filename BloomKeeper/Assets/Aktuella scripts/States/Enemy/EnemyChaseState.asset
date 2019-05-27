@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   material: {fileID: 2100000, guid: 1204a691ba9930b4a87784169df93554, type: 2}
-  attackDistance: 5
+  attackDistance: 3
   lostTargetDistance: 80.7
   decoy: 0
