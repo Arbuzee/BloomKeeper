@@ -40,8 +40,13 @@ public class Movement3D : MonoBehaviour
     private void Update()
     {
         SetDecoy();
+        SetRotation();
     }
 
+    public void SetRotation()
+    {
+        transform.root.eulerAngles = new Vector3(0, ThirdPerCamera.rotationY, 0);
+    }
 
     private Vector3 inputVelocity(float Speed)
     {
@@ -52,26 +57,6 @@ public class Movement3D : MonoBehaviour
         return direction * distance;
     }
 
-    //Method for executing decoy with force multiplier
-    //private void SetDecoy()
-    //{
-
-    //    if (Input.GetKey(KeyCode.Q) && forceMultiplier < 1)
-    //    {
-            
-    //        forceMultiplier += forceStep * Time.deltaTime;
-    //        forceMeter.fillAmount = forceMultiplier;
-    //    }
-    //    else if (Input.GetKeyUp(KeyCode.Q))
-    //    {
-    //        // Make sure it plays decoy sound in the appropriate script, PlayerAnimController
-    //        //SoundManager.instance.PlaySound(decoyAudio);
-    //        Decoy.Execute(dropPoint, forceMultiplier);
-    //        forceMultiplier = 0;
-    //        forceMeter.fillAmount = 0;
-
-    //    }
-    //}
 
     //Method for executing decoy without force
     private void SetDecoy()
@@ -111,11 +96,6 @@ public class Movement3D : MonoBehaviour
 
         input = transform.TransformDirection(new Vector3(input.x, 0, input.z));
         input = Vector3.ProjectOnPlane(input, PlayerPhysics.Instance.GroundNormal());
-
-        //if (PlayerPhysics.Instance.groundColl())
-        //{
-        //    input = input.normalized;
-        //}
 
         //gravity
         float grav = gravityForce * Time.deltaTime;

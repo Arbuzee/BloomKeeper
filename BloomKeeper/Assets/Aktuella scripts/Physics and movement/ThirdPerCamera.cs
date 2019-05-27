@@ -13,7 +13,7 @@ public class ThirdPerCamera : MonoBehaviour
 
     private Vector3 cameraPositionToPlayer;
     private float rotationX;
-    private float rotationY;
+    public static float rotationY;
     [SerializeField] private float maxAngle = 90f;
     [SerializeField] private float minAngle = -2f;
 
@@ -49,7 +49,7 @@ public class ThirdPerCamera : MonoBehaviour
 
     public void CameraMovementThirdPerson()
     {
-        playerTransform.root.eulerAngles = new Vector3(0, rotationY, 0);
+        //playerTransform.root.eulerAngles = new Vector3(0, rotationY, 0);
         transform.forward = rotation * Vector3.forward;
 
         RaycastHit hit;
