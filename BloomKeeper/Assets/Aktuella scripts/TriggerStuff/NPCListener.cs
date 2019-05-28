@@ -6,12 +6,16 @@ public class NPCListener : MonoBehaviour
 {
     public GameObject textBox, background, textHelp;
     public AudioClip interactionAudio;
+    [SerializeField] private GameObject portal;
+    [SerializeField] private GameObject exclamationPoint;
     [TextArea]
-    public string NPCGreeting;
+    [SerializeField] private string NPCGreeting;
+    
 
     private bool playerListening = false;
     private bool playerKnows = false;
     private bool isPrinting = false;
+    private bool openPortal = false;
 
     private void Update()
     {
@@ -28,6 +32,16 @@ public class NPCListener : MonoBehaviour
                     OpenTextbox();
                 }
             }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                openPortal = true;
+            }
+        }
+        if (openPortal)
+        {
+            portal.SetActive(true);
+            openPortal = false;
         }
     }
 
@@ -38,7 +52,8 @@ public class NPCListener : MonoBehaviour
             if (!playerKnows)
             {
                 OpenTextbox();
-            } else
+            }
+            else
             {
                 textHelp.SetActive(true);
             }
@@ -51,6 +66,7 @@ public class NPCListener : MonoBehaviour
         {
             CloseTextbox();
             textHelp.SetActive(false);
+            exclamationPoint.SetActive(false);
         }
     }
 

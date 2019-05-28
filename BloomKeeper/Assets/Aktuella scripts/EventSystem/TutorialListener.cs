@@ -32,6 +32,7 @@ namespace EventCallbacks
         void OnTutorialDecoy(TutorialMovementEvent OnTutorialDecoy)
         {
             tutorialTextDecoy.SetActive(true);
+
         }
     }
 }

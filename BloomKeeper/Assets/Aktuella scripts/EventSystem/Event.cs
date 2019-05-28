@@ -59,6 +59,7 @@ namespace EventCallbacks
 
     public class TutorialMovementEvent : Event<TutorialMovementEvent>
     {
+        public GameObject toBeSetActive;
     }
 
     public class DecoyDestroyEvent : Event<DecoyDestroyEvent>
