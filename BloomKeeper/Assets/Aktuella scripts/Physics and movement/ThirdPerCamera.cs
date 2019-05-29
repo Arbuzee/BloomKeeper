@@ -27,8 +27,17 @@ public class ThirdPerCamera : MonoBehaviour
 
     private void Awake()
     {
+
+        if (Instance == null)
+            Instance = this;
+
+        if (Instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+
+
         cameraPositionToPlayer = new Vector3(0, 1, -cameraDistance);
-        Instance = this;
         //Funkar?? Kanske måste kolla i build
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

@@ -1,6 +1,7 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class Movement3D : MonoBehaviour
@@ -36,7 +37,13 @@ public class Movement3D : MonoBehaviour
 
     void Awake()
     {
-        Instance_3d = this;
+        if (Instance_3d == null)
+            Instance_3d = this;
+
+        if (Instance_3d != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
         
     }
 
@@ -44,6 +51,14 @@ public class Movement3D : MonoBehaviour
     {
         SetDecoy();
         SetRotation();
+
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+
+            SceneManager.LoadScene(0);
+        }
+            
     }
 
     public void SetRotation()

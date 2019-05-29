@@ -13,10 +13,17 @@ public class MenuButtonController : MonoBehaviour
     [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject optionsMenu;
     [SerializeField] private GameObject continueButton;
+    [SerializeField] private Camera camera;
 
     private Animator menuAnim;
 
     private bool gameStartAnimationFinished = false;
+
+
+    public void Awake()
+    {
+        Player.instance.gameObject.SetActive(false);
+    }
 
     void Start()
     {
@@ -24,7 +31,7 @@ public class MenuButtonController : MonoBehaviour
         menuAnim = GetComponent<Animator>();
 
         // Check if game has a saved state, if so create the continue button
-        if (PlayerPrefs.GetInt("GameSaved", 0) > 0)
+        if (PlayerPrefs.GetInt("GameSaved") > 0)
         {
             maxIndex += 1;
         } else
@@ -121,12 +128,16 @@ public class MenuButtonController : MonoBehaviour
 
     private void StartGame()
     {
+        PlayerPrefs.DeleteAll();
+        Destroy(Player.instance.gameObject);
         SceneManager.LoadScene(1); // LoadSceneMode.Single is the Default
     }
 
     private void ContinueGame()
     {
-        SceneManager.LoadScene(1); // LoadSceneMode.Single is the Default
+        Player.instance.gameObject.SetActive(true);
+        CheckPointSave.LoadPlayer(Player.instance.gameObject);
+        //SceneManager.LoadScene(PlayerPrefs.GetInt("SceneIndex")); // LoadSceneMode.Single is the Default
         //
         // Make sure it loads Player prefs and works with the checkpoint system
     }

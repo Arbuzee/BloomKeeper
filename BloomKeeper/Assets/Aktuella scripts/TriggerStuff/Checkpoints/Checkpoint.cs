@@ -10,8 +10,9 @@ public class Checkpoint : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        if (CheckPointSave.currentCheckpointIndex < checkpointIndex)
+        if (CheckPointSave.currentCheckpointIndex <= checkpointIndex)
         {
+            Debug.Log("Saved");
             CheckPointSave.SavePlayer(other.gameObject);
             CheckPointSave.currentCheckpointIndex = checkpointIndex;
         }

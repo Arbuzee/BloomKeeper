@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class CheckPointSave
 {
@@ -9,7 +10,8 @@ public static class CheckPointSave
 
     public static void SavePlayer(GameObject player)
     {
-
+        PlayerPrefs.SetInt("GameSaved", 1);
+        PlayerPrefs.SetInt("SceneIndex", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.SetFloat("YRoation", player.transform.eulerAngles.y);
 
         PlayerPrefs.SetFloat("XPosition", player.transform.position.x);
@@ -19,7 +21,7 @@ public static class CheckPointSave
 
     public static void LoadPlayer(GameObject player)
     {
-
+        SceneManager.LoadScene(PlayerPrefs.GetInt("SceneIndex"));
 
         float xPosition = PlayerPrefs.GetFloat("XPosition");
         float yPosition = PlayerPrefs.GetFloat("YPosition");
@@ -36,6 +38,9 @@ public static class CheckPointSave
 
     }
 
-   
+
+
+
+
 
 }

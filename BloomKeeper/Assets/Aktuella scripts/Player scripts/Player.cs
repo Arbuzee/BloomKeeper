@@ -1,17 +1,28 @@
 ﻿using UnityEngine;
 
+
 public class Player : MonoBehaviour
 {
 
-    public ParticleSystem HitParticle;
-    public Transform hitpos;
+    //public ParticleSystem HitParticle;
+    //public Transform hitpos;
     [SerializeField] private GameObject[] hearts;
     public int health;
     public AudioClip hitAudio;
-
+    public static Player instance;
 
     public void Awake()
     {
+
+        if (instance == null)
+            instance = this;
+
+        if (instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+
+
         health = hearts.Length;
     }
 
@@ -29,9 +40,9 @@ public class Player : MonoBehaviour
             
 
         health--;
-        ParticleSystem particleInstance = Instantiate(HitParticle, hitpos.position, Quaternion.identity);
+        //ParticleSystem particleInstance = Instantiate(HitParticle, hitpos.position, Quaternion.identity);
         hearts[health].SetActive(false);
-        Destroy(particleInstance.gameObject, 1.5f);
+        //Destroy(particleInstance.gameObject, 1.5f);
 
     }
 

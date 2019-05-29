@@ -28,7 +28,16 @@ public class PlayerPhysics : MonoBehaviour
 
     public void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
+
+        if (Instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+            
+
+
         capsuleSize = gameObject.GetComponent<CapsuleCollider>().radius;
         capsule = GetComponent<CapsuleCollider>();
     }
