@@ -10,68 +10,71 @@ public class NPCListener : MonoBehaviour
     [SerializeField] private GameObject exclamationPoint;
     [TextArea]
     [SerializeField] private string NPCGreeting;
-    
 
-    private bool playerListening = false;
-    private bool playerKnows = false;
-    private bool isPrinting = false;
-    private bool openPortal = false;
+
+    private bool playerListening, playerKnows, isPrinting, openPortal, inRange;
+   
 
     private void Update()
     {
-        if (playerKnows)
-        {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                if (textBox.activeSelf)
-                {
-                    CloseTextbox();
-                }
-                else
-                {
-                    OpenTextbox();
-                }
-            }
 
-            if (Input.GetKeyDown(KeyCode.Q))
+        if (inRange && Input.GetKeyDown(KeyCode.F))
+        {
+            playerKnows = true;
+
+            if (textBox.activeSelf)
             {
-                openPortal = true;
+                CloseTextbox();
+            }
+            else
+            {
+                OpenTextbox();
             }
         }
-        if (openPortal)
+
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             portal.SetActive(true);
-            openPortal = false;
         }
+
+     
     }
 
+    #region Triggers
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            inRange = true;
+
             if (!playerKnows)
             {
                 OpenTextbox();
+
             }
             else
-            {
                 textHelp.SetActive(true);
-            }
+
         }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            inRange = false;
             CloseTextbox();
             textHelp.SetActive(false);
-            exclamationPoint.SetActive(false);
         }
     }
+    #endregion
+
+
 
     private void OpenTextbox()
     {
+        StopAllCoroutines();
         SoundManager.instance.PlaySound(interactionAudio);
         textBox.SetActive(true);
         background.SetActive(true);
@@ -96,7 +99,7 @@ public class NPCListener : MonoBehaviour
         {
             yield return new WaitForSeconds(0.01f);
             greeting.text += NPCGreeting[i];
-            
+
         }
         playerKnows = true;
         isPrinting = false;
