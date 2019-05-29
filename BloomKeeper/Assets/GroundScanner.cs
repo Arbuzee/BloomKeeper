@@ -6,6 +6,19 @@ public class GroundScanner : MonoBehaviour
 {
     public GameObject point;
     public LayerMask layerMask;
+    public static GroundScanner instance;
+
+
+    public void Awake()
+    {
+        if (instance == null)
+            instance = this;
+
+        if (instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     public void Update()
     {
@@ -20,8 +33,8 @@ public class GroundScanner : MonoBehaviour
             point.transform.position = hit.point;
         }
 
-
-
     }
+
+
 
 }

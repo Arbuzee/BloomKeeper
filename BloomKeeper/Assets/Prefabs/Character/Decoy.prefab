@@ -128,8 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f729d1782971e4e982d8ef727d2731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
   damageTaken: {fileID: 810682120501308049, guid: ecb34dec690c37041b723930830ff079,
     type: 3}
+  timeToDestroy: 0
 --- !u!95 &4206230628147287885
 Animator:
   serializedVersion: 3
@@ -138,7 +140,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308748476599310167}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8bc6e4bbeb5c61e4a8d826ffa0ac04aa, type: 2}
   m_CullingMode: 0

@@ -1,6 +1,6 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
-
+using System.Collections;
 
 
 public class Movement3D : MonoBehaviour
@@ -30,6 +30,9 @@ public class Movement3D : MonoBehaviour
     private Vector3 maxVelocity;
 
     public static Movement3D Instance_3d;
+
+
+    private bool onCooldown = false;
 
     void Awake()
     {
@@ -67,8 +70,25 @@ public class Movement3D : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
-            Decoy.Execute(dropPoint, decoyForce);
+
+            if (!onCooldown)
+            {
+                StartCoroutine(Cooldown());
+
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1))
+                {
+                    Decoy.Execute(hit.point);
+                }
+                else
+                {
+                    Decoy.Execute(dropPoint, decoyForce);
+                }
+
+            }
+          
             decoyPreviewPoint.SetActive(false);
+
         }
         Switcheroo();
     }
@@ -80,12 +100,19 @@ public class Movement3D : MonoBehaviour
             GameObject decoy = GameObject.FindGameObjectWithTag("Decoy");
             GameObject temporaryPosition = new GameObject();
             temporaryPosition.transform.position = transform.position;
-            transform.position = decoy.transform.position + new Vector3(0, 2, 0);
+            transform.position = decoy.transform.position + new Vector3(0, 1, 0);
             decoy.transform.position = temporaryPosition.transform.position;
             DestroyImmediate(temporaryPosition);
         }
     }
 
+
+    public IEnumerator Cooldown()
+    {
+        onCooldown = true;
+        yield return new WaitForSeconds(1.5f);
+        onCooldown = false;
+    }
    
 
     public void walk(float Speed)

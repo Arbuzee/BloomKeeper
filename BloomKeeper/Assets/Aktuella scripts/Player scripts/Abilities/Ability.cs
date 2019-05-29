@@ -19,10 +19,12 @@ public class Ability : ScriptableObject
         
     }
 
-    public void Execute(Transform dropPoint)
+    public void Execute(Vector3 dropPoint)
     {
-        instance = Instantiate(attack, dropPoint.position, Quaternion.identity);
+        instance = Instantiate(attack, dropPoint, Quaternion.identity);
     }
+
+
 
     public GameObject GetInstance() {
 
