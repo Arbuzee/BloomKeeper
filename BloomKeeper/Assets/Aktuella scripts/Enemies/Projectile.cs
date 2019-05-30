@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
 
 
         other.GetComponent<Player>().TakeDamage();
-
+        PlayerPhysics.Instance.PlayerVelocity = Camera.main.transform.TransformDirection(new Vector3(0, 100, -300));
 
     }
 

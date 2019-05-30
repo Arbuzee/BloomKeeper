@@ -4783,7 +4783,7 @@ Transform:
   m_GameObject: {fileID: 5753028559982504751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 30.11, y: 6.74, z: -7.7}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5030763166325157200}
   - {fileID: 544242834918290490}
@@ -4816,7 +4816,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 570ecd7b967e9a64bb7de47d841019d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4849,7 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states:
-  - {fileID: 11400000, guid: d69cb0d0ff4b95a42ba96e1b85fd2069, type: 2}
+  - {fileID: 11400000, guid: 0a199151de97f884390b15c5c1530793, type: 2}
   - {fileID: 11400000, guid: c84bc536354398c41a962d022e3802dd, type: 2}
   - {fileID: 11400000, guid: f7fa690232cb6be4d8b757586e329bf0, type: 2}
   - {fileID: 11400000, guid: 069b6b7a1b24bb7419d3322b59171eaf, type: 2}
@@ -4860,9 +4860,9 @@ MonoBehaviour:
   agent: {fileID: 0}
   visionMask:
     serializedVersion: 2
-    m_Bits: 9728
+    m_Bits: 512
   capCollider: {fileID: 4520666462647811605}
-  player: {fileID: 4623867980507018231, guid: cee3bdf32a960b04186663ab4ac84f23, type: 3}
+  player: {fileID: 0}
   Dmg: 1
   prone: 0
   Mouth: {fileID: 544242834918290490}
@@ -5097,7 +5097,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7072839770355810948}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

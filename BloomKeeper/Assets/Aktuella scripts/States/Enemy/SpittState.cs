@@ -26,7 +26,7 @@ public class SpittState : EnemyBaseState
         if (Spitter.CanSpitt)
         {
             GameObject instantiatedSpit = Instantiate(spitt, owner.Mouth.position, Quaternion.identity);
-            instantiatedSpit.GetComponent<Rigidbody>().AddForce((owner.player.transform.position - owner.transform.position) * 100);
+            instantiatedSpit.GetComponent<Rigidbody>().AddForce((owner.player.transform.position - owner.transform.position * 100));
             Spitter.CanSpitt = false;
             owner.gameObject.AddComponent<Timer>().RunTimer("spittimer");
             owner.Transition<EnemyChaseState>();

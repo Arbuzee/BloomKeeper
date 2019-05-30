@@ -25,6 +25,7 @@ public class EnemyAttackState : EnemyBaseState
         owner.GetComponentInChildren<EnemyColliderCheck>().RegisterOnHitPlayer(OnCollision);
         animator = owner.GetComponentInChildren<Animator>();
         owner.agent.velocity = Vector3.zero;
+        owner.AttackCollider.enabled = true;
 
     }
 
