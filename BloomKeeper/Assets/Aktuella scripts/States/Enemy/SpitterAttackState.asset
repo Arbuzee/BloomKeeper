@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 629af1f50d6eb3d4aa605ecfea404d21, type: 3}
-  m_Name: EnemyChaseState
+  m_Script: {fileID: 11500000, guid: b93d92168075158409b61e5c9ac6dcce, type: 3}
+  m_Name: SpitterAttackState
   m_EditorClassIdentifier: 
   moveSpeed: 20
   attackDistance: 5
-  lostTargetDistance: 80.7
-  decoy: 0
+  lostTargetDistance: 35
+  chaseDistance: 5

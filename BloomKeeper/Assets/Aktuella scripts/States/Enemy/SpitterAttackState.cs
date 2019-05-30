@@ -4,8 +4,8 @@ using UnityEngine;
 
 
 
-[CreateAssetMenu(menuName = "Enemy/EnemyAttackState")]
-public class EnemyAttackState : EnemyBaseState
+[CreateAssetMenu(menuName = "Enemy/SpitterAttackState")]
+public class SpitterAttackState : EnemyBaseState
 {
     // Attributes
     [SerializeField] private float chaseDistance;
@@ -23,9 +23,10 @@ public class EnemyAttackState : EnemyBaseState
     {
         base.Enter();
         owner.GetComponentInChildren<EnemyColliderCheck>().RegisterOnHitPlayer(OnCollision);
-        animator = owner.GetComponentInChildren<Animator>();
+       // animator = owner.GetComponentInChildren<Animator>();
         owner.agent.velocity = Vector3.zero;
-
+        owner.AttackCollider.enabled = true;
+        Debug.Log("enter spitterAttackstate");
     }
 
     public override void Exit()
@@ -40,20 +41,22 @@ public class EnemyAttackState : EnemyBaseState
     public override void HandleUpdate()
     {
 
-
+        //base.HandleUpdate();
+        //owner.agent.SetDestination(owner.player.transform.position);
+        //Hur få att inte röra sig??
 
         if (attackCooldown <= 0)
         {
             Attack();
             attackCooldown = 2.5f;
-            //owner.AttackCollider.enabled = true;
+            owner.AttackCollider.enabled = true;
             //hasAttacked = true;
         }
-
+        attackCooldown -= Time.deltaTime;
         RoatateToPlayer();
 
 
-        attackCooldown -= Time.deltaTime;
+
         if (!CanSeePlayer() || hasAttacked == true ||Vector3.Distance(owner.transform.position, owner.player.transform.position) > chaseDistance)
         {
             owner.Transition<EnemyChaseState>();
@@ -70,7 +73,7 @@ public class EnemyAttackState : EnemyBaseState
             hasAttacked = true;
             owner.AttackCollider.enabled = true;
 
-            animator.SetTrigger("AttackTrigger"); // Triggers the animation            animator.SetTrigger("AttackTrigger"); // Triggers the animation
+           // animator.SetTrigger("AttackTrigger"); // Triggers the animation
         }
 
 
@@ -93,7 +96,7 @@ public class EnemyAttackState : EnemyBaseState
     //    yield return null;
     //}
 
-    private void AttackColliderHandeler() //används inte
+    private void AttackColliderHandeler() // används inte
     {
         if (hasAttacked)
         {

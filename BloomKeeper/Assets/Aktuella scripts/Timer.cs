@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour
     {
         
         yield return new WaitForSeconds(time);
-        owner.Transition<EnemyAttackState>();
+        owner.Transition<SpitterAttackState>();
         Destroy(this);
         
     }
@@ -48,7 +48,7 @@ public class Timer : MonoBehaviour
 
     public IEnumerator SpitTimer() {
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(10);
         Spitter.CanSpitt = true;
         Destroy(this);
     }

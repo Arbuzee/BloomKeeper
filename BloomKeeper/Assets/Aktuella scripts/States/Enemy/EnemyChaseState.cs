@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyChaseState : EnemyBaseState
 {
 
-
+    private Vector3 playerPos;
     public bool decoy = false;
     // Methods
 
@@ -14,18 +14,20 @@ public class EnemyChaseState : EnemyBaseState
     {
         base.Enter();
         Debug.Log("ChaseState");
-        
+
     }
 
     public override void HandleUpdate()
     {
         base.HandleUpdate();
-
-
+        playerPos = owner.player.transform.position;
+        //Debug.Log("SetDestination -> chaseState " + playerPos);
         owner.agent.SetDestination(owner.player.transform.position);
+        //Debug.Log("SetDestination -> chaseState " + owner.player.transform.position);
 
 
-        
+
+
         if (!CanSeePlayer() && !CanSeeDecoy() || Vector3.Distance(owner.transform.position, owner.player.transform.position) > lostTargetDistance)
         {
             owner.Transition<EnemyPatrolState>();
@@ -33,26 +35,27 @@ public class EnemyChaseState : EnemyBaseState
         else if (CanSeeDecoy())
         {
             owner.Transition<EnemyChasingDecoyState>();
-        }            
-        else if (owner.CompareTag("Spitter"))
+        }
+        if (owner.CompareTag("Spitter"))
         {
             if (Spitter.CanSpitt)
             {
                 owner.Transition<SpittState>();
             }
         }
-        else if (Vector3.Distance(owner.transform.position, owner.player.transform.position) < attackDistance && !owner.CompareTag("Spitter"))
+        if (Vector3.Distance(owner.transform.position, owner.player.transform.position) < attackDistance && owner.CompareTag("Enemy"))
         {
             owner.Transition<EnemyAttackState>();
-        }           
-        Charge();
-    }
-
-    private void Charge()
-    {
-
-    }
-
-
+        }
+        else if (Vector3.Distance(owner.transform.position, owner.player.transform.position) < attackDistance && owner.gameObject.name == "Spitter")
+        {
+            owner.Transition<SpitterAttackState>();
+        }
 
     }
+
+
+
+
+
+}

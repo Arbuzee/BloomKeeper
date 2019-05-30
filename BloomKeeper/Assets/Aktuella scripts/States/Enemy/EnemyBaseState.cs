@@ -6,7 +6,6 @@ public class EnemyBaseState : EnemyState
 {
     // Attributes
     [SerializeField] protected float moveSpeed;
-    [SerializeField] protected Material material;
     [SerializeField] protected float attackDistance;
     [SerializeField] protected float lostTargetDistance;
 
@@ -27,7 +26,11 @@ public class EnemyBaseState : EnemyState
         {
             owner.Transition<EnemyProneState>();
         }
-        owner.GetComponentInChildren<Animator>().SetFloat("MovementSpeed", moveSpeed);
+        if(owner.gameObject.name == "Enemy") // for developing Spiiter
+        {
+            owner.GetComponentInChildren<Animator>().SetFloat("MovementSpeed", moveSpeed);
+        }
+       
     }
 
 

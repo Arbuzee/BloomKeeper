@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 625604953}
   - component: {fileID: 625604960}
   - component: {fileID: 7363052964951622473}
-  - component: {fileID: 6965933210391843881}
+  - component: {fileID: 6775712713221406782}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -812,7 +812,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1bd2aa4bc83ef5844a9fa206c2d2e53e, type: 2}
   - {fileID: 11400000, guid: 0af6105f0e5b93640947522476ef9f62, type: 2}
   Renderer: {fileID: 0}
---- !u!114 &6965933210391843881
+--- !u!114 &6775712713221406782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -821,11 +821,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7116882412392993430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c1196562e53bd24688f143571f3b181, type: 3}
+  m_Script: {fileID: 11500000, guid: 7de9801d47a1f794dbb4ad8aec49efe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearts: []
-  health: 3
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  health: 0
   hitAudio: {fileID: 0}
 --- !u!1001 &1886562866
 PrefabInstance:
