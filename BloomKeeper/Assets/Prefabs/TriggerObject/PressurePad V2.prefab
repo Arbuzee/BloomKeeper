@@ -306,6 +306,9 @@ MonoBehaviour:
   AnimObject:
   - {fileID: 6432905540049024147}
   LockObject: {fileID: 0}
+  cabels: []
+  DeActivatedMaterial: {fileID: 2100000, guid: dd6fdedf1f5594c41af3bf0eadf7728b, type: 2}
+  ActivatedMaterial: {fileID: 2100000, guid: a69e51f57298bc14e8c0036c4a4fc13d, type: 2}
 --- !u!114 &1529295718093069072
 MonoBehaviour:
   m_ObjectHideFlags: 0
