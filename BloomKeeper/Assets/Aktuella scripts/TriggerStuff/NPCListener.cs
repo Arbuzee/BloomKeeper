@@ -34,7 +34,7 @@ public class NPCListener : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            portal.SetActive(true);
+            portal.GetComponent<Animator>().SetBool("Active", true);
         }
 
      
