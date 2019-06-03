@@ -15,7 +15,10 @@ public class PressurePadActivatedState : TriggerBaseState
             {
                 animGO.GetComponent<TriggeredObject>().OnTrigger();
             }
+
         }
+
+        ActivateCable();
         
         owner.isActive = true;    
         
@@ -24,6 +27,8 @@ public class PressurePadActivatedState : TriggerBaseState
     public override void Exit()
     {
         Debug.Log("PressurePadActivatedState -> Exit");
+
+        DeActivateCabel();
     }
 
     public override void FixedHandelUpdate()
@@ -40,4 +45,8 @@ public class PressurePadActivatedState : TriggerBaseState
             owner.Transition<PressurePadDeactivatedState>();
         }
     }
+
+
+
+
 }

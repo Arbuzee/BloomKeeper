@@ -3282,11 +3282,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 478915711746466669, guid: ffdca759ad1d7044b9274b617ce21685,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1511187380576574407, guid: ffdca759ad1d7044b9274b617ce21685,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3362,6 +3357,11 @@ PrefabInstance:
       propertyPath: decoy
       value: 
       objectReference: {fileID: 1301915324}
+    - target: {fileID: 478915711746466669, guid: ffdca759ad1d7044b9274b617ce21685,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3686721574895880249, guid: ffdca759ad1d7044b9274b617ce21685,
         type: 3}
       propertyPath: m_Layer
@@ -3864,6 +3864,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1098149388200732696, guid: 55afcaa7060128240a9c77c1ceb89bb6,
+        type: 3}
+      propertyPath: cabels.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098149388200732696, guid: 55afcaa7060128240a9c77c1ceb89bb6,
+        type: 3}
+      propertyPath: cabels.Array.data[0]
+      value: 
+      objectReference: {fileID: 830916485}
+    - target: {fileID: 1098149388200732696, guid: 55afcaa7060128240a9c77c1ceb89bb6,
+        type: 3}
+      propertyPath: cabels.Array.data[1]
+      value: 
+      objectReference: {fileID: 1403641317}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55afcaa7060128240a9c77c1ceb89bb6, type: 3}
 --- !u!1001 &6061074665598908138
