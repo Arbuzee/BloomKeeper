@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1828dffed7ad3c4ea4e6d725f1d766f, type: 3}
   m_Name: EnemyBaseState
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 3.5
   attackDistance: 3
   lostTargetDistance: 35

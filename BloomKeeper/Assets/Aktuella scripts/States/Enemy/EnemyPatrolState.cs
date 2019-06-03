@@ -7,7 +7,6 @@ public class EnemyPatrolState : EnemyBaseState
     [SerializeField] private Rigidbody body;
 
     // Attributes
-    [SerializeField] private Vector3[] patrolPoints;
     [SerializeField] private float chaseDistance;
     //[SerializeField] private float attackDistance;
     [SerializeField] private float hearingRange;
@@ -29,9 +28,9 @@ public class EnemyPatrolState : EnemyBaseState
     {
         base.HandleUpdate();
 
-        owner.agent.SetDestination(patrolPoints[currentPoint]);
-        if (Vector3.Distance(owner.transform.position, patrolPoints[currentPoint]) < 5)
-            currentPoint = (currentPoint + 1) % patrolPoints.Length;
+        owner.agent.SetDestination(owner.PatrolPoints[currentPoint].position);
+        if (Vector3.Distance(owner.transform.position, owner.PatrolPoints[currentPoint].position) < 5)
+            currentPoint = (currentPoint + 1) % owner.PatrolPoints.Length;
 
         if (CanSeePlayer() && Vector3.Distance(owner.transform.position, owner.player.transform.position) < chaseDistance)
             owner.Transition<EnemyChaseState>();
@@ -42,10 +41,10 @@ public class EnemyPatrolState : EnemyBaseState
     private void ChooseClosest()
     {
         int closest = 0;
-        for (int i = 0; i < patrolPoints.Length; i++)
+        for (int i = 0; i < owner.PatrolPoints.Length; i++)
         {
-            float dist = Vector3.Distance(owner.transform.position, patrolPoints[i]);
-            if (dist < Vector3.Distance(owner.transform.position, patrolPoints[closest]))
+            float dist = Vector3.Distance(owner.transform.position, owner.PatrolPoints[i].position);
+            if (dist < Vector3.Distance(owner.transform.position, owner.PatrolPoints[closest].position))
                 closest = i;
         }
         currentPoint = closest;

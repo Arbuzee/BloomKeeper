@@ -17,6 +17,11 @@ public class Enemy : EnemyStatemachine
     [SerializeField] public Transform Mouth;
     [SerializeField] public BoxCollider AttackCollider;
 
+    [Header("Patrol")]
+    [SerializeField] public Transform[] PatrolPoints;
+
+
+
     protected override void Awake()
     {
 

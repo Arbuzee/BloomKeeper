@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ade58bc02e2c449b04ade0321da8ba, type: 3}
   m_Name: EnemyPatrolState
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 3.5
   attackDistance: 3
   lostTargetDistance: 81
   body: {fileID: 0}
-  patrolPoints:
-  - {x: 0, y: 1.89, z: 0}
   chaseDistance: 37.71
   hearingRange: 35.17

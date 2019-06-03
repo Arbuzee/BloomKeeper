@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774828fa43498a64cb9da293e441652d, type: 3}
   m_Name: EnemySpitState
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 3.5
   attackDistance: 3
   lostTargetDistance: 35
   spitt: {fileID: 7939980736749093821, guid: 50df2d89cfa347b4d851cde8dffefef6, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93d92168075158409b61e5c9ac6dcce, type: 3}
   m_Name: SpitterAttackState
   m_EditorClassIdentifier: 
-  moveSpeed: 20
-  attackDistance: 5
+  moveSpeed: 3.5
+  attackDistance: 3
   lostTargetDistance: 35
-  chaseDistance: 5
+  chaseDistance: 3
