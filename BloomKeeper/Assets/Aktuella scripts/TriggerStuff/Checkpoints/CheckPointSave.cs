@@ -19,9 +19,14 @@ public static class CheckPointSave
         PlayerPrefs.SetFloat("ZPosition", player.transform.position.z);
     }
 
-    public static void LoadPlayer(GameObject player)
+    public static void LoadScene()
     {
         SceneManager.LoadScene(PlayerPrefs.GetInt("SceneIndex"));
+    }
+
+    public static void LoadPlayer(GameObject player)
+    {
+        
 
         float xPosition = PlayerPrefs.GetFloat("XPosition");
         float yPosition = PlayerPrefs.GetFloat("YPosition");
