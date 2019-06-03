@@ -10,13 +10,24 @@ public class EnemyColliderCheck : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-       if (true)
+        //if (true)
+        // {
+        //     if (onHitPlayer != null)
+        //     {
+        //         onHitPlayer();
+        //     }
+        // }
+
+
+
+        if (collider.CompareTag("Player"))
         {
-            if (onHitPlayer != null)
-            {
-                onHitPlayer();
-            }
+            collider.GetComponent<PlayerHealth>().TakeDamage();
+        } else if (collider.CompareTag("Decoy"))
+        {
+            collider.GetComponent<DecoyBehaviour>().Explode(transform.root.gameObject.GetComponent<Enemy>());
         }
+
     }
 
     public void RegisterOnHitPlayer(Action hitPlayerFunction)

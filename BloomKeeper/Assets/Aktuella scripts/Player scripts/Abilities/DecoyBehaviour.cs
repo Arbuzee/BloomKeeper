@@ -5,7 +5,7 @@ using System;
 public class DecoyBehaviour : MonoBehaviour
 {
     private bool move = false;
-    [SerializeField] private int health = 3;
+    [SerializeField] private int health = 1;
     [SerializeField] private ParticleSystem damageTaken;
     [SerializeField] private int timeToDestroy;
     private GameObject pressurePad;
@@ -54,19 +54,18 @@ public class DecoyBehaviour : MonoBehaviour
     public void TakeDamage(Enemy enemy)
     {
         if (health > 0)
-        {
             health--;
-            Instantiate(damageTaken, transform.position, Quaternion.identity);
-            
-        }
+
         else
             Explode(enemy);
+
+        
     }
 
     public void Explode(Enemy enemy)
     {
-        Instantiate(damageTaken, transform.position, Quaternion.identity);
         OnDestroy();
+        Instantiate(damageTaken, transform.position, Quaternion.identity);
         Destroy(gameObject, 0.1f);
         enemy.Transition<EnemyProneState>();       
     }

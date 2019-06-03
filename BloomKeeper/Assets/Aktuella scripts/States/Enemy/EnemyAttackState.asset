@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: EnemyAttackState
   m_EditorClassIdentifier: 
   moveSpeed: 20
-  material: {fileID: 2100000, guid: 845b638d5b449634abf2c2afad81d79b, type: 2}
   attackDistance: 3
   lostTargetDistance: 35
   chaseDistance: 3.1

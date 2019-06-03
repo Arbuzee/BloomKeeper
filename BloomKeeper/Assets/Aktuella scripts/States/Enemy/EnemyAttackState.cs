@@ -80,6 +80,9 @@ public class EnemyAttackState : EnemyBaseState
 
     public void OnCollision()
     {
+        if (Vector3.Distance(owner.transform.position, owner.player.transform.position) > attackDistance)
+            return;
+
         //owner.player.GetComponent<Health>().TakeDamage();
         PlayerPhysics.Instance.PlayerVelocity = Camera.main.transform.TransformDirection(new Vector3(0,100,-300)); //Blir alltid pushad bakåt för spelaren. dvs om man står riktad framåt så flyger man fortfarande bakåt.
         Debug.Log("Collision");
