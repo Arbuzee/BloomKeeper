@@ -129,7 +129,7 @@ public class MenuButtonController : MonoBehaviour
     private void StartGame()
     {
         PlayerPrefs.DeleteAll();
-        Destroy(Player.instance.gameObject);
+        Destroy(Player.instance.gameObject); 
         SceneManager.LoadScene(1); // LoadSceneMode.Single is the Default
     }
 
