@@ -25,7 +25,6 @@ public class EnemyAttackState : EnemyBaseState
         owner.GetComponentInChildren<EnemyColliderCheck>().RegisterOnHitPlayer(OnCollision);
         animator = owner.GetComponentInChildren<Animator>();
         owner.agent.velocity = Vector3.zero;
-        owner.AttackCollider.enabled = true;
 
     }
 
@@ -34,8 +33,7 @@ public class EnemyAttackState : EnemyBaseState
         base.Exit();
         owner.GetComponentInChildren<EnemyColliderCheck>().UnRegisterOnHitPlayer(OnCollision);
         owner.AttackCollider.enabled = false;
-        //owner.agent.isStopped = false;
-        //owner.agent.speed = 2.5f;
+
     }
 
     public override void HandleUpdate()
@@ -47,9 +45,17 @@ public class EnemyAttackState : EnemyBaseState
         {
             Attack();
             attackCooldown = 2.5f;
-            //owner.AttackCollider.enabled = true;
-            //hasAttacked = true;
+
         }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            owner.AttackCollider.enabled = true;
+        }
+        else
+        {
+            owner.AttackCollider.enabled = false;
+        }
+
 
         RoatateToPlayer();
 
@@ -69,8 +75,7 @@ public class EnemyAttackState : EnemyBaseState
         if (Vector3.Distance(owner.transform.position, owner.player.transform.position) < attackDistance)
         {
             hasAttacked = true;
-            owner.AttackCollider.enabled = true;
-
+            
             animator.SetTrigger("AttackTrigger"); // Triggers the animation            animator.SetTrigger("AttackTrigger"); // Triggers the animation
         }
 
@@ -88,31 +93,6 @@ public class EnemyAttackState : EnemyBaseState
         Debug.Log("Collision");
     }
 
-    //IEnumerator attackColliderCooldown()
-    //{
-    //    Debug.Log("hey");
-    //    owner.AttackCollider.enabled = true;
-    //    new WaitForSeconds(2.5f);
-    //    owner.AttackCollider.enabled = false;
-    //    yield return null;
-    //}
-
-    private void AttackColliderHandeler() //används inte
-    {
-        if (hasAttacked)
-        {
-            owner.AttackCollider.enabled = true;
-            if (activateColliderSeconds >= 0)
-            {
-                activateColliderSeconds -= Time.deltaTime;
-            }
-            else
-            {
-                owner.AttackCollider.enabled = false;
-            }
-        }
-        
-    }
 
 
     private void RoatateToPlayer()
@@ -122,37 +102,9 @@ public class EnemyAttackState : EnemyBaseState
         owner.transform.rotation = Quaternion.Slerp(owner.transform.rotation, lookRotation, Time.deltaTime * lookRotationSpeed);
     }
 
-    //private void RotateTowards(Transform target)
-    //{
-    //    Vector3 direction = (target.position - transform.position).normalized;
-    //    Quaternion lookRotation = Quaternion.LookRotation(direction);
-    //    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
-    //}
 
 
 }
 
 
 
-//else
-//{
-//    hasAttacked = false;
-//}
-
-//AttackColliderHandeler();
-
-//else
-//{
-//    hasAttacked = false;
-//    owner.AttackCollider.enabled = false;
-//}
-
-
-//if (hasAttacked)
-//{
-//    owner.AttackCollider.enabled = true;
-//}
-//else
-//{
-//    owner.AttackCollider.enabled = false;
-//}

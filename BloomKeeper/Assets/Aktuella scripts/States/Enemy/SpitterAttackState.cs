@@ -25,7 +25,6 @@ public class SpitterAttackState : EnemyBaseState
         owner.GetComponentInChildren<EnemyColliderCheck>().RegisterOnHitPlayer(OnCollision);
        // animator = owner.GetComponentInChildren<Animator>();
         owner.agent.velocity = Vector3.zero;
-        owner.AttackCollider.enabled = true;
         Debug.Log("enter spitterAttackstate");
     }
 
@@ -34,24 +33,29 @@ public class SpitterAttackState : EnemyBaseState
         base.Exit();
         owner.GetComponentInChildren<EnemyColliderCheck>().UnRegisterOnHitPlayer(OnCollision);
         owner.AttackCollider.enabled = false;
-        //owner.agent.isStopped = false;
-        //owner.agent.speed = 2.5f;
+
     }
 
     public override void HandleUpdate()
     {
 
-        //base.HandleUpdate();
-        //owner.agent.SetDestination(owner.player.transform.position);
-        //Hur få att inte röra sig??
+
 
         if (attackCooldown <= 0)
         {
             Attack();
             attackCooldown = 2.5f;
-            owner.AttackCollider.enabled = true;
-            //hasAttacked = true;
         }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            owner.AttackCollider.enabled = true;
+        }
+        else
+        {
+            owner.AttackCollider.enabled = false;
+        }
+
         attackCooldown -= Time.deltaTime;
         RoatateToPlayer();
 
@@ -73,7 +77,7 @@ public class SpitterAttackState : EnemyBaseState
             hasAttacked = true;
             owner.AttackCollider.enabled = true;
 
-           // animator.SetTrigger("AttackTrigger"); // Triggers the animation
+            //animator.SetTrigger("AttakckTrigger"); // Triggers the animation
         }
 
 
@@ -87,31 +91,9 @@ public class SpitterAttackState : EnemyBaseState
         Debug.Log("Collision");
     }
 
-    //IEnumerator attackColliderCooldown()
-    //{
-    //    Debug.Log("hey");
-    //    owner.AttackCollider.enabled = true;
-    //    new WaitForSeconds(2.5f);
-    //    owner.AttackCollider.enabled = false;
-    //    yield return null;
-    //}
 
-    private void AttackColliderHandeler() // används inte
-    {
-        if (hasAttacked)
-        {
-            owner.AttackCollider.enabled = true;
-            if (activateColliderSeconds >= 0)
-            {
-                activateColliderSeconds -= Time.deltaTime;
-            }
-            else
-            {
-                owner.AttackCollider.enabled = false;
-            }
-        }
-        
-    }
+
+
 
 
     private void RoatateToPlayer()
@@ -121,37 +103,9 @@ public class SpitterAttackState : EnemyBaseState
         owner.transform.rotation = Quaternion.Slerp(owner.transform.rotation, lookRotation, Time.deltaTime * lookRotationSpeed);
     }
 
-    //private void RotateTowards(Transform target)
-    //{
-    //    Vector3 direction = (target.position - transform.position).normalized;
-    //    Quaternion lookRotation = Quaternion.LookRotation(direction);
-    //    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
-    //}
 
 
 }
 
 
 
-//else
-//{
-//    hasAttacked = false;
-//}
-
-//AttackColliderHandeler();
-
-//else
-//{
-//    hasAttacked = false;
-//    owner.AttackCollider.enabled = false;
-//}
-
-
-//if (hasAttacked)
-//{
-//    owner.AttackCollider.enabled = true;
-//}
-//else
-//{
-//    owner.AttackCollider.enabled = false;
-//}
