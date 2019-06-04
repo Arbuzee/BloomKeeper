@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        gameObject.transform.position += player.transform.position * Time.deltaTime * 1; //tänkte att all rörelse skulle ske i projektilen, så gjorde vi innan tror jag
+        //gameObject.transform.position += player.transform.position * Time.deltaTime * 1; //tänkte att all rörelse skulle ske i projektilen, så gjorde vi innan tror jag
 
     }
 

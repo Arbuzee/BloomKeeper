@@ -29,7 +29,7 @@ public class SpittState : EnemyBaseState
 
 
             GameObject instantiatedSpit = Instantiate(spitt, owner.Mouth.position, Quaternion.identity);
-            //instantiatedSpit.GetComponent<Rigidbody>().AddForce((owner.player.transform.position - owner.transform.position * 100)); // här är din kod, den sköt mot prefabens position
+            instantiatedSpit.GetComponent<Rigidbody>().AddForce((owner.player.transform.position - owner.transform.position )* 100); // här är din kod, den sköt mot prefabens position
             Spitter.CanSpitt = false;
             owner.gameObject.AddComponent<Timer>().RunTimer("spittimer");
             owner.Transition<EnemyChaseState>();
