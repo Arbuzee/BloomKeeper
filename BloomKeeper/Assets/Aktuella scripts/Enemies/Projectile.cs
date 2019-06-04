@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
             return;
 
 
-        other.GetComponent<Player>().TakeDamage();
+        other.GetComponent<PlayerHealth>().TakeDamage();
         PlayerPhysics.Instance.PlayerVelocity = Camera.main.transform.TransformDirection(new Vector3(0, 100, -300));
 
     }
