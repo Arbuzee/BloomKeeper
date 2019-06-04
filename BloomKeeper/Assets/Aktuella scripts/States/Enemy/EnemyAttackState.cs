@@ -9,7 +9,7 @@ public class EnemyAttackState : EnemyBaseState
 {
     // Attributes
     [SerializeField] private float chaseDistance;
-    Animator animator;
+
     private bool hasAttacked;
     float attackCooldown = 2.5f;
 

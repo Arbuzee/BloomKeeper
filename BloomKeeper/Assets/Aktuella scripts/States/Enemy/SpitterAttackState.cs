@@ -9,7 +9,6 @@ public class SpitterAttackState : EnemyBaseState
 {
     // Attributes
     [SerializeField] private float chaseDistance;
-    Animator animator;
     private bool hasAttacked;
     float attackCooldown = 2.5f;
 
@@ -23,7 +22,7 @@ public class SpitterAttackState : EnemyBaseState
     {
         base.Enter();
         owner.GetComponentInChildren<EnemyColliderCheck>().RegisterOnHitPlayer(OnCollision);
-       // animator = owner.GetComponentInChildren<Animator>();
+        animator = owner.GetComponentInChildren<Animator>();
         owner.agent.velocity = Vector3.zero;
         Debug.Log("enter spitterAttackstate");
     }
@@ -47,14 +46,14 @@ public class SpitterAttackState : EnemyBaseState
             attackCooldown = 2.5f;
         }
 
-        //if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-        //{
-        //    owner.AttackCollider.enabled = true;
-        //}
-        //else
-        //{
-        //    owner.AttackCollider.enabled = false;
-        //}
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Spit"))
+        {
+            owner.AttackCollider.enabled = true;
+        }
+        else
+        {
+            owner.AttackCollider.enabled = false;
+        }
 
         attackCooldown -= Time.deltaTime;
         RoatateToPlayer();
@@ -77,7 +76,7 @@ public class SpitterAttackState : EnemyBaseState
             hasAttacked = true;
             owner.AttackCollider.enabled = true;
 
-            //animator.SetTrigger("AttakckTrigger"); // Triggers the animation
+            animator.SetTrigger("Attack"); // Triggers the animation
         }
 
 

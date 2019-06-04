@@ -12,7 +12,6 @@ public class SpittState : EnemyBaseState
     [SerializeField] private GameObject spitt;
 
 
-
     public override void Enter()
     {
         owner.agent.velocity = Vector3.zero;
@@ -25,8 +24,12 @@ public class SpittState : EnemyBaseState
 
         if (Spitter.CanSpitt)
         {
+
+
+
+
             GameObject instantiatedSpit = Instantiate(spitt, owner.Mouth.position, Quaternion.identity);
-            instantiatedSpit.GetComponent<Rigidbody>().AddForce((owner.player.transform.position - owner.transform.position * 100));
+            //instantiatedSpit.GetComponent<Rigidbody>().AddForce((owner.player.transform.position - owner.transform.position * 100)); // här är din kod, den sköt mot prefabens position
             Spitter.CanSpitt = false;
             owner.gameObject.AddComponent<Timer>().RunTimer("spittimer");
             owner.Transition<EnemyChaseState>();
@@ -44,6 +47,8 @@ public class SpittState : EnemyBaseState
 
 
     }
+
+
 
 
 }

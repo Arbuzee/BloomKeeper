@@ -9,6 +9,8 @@ public class EnemyBaseState : EnemyState
     [SerializeField] protected float attackDistance;
     [SerializeField] protected float lostTargetDistance;
     protected float AnimationSpeed;
+    protected Animator animator;
+
 
     protected Enemy owner;
 
@@ -33,7 +35,7 @@ public class EnemyBaseState : EnemyState
         //}
 
         AnimationSpeed = owner.agent.velocity.magnitude / owner.agent.speed;
-        Debug.Log(AnimationSpeed + " animspeed   " + owner.agent.velocity.magnitude);
+        //Debug.Log(AnimationSpeed + " animspeed   " + owner.agent.velocity.magnitude);
         owner.GetComponentInChildren<Animator>().SetFloat("Speed", AnimationSpeed);
        
     }

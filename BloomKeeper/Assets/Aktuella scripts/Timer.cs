@@ -48,7 +48,7 @@ public class Timer : MonoBehaviour
 
     public IEnumerator SpitTimer() {
 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(1);
         Spitter.CanSpitt = true;
         Destroy(this);
     }
