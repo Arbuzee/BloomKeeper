@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Torso
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Character:Mesh
+    m_Weight: 1
+  - m_Path: Character:Root
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:L_Leg
+    m_Weight: 0
+  - m_Path: Character:Root/Character:Pelvis/Character:L_Leg/Character:L_Knee
+    m_Weight: 0
+  - m_Path: Character:Root/Character:Pelvis/Character:L_Leg/Character:L_Knee/Character:L_Foot
+    m_Weight: 0
+  - m_Path: Character:Root/Character:Pelvis/Character:L_Leg/Character:L_Knee/Character:L_Foot/Character:L_Ball
+    m_Weight: 0
+  - m_Path: Character:Root/Character:Pelvis/Character:PouchRope
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:PouchRope/Character:PouchBase
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:R_Leg
+    m_Weight: 0
+  - m_Path: Character:Root/Character:Pelvis/Character:R_Leg/Character:R_Knee
+    m_Weight: 0
+  - m_Path: Character:Root/Character:Pelvis/Character:R_Leg/Character:R_Knee/Character:R_Foot
+    m_Weight: 0
+  - m_Path: Character:Root/Character:Pelvis/Character:R_Leg/Character:R_Knee/Character:R_Foot/Character:R_Ball
+    m_Weight: 0
+  - m_Path: Character:Root/Character:Pelvis/Character:Spine
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:Spine/Character:L_Shoulder
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:Spine/Character:L_Shoulder/Character:L_Elbow
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:Spine/Character:L_Shoulder/Character:L_Elbow/Character:L_Wrist
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:Spine/Character:L_Shoulder/Character:L_Elbow/Character:L_Wrist/Character:L_Hand
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:Spine/Character:Neck
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:Spine/Character:Neck/Character:Head
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:Spine/Character:R_Shoulder
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:Spine/Character:R_Shoulder/Character:R_Elbow
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:Spine/Character:R_Shoulder/Character:R_Elbow/Character:R_Wrist
+    m_Weight: 1
+  - m_Path: Character:Root/Character:Pelvis/Character:Spine/Character:R_Shoulder/Character:R_Elbow/Character:R_Wrist/Character:R_Hand
+    m_Weight: 1
