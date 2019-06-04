@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629af1f50d6eb3d4aa605ecfea404d21, type: 3}
   m_Name: EnemyChaseState
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  attackDistance: 3
+  moveSpeed: 3.5
+  attackDistance: 2
   lostTargetDistance: 80.7
   decoy: 0

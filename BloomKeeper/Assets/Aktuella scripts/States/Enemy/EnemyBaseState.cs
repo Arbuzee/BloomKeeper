@@ -8,6 +8,7 @@ public class EnemyBaseState : EnemyState
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float attackDistance;
     [SerializeField] protected float lostTargetDistance;
+    protected float AnimationSpeed;
 
     protected Enemy owner;
 
@@ -26,10 +27,14 @@ public class EnemyBaseState : EnemyState
         {
             owner.Transition<EnemyProneState>();
         }
-        if(owner.gameObject.name == "Enemy") // for developing Spiiter
-        {
-            owner.GetComponentInChildren<Animator>().SetFloat("MovementSpeed", moveSpeed);
-        }
+        //if(owner.gameObject.name == "Enemy") // for developing Spiiter
+        //{
+        //    owner.GetComponentInChildren<Animator>().SetFloat("MovementSpeed", moveSpeed);
+        //}
+
+        AnimationSpeed = owner.agent.velocity.magnitude / owner.agent.speed;
+        Debug.Log(AnimationSpeed + " animspeed   " + owner.agent.velocity.magnitude);
+        owner.GetComponentInChildren<Animator>().SetFloat("Speed", AnimationSpeed);
        
     }
 

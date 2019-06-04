@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnemyAttackState
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
-  attackDistance: 3
+  attackDistance: 2
   lostTargetDistance: 35
-  chaseDistance: 3.1
+  chaseDistance: 2.1
