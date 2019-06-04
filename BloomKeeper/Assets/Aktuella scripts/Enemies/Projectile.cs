@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        gameObject.transform.position += player.transform.position * Time.deltaTime * 1; //tänkte att all rörelse skulle ske i projektilen, så gjorde vi innan tror jag
+        //gameObject.transform.position += player.transform.position * Time.deltaTime * 1; //tänkte att all rörelse skulle ske i projektilen, så gjorde vi innan tror jag
 
     }
 
@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
             return;
 
 
-        other.GetComponent<Player>().TakeDamage();
+        other.GetComponent<PlayerHealth>().TakeDamage();
         PlayerPhysics.Instance.PlayerVelocity = Camera.main.transform.TransformDirection(new Vector3(0, 100, -300));
 
     }
