@@ -8,7 +8,7 @@ ModelImporter:
     second: right
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -250,7 +250,7 @@ ModelImporter:
       scale: {x: 1.0000002, y: 1.0000002, z: 1.0000005}
     - name: Character:Pelvis
       parentName: Character:Root
-      position: {x: -0.5668288, y: -0.014250929, z: 0.0000000023669688}
+      position: {x: -0.5668288, y: -0.014250929, z: 0.0000000023669686}
       rotation: {x: -0.9999783, y: 0.006589382, z: -0, w: -0.000000059604638}
       scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
     - name: Character:Spine
@@ -260,7 +260,7 @@ ModelImporter:
       scale: {x: 1.0000006, y: 1.0000002, z: 1.0000006}
     - name: Character:Neck
       parentName: Character:Spine
-      position: {x: -0.23140386, y: 0.0000000037775574, z: -0.0000000015639299}
+      position: {x: -0.23140386, y: 0.0000000037775574, z: -0.0000000015639301}
       rotation: {x: -7.336068e-10, y: 7.5506873e-10, z: -0.024976572, w: -0.999688}
       scale: {x: 1.0000008, y: 1.000001, z: 1.0000007}
     - name: Character:Head

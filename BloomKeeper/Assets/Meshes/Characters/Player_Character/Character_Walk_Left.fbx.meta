@@ -8,7 +8,7 @@ ModelImporter:
     second: left
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -260,7 +260,7 @@ ModelImporter:
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: Character:Neck
       parentName: Character:Spine
-      position: {x: -0.23140386, y: 5.2086556e-12, z: 1.942112e-11}
+      position: {x: -0.23140386, y: 5.208722e-12, z: 1.942103e-11}
       rotation: {x: 7.3360323e-10, y: -7.5506873e-10, z: 0.024976542, w: 0.999688}
       scale: {x: 0.99999994, y: 0.9999999, z: 1.0000002}
     - name: Character:Head

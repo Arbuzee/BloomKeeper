@@ -8,7 +8,7 @@ ModelImporter:
     second: bwd
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -255,12 +255,12 @@ ModelImporter:
       scale: {x: 0.9999998, y: 0.9999999, z: 0.9999997}
     - name: Character:Spine
       parentName: Character:Pelvis
-      position: {x: -0.20801684, y: -0.0003908274, z: -1.6723212e-10}
+      position: {x: -0.20801684, y: -0.0003908274, z: -1.6723209e-10}
       rotation: {x: 0.000000029606475, y: -0.000000029720358, z: -0.0046589966, w: 0.9999892}
       scale: {x: 1.0000005, y: 1.0000008, z: 1.0000008}
     - name: Character:Neck
       parentName: Character:Spine
-      position: {x: -0.23140386, y: 2.3432365e-12, z: -1.32784e-11}
+      position: {x: -0.23140386, y: 2.3432588e-12, z: -1.3278444e-11}
       rotation: {x: 7.336068e-10, y: -7.550705e-10, z: 0.024976572, w: 0.999688}
       scale: {x: 1.0000011, y: 1.0000012, z: 1.0000012}
     - name: Character:Head
@@ -328,6 +328,16 @@ ModelImporter:
       position: {x: -0.1008843, y: -2.2204459e-17, z: 5.5511148e-18}
       rotation: {x: -0.0078523755, y: 0.7070632, z: -0.70693237, w: 0.015707608}
       scale: {x: 1, y: 1.0000002, z: 1}
+    - name: Character:PouchRope
+      parentName: Character:Pelvis
+      position: {x: -0.14301054, y: 0.1040032, z: 0.10356457}
+      rotation: {x: 0.21160994, y: -0.97735417, z: -0.000000028172412, w: -0.00000004260182}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000002}
+    - name: Character:PouchBase
+      parentName: Character:PouchRope
+      position: {x: -0.15269923, y: -0.0029926102, z: -0.02786666}
+      rotation: {x: -0.21160997, y: 0.97735417, z: 0.000000028172414, w: -0.00000004260182}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000001}
     - name: Character:R_Leg
       parentName: Character:Pelvis
       position: {x: 0.071104564, y: -0.0006625633, z: 0.09196819}
