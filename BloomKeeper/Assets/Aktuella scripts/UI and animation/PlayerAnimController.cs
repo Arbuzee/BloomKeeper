@@ -55,6 +55,8 @@ public class PlayerAnimController : MonoBehaviour
             PlayJumpSound();
         }
 
+        
+
         if (player.PlayerVelocity.x == 0 && player.PlayerVelocity.z == 0)
         {
             if (idleTimer > idleTimeBetweenVoicelines)
@@ -77,6 +79,21 @@ public class PlayerAnimController : MonoBehaviour
     private void PlaySound(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
+    }
+
+    private void PlayWalkSound()
+    {
+        if (walkSoundsIndex < walkSounds.Length - 1)
+        {
+            walkSoundsIndex++;
+        }
+        else
+        {
+            walkSoundsIndex = 0;
+        }
+        audioSource.volume = 0.3f;
+        PlaySound(walkSounds[walkSoundsIndex]);
+
     }
 
     private void PlayJumpSound()

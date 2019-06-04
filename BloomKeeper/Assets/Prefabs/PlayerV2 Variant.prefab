@@ -472,9 +472,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5a8691f541edae14f9e53507085b2b32, type: 3}
   - {fileID: 8300000, guid: e4a057183a4ac8e4e85e2abcbc823080, type: 3}
   walkSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: efc800183bedaa34ea06305a1a6d5896, type: 3}
+  - {fileID: 8300000, guid: 8d3af828704001d4484b83806beef8cd, type: 3}
+  - {fileID: 8300000, guid: 8d3af828704001d4484b83806beef8cd, type: 3}
   idleSounds:
   - {fileID: 8300000, guid: 07b6132809ba2584d956647ff3ced61e, type: 3}
   - {fileID: 8300000, guid: 7e483f1dfff8ec0428563daa118d04b8, type: 3}
@@ -3018,16 +3018,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Idle 1
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 6d7a45b6172741b47ad16fe254e6bb64,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 2234c1524abbebb42abae3c5e677b9b9, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 6d7a45b6172741b47ad16fe254e6bb64,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d7a45b6172741b47ad16fe254e6bb64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3082,6 +3072,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 6d7a45b6172741b47ad16fe254e6bb64,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2234c1524abbebb42abae3c5e677b9b9, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 6d7a45b6172741b47ad16fe254e6bb64,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7a45b6172741b47ad16fe254e6bb64, type: 3}
