@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyPatrolState
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
-  attackDistance: 3
+  attackDistance: 2
   lostTargetDistance: 81
   body: {fileID: 0}
   chaseDistance: 37.71

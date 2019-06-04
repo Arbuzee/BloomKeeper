@@ -47,14 +47,14 @@ public class SpitterAttackState : EnemyBaseState
             attackCooldown = 2.5f;
         }
 
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-        {
-            owner.AttackCollider.enabled = true;
-        }
-        else
-        {
-            owner.AttackCollider.enabled = false;
-        }
+        //if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        //{
+        //    owner.AttackCollider.enabled = true;
+        //}
+        //else
+        //{
+        //    owner.AttackCollider.enabled = false;
+        //}
 
         attackCooldown -= Time.deltaTime;
         RoatateToPlayer();

@@ -14,6 +14,8 @@ public class EnemyChasingDecoyState : EnemyBaseState
 
     public override void HandleUpdate()
     {
+        base.HandleUpdate();
+
         if (Movement3D.Instance_3d.Decoy.GetInstance())
         {
             GameObject decoy = Movement3D.Instance_3d.Decoy.GetInstance();

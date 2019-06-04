@@ -14,7 +14,7 @@ public class EnemyProneState : EnemyBaseState
     public override void Enter()
     {
 
-        SoundManager.instance.PlaySound(hitSound);
+        //SoundManager.instance.PlaySound(hitSound);
         
     }
     public override void HandleUpdate()
