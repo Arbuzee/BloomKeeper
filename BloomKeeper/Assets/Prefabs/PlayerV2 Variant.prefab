@@ -107,7 +107,7 @@ Transform:
   m_Children:
   - {fileID: 8882721509286129992}
   m_Father: {fileID: 3739492554592628938}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6354903445261156713
 MonoBehaviour:
@@ -125,36 +125,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
---- !u!1 &1183532778278176741
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2296057949447106355}
-  m_Layer: 0
-  m_Name: HitPos
-  m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2296057949447106355
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183532778278176741}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.002, y: 0, z: 0.525}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3739492554592628938}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3739492554592628933
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +162,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1152938076520028786}
-  - {fileID: 2296057949447106355}
   - {fileID: 5846066435380105953}
   - {fileID: 1845036017661178041}
   - {fileID: 5846066434564005094}
@@ -559,7 +528,7 @@ Transform:
   m_Children:
   - {fileID: 5846066435005128796}
   m_Father: {fileID: 3739492554592628938}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5846066435005128795
 GameObject:
@@ -1820,7 +1789,7 @@ Transform:
   - {fileID: 5846066435380105879}
   - {fileID: 5846066435380105887}
   m_Father: {fileID: 3739492554592628938}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5846066435389701377
 Animator:
@@ -3000,7 +2969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7874621567134487130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.804, z: 1}
+  m_LocalPosition: {x: 0, y: 0.515, z: 0.608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3739492554592628938}
@@ -3013,6 +2982,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3739492554592628938}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 6d7a45b6172741b47ad16fe254e6bb64,
+        type: 3}
+      propertyPath: m_Name
+      value: Character_Idle 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d7a45b6172741b47ad16fe254e6bb64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3021,7 +2995,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6d7a45b6172741b47ad16fe254e6bb64,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.472
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d7a45b6172741b47ad16fe254e6bb64,
         type: 3}
@@ -3051,7 +3025,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6d7a45b6172741b47ad16fe254e6bb64,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d7a45b6172741b47ad16fe254e6bb64,
         type: 3}
@@ -3067,11 +3041,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 6d7a45b6172741b47ad16fe254e6bb64,
-        type: 3}
-      propertyPath: m_Name
-      value: Character_Idle 1
       objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: 6d7a45b6172741b47ad16fe254e6bb64,
         type: 3}
