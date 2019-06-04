@@ -92,6 +92,7 @@ public class PressFTriggerScript : MonoBehaviour
         foreach (GameObject cabel in cables)
         {
             cabel.GetComponent<Renderer>().material = activeMaterial;
+            cabel.GetComponentInChildren<ParticleSystem>().Play();
         }
     }
 

@@ -41,12 +41,17 @@ public class PlayerAnimController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            anim.SetTrigger("decoy");
+            anim.SetTrigger("decoyAim");
+        }
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            anim.SetTrigger("decoyDrop");
             PlayDecoySound();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            anim.SetTrigger("jump");
             PlayJumpSound();
         }
 
@@ -67,11 +72,6 @@ public class PlayerAnimController : MonoBehaviour
             idleTimer = 0;
         }
         
-    }
-
-    public void StandOnPad()
-    {
-        anim.SetTrigger("pressurepad");
     }
 
     private void PlaySound(AudioClip clip)
