@@ -1533,22 +1533,22 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 80
+    value: 79.35
   threshold:
     overrideState: 1
-    value: 10
+    value: 10.7
   softKnee:
     overrideState: 1
     value: 1
   clamp:
     overrideState: 1
-    value: 10
+    value: 10.13
   diffusion:
     overrideState: 1
-    value: 9.69
+    value: 9.48
   anamorphicRatio:
     overrideState: 1
-    value: 1
+    value: -1
   color:
     overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}

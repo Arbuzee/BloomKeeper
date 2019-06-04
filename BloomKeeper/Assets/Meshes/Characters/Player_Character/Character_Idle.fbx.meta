@@ -6,7 +6,37 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: idle
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Character_Greens
+    second: {fileID: 2100000, guid: 1bc3528a8e73185469b4d130839c3c8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Character_Hat
+    second: {fileID: 2100000, guid: 4e842b912f5548947831885c3589dcf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Character_Pants
+    second: {fileID: 2100000, guid: 21b3dbf537db6bc4694724f44eaf8f12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Character_Shoes
+    second: {fileID: 2100000, guid: 1e7387c98ec3b78479df76d0c2f056f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Character_Skin
+    second: {fileID: 2100000, guid: 25ebcdfc84e5d0a43a6f2e39d482395c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Character_Tunic
+    second: {fileID: 2100000, guid: d6c0aae2ad0387847a65f0430cceea0e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

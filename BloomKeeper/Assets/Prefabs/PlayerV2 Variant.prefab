@@ -3052,6 +3052,11 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7758458634892556434, guid: 6d7a45b6172741b47ad16fe254e6bb64,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7a45b6172741b47ad16fe254e6bb64, type: 3}
 --- !u!1 &4579413323247849674 stripped
