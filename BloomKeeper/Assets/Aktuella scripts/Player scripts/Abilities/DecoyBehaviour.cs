@@ -13,7 +13,7 @@ public class DecoyBehaviour : MonoBehaviour
     public void Start()
     {
         DestroyDecoy();
-        StartCoroutine(timer(30));
+        StartCoroutine(timer(300));
     }
 
     public IEnumerator timer(float t) {
