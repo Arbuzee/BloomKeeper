@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThirdPerCamera : MonoBehaviour
 {
     [Header("Camera")]
-    [SerializeField] private float mouseSensitivity = 6f;
+    private float mouseSensitivity = 6f;
     private Quaternion rotation;
 
     [Range(0, 10)]
@@ -14,6 +14,10 @@ public class ThirdPerCamera : MonoBehaviour
     private Vector3 cameraPositionToPlayer;
     private float rotationX;
     public static float rotationY;
+
+    private float consoleRotationX;
+    public static float consoleRotationY;
+
     [SerializeField] private float maxAngle = 90f;
     [SerializeField] private float minAngle = -2f;
 
@@ -45,14 +49,24 @@ public class ThirdPerCamera : MonoBehaviour
 
     public void CameraInput()
     {
-        float x = Input.GetAxisRaw("Mouse X");
-        float y = Input.GetAxisRaw("Mouse Y");
+        //float x = Input.GetAxisRaw("Mouse X");
+        //float y = Input.GetAxisRaw("Mouse Y");
 
-        rotationX -= y * mouseSensitivity;
-        rotationY += x * mouseSensitivity;
+        //console
+        float consoleX = Input.GetAxisRaw("ConsoleX");
+        float consoleY = Input.GetAxisRaw("ConsoleY");
 
-        rotationX = Mathf.Clamp(rotationX, minAngle, maxAngle);
-        rotation = Quaternion.Euler(rotationX, rotationY, 0);
+        consoleRotationX -= consoleY * mouseSensitivity;
+        consoleRotationY += consoleX * mouseSensitivity;
+        //consoleRotationX = Mathf.Clamp(consoleRotationX, minAngle, minAngle);
+        rotation = Quaternion.Euler(consoleRotationX, consoleRotationY, 0);
+
+        //----
+        //rotationX -= y * mouseSensitivity;
+        //rotationY += x * mouseSensitivity;
+
+        //rotationX = Mathf.Clamp(rotationX, minAngle, maxAngle);
+        //rotation = Quaternion.Euler(rotationX, rotationY, 0);
     }
 
 

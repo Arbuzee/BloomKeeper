@@ -63,7 +63,9 @@ public class Movement3D : MonoBehaviour
 
     public void SetRotation()
     {
-        transform.root.eulerAngles = new Vector3(0, ThirdPerCamera.rotationY, 0);
+        //transform.root.eulerAngles = new Vector3(0, ThirdPerCamera.rotationY, 0);
+        transform.root.eulerAngles = new Vector3(0, ThirdPerCamera.consoleRotationY, 0);
+
     }
 
     private Vector3 inputVelocity(float Speed)
@@ -79,11 +81,11 @@ public class Movement3D : MonoBehaviour
     //Method for executing decoy without force
     private void SetDecoy()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("ConsoleB"))
         {
             decoyPreviewPoint.SetActive(true);  
         }
-        else if (Input.GetKeyUp(KeyCode.Q))
+        else if (Input.GetKeyUp(KeyCode.Q) || Input.GetButtonUp("ConsoleB"))
         {
 
             if (!onCooldown)
@@ -110,7 +112,7 @@ public class Movement3D : MonoBehaviour
 
     private void Switcheroo()
     {
-        if (Input.GetKeyDown(KeyCode.R) && GameObject.FindGameObjectWithTag("Decoy") && PlayerPhysics.Instance.groundColl())
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("ConsoleYButton") && GameObject.FindGameObjectWithTag("Decoy") && PlayerPhysics.Instance.groundColl())
         {
             GameObject decoy = GameObject.FindGameObjectWithTag("Decoy");
             GameObject temporaryPosition = new GameObject();
@@ -155,7 +157,7 @@ public class Movement3D : MonoBehaviour
     public void jump()
     {
         //jump
-        if (Input.GetKeyDown(KeyCode.Space) && GetComponent<PlayerPhysics>().groundColl())
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("ConsoleAButton") && GetComponent<PlayerPhysics>().groundColl())
         {
             PlayerPhysics.Instance.PlayerVelocity += jumpforce;
         }
